@@ -1,5 +1,4 @@
 <footer>
-  {%- block next_prev %}
   {% if config.theme.prev_next_buttons_location|lower in ['bottom', 'both']
         and page and (page.next_page or page.previous_page) %}
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
@@ -11,7 +10,6 @@
       {% endif %}
     </div>
   {% endif %}
-  {%- endblock %}
 
   <hr/>
 

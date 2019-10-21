@@ -10,7 +10,7 @@
             {#- Skip first level of toc which is page title. #}
             {%- set toc_item = nav_item.toc.items[0] %}
             {%- include 'toc.html' %}
-        {%- elif nav_item.is_section %}
+        {%- elsif nav_item.is_section %}
             {%- for nav_item in nav_item.children %}
                 <li class="toctree-l{{ navlevel }}{% if nav_item.active%} current{%endif%}">
                     {%- include 'nav.html' %}
