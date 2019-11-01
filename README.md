@@ -5,7 +5,7 @@ Port of the Read the Docs theme to Jekyll to use with GitHub Pages.
 ```
 vagrant up
 vagrant ssh
-(in ssh session) > cd /vagrant && bundle exec jekyll serve --host 0.0.0.0 --watch --force_polling 
+(in ssh session) > cd /vagrant && bundle exec jekyll serve --host 0.0.0.0 --watch --force_polling
 ```
 
 This is still a **Work-In-Progress** theme and things will **not** work well.

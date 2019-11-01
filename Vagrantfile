@@ -20,16 +20,22 @@ Vagrant.configure("2") do |config|
     vb.memory = "2048"
   end
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
-        # Update the system
-        sudo apt-get -y update
-        sudo apt-get -y install ruby-full
-        # Needed to build some gems
-        sudo apt-get -y install build-essential zlib1g-dev
-        sudo gem install bundler
-        # Install Jekyll and mirrors the GitHub environment
-        sudo gem install github-pages
-        # Set up gem environment
-        cd /vagrant
-        bundle install
+    # Update the system
+    sudo apt-get -y update
+    sudo apt-get -y install ruby-full
+    # Needed to build some gems
+    sudo apt-get -y install build-essential zlib1g-dev
+    sudo gem install bundler
+    # Install Jekyll and mirrors the GitHub environment
+    sudo gem install github-pages
+    # Set up gem environment
+    cd /vagrant
+    bundle install
+  SHELL
+
+  config.vm.provision "shell", privileged: false, run: "always", inline: <<-SHELL
+    # On every 'vagrant up' run the Jekyll server, add --detach to run in the background
+    cd /vagrant
+    bundle exec jekyll serve --host 0.0.0.0 --watch --force_polling
   SHELL
 end
