@@ -14,6 +14,12 @@ This theme is ported from the MkDocs port of the Read The Docs Sphinx theme.
 License and copyright for the theme can be found in the
 [LICENSE-mkdocs](LICENSE-mkdocs) file.
 
+To compare the output from MkDocs:
+
+```
+mkdocs build
+```
+
 -----
 
 Welcome to your new Jekyll theme! In this directory, you'll find the files you need to be able to package up your theme into a gem. Put your layouts in `_layouts`, your includes in `_includes`, your sass files in `_sass` and any other assets in `assets`.
