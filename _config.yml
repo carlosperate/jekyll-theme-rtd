@@ -8,3 +8,5 @@ webrick:
 
 # Theme settings
 sticky_navigation: true
+prev_next_buttons_location: both
+copyright: Carlos Pereira Atencio

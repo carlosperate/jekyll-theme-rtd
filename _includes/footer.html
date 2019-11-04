@@ -1,12 +1,50 @@
 <footer>
-  {% if config.theme.prev_next_buttons_location|lower in ['bottom', 'both']
-        and page and (page.next_page or page.previous_page) %}
+  {%- comment -%}
+    Jekyll doesn't offer a way to see if there are next or previous pages, it'
+    only available for posts. So we will iterate through the pages like we do
+    on the navigation bar and store the previous and next URLS.
+  {%- endcomment -%}
+  {%- assign previous_page = false -%}
+  {%- assign next_page = false -%}
+  {%- assign nav = site.pages | sort:"nav_order" -%}
+  {%- assign found = false -%}
+
+  {%- for nav_item in nav -%}
+    {%- if nav_item.hide != true and nav_item.nav_exclude != true -%}
+      {%- if nav_item.url == page.url -%}
+        {%- assign found = true -%}
+        {% break %}
+      {%- else -%}
+        {%- assign previous_page = nav_item -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {%- if found == false -%}
+    {%- assign previous_page = false -%}
+  {%- endif -%}
+
+  {%- assign found = false -%}
+  {%- for nav_item in nav reversed -%}
+    {%- if nav_item.hide != true and nav_item.nav_exclude != true -%}
+      {%- if nav_item.url == page.url -%}
+        {%- assign found = true -%}
+        {% break %}
+      {%- else -%}
+        {%- assign next_page = nav_item -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {%- if found == false -%}
+    {%- assign next_page = false -%}
+  {%- endif -%}
+
+  {% if (site.prev_next_buttons_location == 'bottom' or  site.prev_next_buttons_location =='both') and (previous_page or next_page) %}
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      {% if page.next_page %}
-        <a href="{{ page.next_page.url|url }}" class="btn btn-neutral float-right" title="{{ page.next_page.title }}">Next <span class="icon icon-circle-arrow-right"></span></a>
+      {% if next_page %}
+        <a href="{{ next_page.url | url }}" class="btn btn-neutral float-right" title="{{ next_page.title }}">Next <span class="icon icon-circle-arrow-right"></span></a>
       {% endif %}
-      {% if page.previous_page %}
-        <a href="{{ page.previous_page.url|url }}" class="btn btn-neutral" title="{{ page.previous_page.title }}"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      {% if previous_page %}
+        <a href="{{ previous_page.url | url }}" class="btn btn-neutral" title="{{ previous_page.title }}"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       {% endif %}
     </div>
   {% endif %}
@@ -15,10 +53,10 @@
 
   <div role="contentinfo">
     <!-- Copyright etc -->
-    {% if config.copyright %}
-      <p>{{ config.copyright }}</p>
+    {% if site.copyright %}
+      <p>© Copyright {{ site.time | date: "%Y" }} {{ site.copyright }}.</p>
     {% endif %}
   </div>
 
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://jekyllrb.com/">Jekyll</a> using a <a href="https://github.com/carlosperate/jekyll-theme-rtd">theme</a> based on <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
