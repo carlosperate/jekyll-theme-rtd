@@ -85,7 +85,7 @@
         {%- assign navlevel = 1 %}
         {%- assign nav = site.html_pages | sort:"nav_order" -%}
         {%- for nav_item in nav -%}
-          {%- if nav_item.isHome != true and nav_item.hide != true and nav_item.nav_exclude != true -%}
+          {%- if nav_item.hide != true and nav_item.nav_exclude != true -%}
             {%- if nav_item.url != page.url -%}
               <p class="caption"><span class="caption-text">{{ nav_item.title }}</span></p>
               <ul{% if nav_item.active %} class="current"{% endif %}>
@@ -110,7 +110,7 @@
       {% comment %} MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE {% endcomment %}
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="{{ nav.homepage.url|url }}">{{ config.site_name }}</a>
+        <a href="{{ site.url | url }}">{{ site.title }}</a>
       </nav>
 
       {% comment %} PAGE CONTENT {% endcomment %}
@@ -132,22 +132,14 @@
 
   {% include versions.html %}
 
-    <script>var base_url = '{{ base_url }}';</script>
-    <script src="{{ 'assets/js/theme.js' | absolute_url }}" defer></script>
-    {%- for path in config['extra_javascript'] %}
-      <script src="{{ path|url }}" defer></script>
-    {%- endfor %}
-    <script type="text/javascript" defer>
-        window.onload = function () {
-            SphinxRtdTheme.Navigation.enable({{ 'true' if config.theme.sticky_navigation else 'false' }});
-        };
-    </script>
-
+  <script>var base_url = '{{ baseurl }}';</script>
+  <script src="{{ 'assets/js/theme.js' | absolute_url }}" defer></script>
+  <script type="text/javascript" defer>
+    window.onload = function () {
+      SphinxRtdTheme.Navigation.enable({{ site.sticky_navigation | default: 'false' }});
+    };
+  </script>
+  <!-- Build Date: {{ site.time | date: "%Y-%m-%d %H:%M" }} -->
 </body>
 </html>
-{% if page and page.is_homepage %}
-<!--
-MkDocs version : {{ mkdocs_version }}
-Build Date UTC : {{ build_date_utc }}
--->
-{% endif %}
+

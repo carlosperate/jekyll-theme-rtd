@@ -5,3 +5,6 @@ description: Port of the Read the Docs theme to Jekyll to use with GitHub Pages.
 webrick:
   headers:
     Access-Control-Allow-Origin: "*"
+
+# Theme settings
+sticky_navigation: true
