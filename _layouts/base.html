@@ -8,8 +8,8 @@
   {% if page and page.is_homepage %}<meta name="description" content="{{ config.site_description }}">{% endif %}
   {% if config.site_author %}<meta name="author" content="{{ config.site_author }}">{% endif %}
   {% if page and page.canonical_url %}<link rel="canonical" href="{{ page.canonical_url }}">{% endif %}
-  {% if config.site_favicon %}<link rel="shortcut icon" href="{{ config.site_favicon|url }}">
-  {% else %}<link rel="shortcut icon" href="{{ 'img/favicon.ico'|url }}">{% endif %}
+  {% if config.site_favicon %}<link rel="shortcut icon" href="{{ config.site_favicon | url }}">
+  {% else %}<link rel="shortcut icon" href="{{ 'assets/img/favicon.ico' | absolute_url  }}">{% endif %}
 
   <title>{% if page and page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
 
@@ -17,8 +17,10 @@
 
   <link rel="stylesheet" href="{{ 'assets/css/theme.css' | absolute_url }}" />
   <link rel="stylesheet" href="{{ 'assets/css/theme_extra.css' | absolute_url }}" />
-  {%- if config.theme.highlightjs %}
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  {%- if site.hljs_style -%}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/{{site.hljs_style}}.min.css" />
+  {%- else -%}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github-gist.min.css" />
   {%- endif %}
   {%- for path in config['extra_css'] %}
   <link href="{{ path|url }}" rel="stylesheet" />
@@ -26,13 +28,11 @@
 
   <script src="{{ 'assets/js/jquery-2.1.1.min.js' | absolute_url }}" defer></script>
   <script src="{{ 'assets/js/modernizr-2.8.3.min.js' | absolute_url }}" defer></script>
-  {%- if config.theme.highlightjs %}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  {%- for lang in config.theme.hljs_languages %}
+  {%- for lang in site.hljs_languages -%}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/{{lang}}.min.js"></script>
-  {%- endfor %}
+  {%- endfor -%}
   <script>hljs.initHighlightingOnLoad();</script>
-  {%- endif %}
 
   {% if config.google_analytics %}
   <script>
@@ -83,7 +83,7 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         {%- assign navlevel = 1 %}
-        {%- assign nav = site.html_pages | sort:"nav_order" -%}
+        {%- assign nav = site.pages | sort:"nav_order" -%}
         {%- for nav_item in nav -%}
           {%- if nav_item.hide != true and nav_item.nav_exclude != true -%}
             {%- if nav_item.url != page.url -%}
