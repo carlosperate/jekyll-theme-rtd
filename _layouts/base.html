@@ -34,17 +34,7 @@
   {%- endfor -%}
   <script>hljs.initHighlightingOnLoad();</script>
 
-  {% if config.google_analytics %}
-  <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', '{{ config.google_analytics[0] }}', '{{ config.google_analytics[1] }}');
-      ga('send', 'pageview');
-  </script>
-  {% endif %}
+  {%- if site.google_analytics %} {%- include ganalytics.html -%} {% endif %}
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -83,10 +73,10 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         {%- assign navlevel = 1 %}
-        {%- assign nav = site.pages | sort:"nav_order" -%}
-        {%- for nav_item in nav -%}
-          {%- if nav_item.hide != true and nav_item.nav_exclude != true -%}
-            {%- if nav_item.url != page.url -%}
+        {%- assign nav = site.pages | sort:"nav_order" %}
+        {%- for nav_item in nav %}
+          {%- if nav_item.hide != true and nav_item.nav_exclude != true %}
+            {%- if nav_item.url != page.url %}
               <p class="caption"><span class="caption-text">{{ nav_item.title }}</span></p>
               <ul{% if nav_item.active %} class="current"{% endif %}>
                   <li class="toctree-l{{ navlevel }}{% if nav_item.active %} current{% endif %}">
