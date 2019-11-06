@@ -5,8 +5,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  {% if page and page.is_homepage %}<meta name="description" content="{{ config.site_description }}">{% endif %}
-  {% if config.site_author %}<meta name="author" content="{{ config.site_author }}">{% endif %}
+  {% if page and page.description %}<meta name="description" content="{{ page.description }}">
+  {% elsif page and page.path == "index.md" %}<meta name="description" content="{{ site.description }}">{% endif %}
+  {% if site.site_author %}<meta name="author" content="{{ site..site_author }}">{% endif %}
   {% if page and page.canonical_url %}<link rel="canonical" href="{{ page.canonical_url }}">{% endif %}
   {% if config.site_favicon %}<link rel="shortcut icon" href="{{ config.site_favicon | url }}">
   {% else %}<link rel="shortcut icon" href="{{ 'assets/img/favicon.ico' | absolute_url  }}">{% endif %}
@@ -22,16 +23,10 @@
   {%- else -%}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github-gist.min.css" />
   {%- endif %}
-  {%- for path in config['extra_css'] %}
-  <link href="{{ path|url }}" rel="stylesheet" />
-  {%- endfor %}
 
   <script src="{{ 'assets/js/jquery-2.1.1.min.js' | absolute_url }}" defer></script>
   <script src="{{ 'assets/js/modernizr-2.8.3.min.js' | absolute_url }}" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  {%- for lang in site.hljs_languages -%}
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/{{lang}}.min.js"></script>
-  {%- endfor -%}
   <script>hljs.initHighlightingOnLoad();</script>
 
   {%- if site.google_analytics %} {%- include ganalytics.html -%} {% endif %}

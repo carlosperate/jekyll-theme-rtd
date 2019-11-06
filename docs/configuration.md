@@ -6,7 +6,7 @@ nav_order: 5
 
 # Configuring the theme
 
-This is an index page. Normally we expect the page title to start with a `#`.
+The docs should have an index page.
 
 ## _config.yml
 
@@ -26,4 +26,22 @@ prev_next_buttons_location: both
 # The highlight.js library provides 79 different colours for their syntax highlighting. The default is github-gist.
 hljs_style: github-gist
 google_analytics: UA-XXXXX-Y
+```
+
+
+```yml
+---
+layout: default
+title: Page Title Goes Here
+---
+
+```
+
+
+```yml
+---
+nav_order: 4
+description: Short description to include for SEO
+canonical_url: https://www.google.com
+---
 ```

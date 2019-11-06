@@ -2,6 +2,7 @@
 layout: default
 title: A Page Inside MySection
 nav_order: 4
+description: A sample description for SEO.
 ---
 
 # A Page Inside MySection Title Header
