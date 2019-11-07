@@ -9,13 +9,13 @@
   {% elsif page and page.path == "index.md" %}<meta name="description" content="{{ site.description }}">{% endif %}
   {% if site.site_author %}<meta name="author" content="{{ site..site_author }}">{% endif %}
   {% if page and page.canonical_url %}<link rel="canonical" href="{{ page.canonical_url }}">{% endif %}
+
   {% if config.site_favicon %}<link rel="shortcut icon" href="{{ config.site_favicon | url }}">
   {% else %}<link rel="shortcut icon" href="{{ 'assets/img/favicon.ico' | absolute_url  }}">{% endif %}
 
   <title>{% if page and page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
-
   <link rel="stylesheet" href="{{ 'assets/css/theme.css' | absolute_url }}" />
   <link rel="stylesheet" href="{{ 'assets/css/theme_extra.css' | absolute_url }}" />
   {%- if site.hljs_style -%}
@@ -40,8 +40,8 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-        <a href="{{ nav.homepage.url|url }}" class="icon icon-home"> {{ config.site_name }}</a>
-        {% if site.search_enabled == true %}{% include searchbox.html %}{% endif %}
+        <a href="{{ nav.homepage.url|url }}" class="icon icon-home"> {{ site.title }}</a>
+        {% unless site.search_enabled == false %}{% include searchbox.html %}{% endunless %}
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
