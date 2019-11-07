@@ -119,9 +119,9 @@
   <script src="{{ 'assets/js/theme.js' | absolute_url }}" defer></script>
   <script type="text/javascript" defer>
     hljs.initHighlightingOnLoad();
-    window.onload = function () {
+    window.addEventListener('load', function() {
       SphinxRtdTheme.Navigation.enable({{ site.sticky_navigation | default: 'false' }});
-    };
+    });
   </script>
   <!-- Build Date: {{ site.time | date: "%Y-%m-%d %H:%M" }} -->
 </body>

@@ -29,6 +29,7 @@ google_analytics: UA-XXXXX-Y
 hljs_style: github-gist
 ```
 
+## Front Matter
 
 ```yml
 ---
@@ -41,8 +42,10 @@ title: Page Title Goes Here
 
 ```yml
 ---
-nav_order: 4
 description: Short description to include for SEO
+nav_order: 4
+nav_exclude: false
 canonical_url: https://www.google.com
+search_exclude: false
 ---
 ```
