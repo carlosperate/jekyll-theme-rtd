@@ -1,0 +1,39 @@
+
+{%- comment -%}
+  Jekyll doesn't offer a way to see if there are next or previous pages, it'
+  only available for posts. So we will iterate through the pages like we do
+  on the navigation bar and store the previous and next URLS.
+{%- endcomment -%}
+{%- assign previous_page = false -%}
+{%- assign next_page = false -%}
+{%- assign nav = site.pages | sort:"nav_order" -%}
+{%- assign found = false -%}
+
+{%- for nav_item in nav -%}
+  {%- if nav_item.hide != true and nav_item.nav_exclude != true -%}
+    {%- if nav_item.url == page.url -%}
+      {%- assign found = true -%}
+      {% break %}
+    {%- else -%}
+      {%- assign previous_page = nav_item -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- if found == false -%}
+  {%- assign previous_page = false -%}
+{%- endif -%}
+
+{%- assign found = false -%}
+{%- for nav_item in nav reversed -%}
+  {%- if nav_item.hide != true and nav_item.nav_exclude != true -%}
+    {%- if nav_item.url == page.url -%}
+      {%- assign found = true -%}
+      {% break %}
+    {%- else -%}
+      {%- assign next_page = nav_item -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- if found == false -%}
+  {%- assign next_page = false -%}
+{%- endif -%}
