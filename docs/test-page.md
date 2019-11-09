@@ -5,7 +5,7 @@
 
 layout: default
 title: Markdown Kitchen Sink Example
-description: A sample description for SEO.
+excerpt: A sample description for SEO.
 nav_order: 1
 ---
 

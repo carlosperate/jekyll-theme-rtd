@@ -1,7 +1,7 @@
 ---
 layout: default
 title: A Page Inside MySection
-description: A sample description for SEO.
+excerpt: A sample description for SEO.
 nav_order: 4
 ---
 

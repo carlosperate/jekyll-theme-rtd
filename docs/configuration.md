@@ -45,7 +45,7 @@ title: Page Title Goes Here
 
 ```yml
 ---
-description: Short description to include for SEO
+excerpt: Short description to include as an opening and SEO metatags.
 nav_order: 4
 nav_exclude: false
 canonical_url: https://www.google.com

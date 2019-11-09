@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  {% if page and page.description %}<meta name="description" content="{{ page.description }}">
+  {% if page and page.excerpt %}<meta name="description" content="{{ page.excerpt }}">
   {% elsif page and page.path == "index.md" %}<meta name="description" content="{{ site.description }}">{% endif %}
-  {% if site.site_author %}<meta name="author" content="{{ site..site_author }}">{% endif %}
+  {% if site.site_author %}<meta name="author" content="{{ site.site_author }}">{% endif %}
   {% if page and page.canonical_url %}<link rel="canonical" href="{{ page.canonical_url }}">{% endif %}
 
   {% if config.site_favicon %}<link rel="shortcut icon" href="{{ config.site_favicon | url }}">
@@ -124,6 +124,9 @@
     });
   </script>
   <!-- Build Date: {{ site.time | date: "%Y-%m-%d %H:%M" }} -->
+
+
+  
 </body>
 </html>
 

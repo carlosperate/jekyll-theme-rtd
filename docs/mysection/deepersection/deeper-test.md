@@ -1,7 +1,7 @@
 ---
 layout: default
 title: A Page Deeper Inside
-description: A sample description for SEO.
+excerpt: A sample description for SEO.
 ---
 
 # A Much Deeper Section
