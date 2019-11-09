@@ -14,6 +14,7 @@ The docs should have an index page.
 ```yml
 title: Read The Docs Jekyll Theme
 description: Port of the Read the Docs theme to Jekyll to use with GitHub Pages.
+url: "https://username.github.io/repo-name/"
 
 # Specific to this theme
 site_author: Carlos Pereira Atencio
