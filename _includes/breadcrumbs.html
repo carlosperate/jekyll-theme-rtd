@@ -21,7 +21,7 @@
   </ul>
 
   {%- include paginationlist.html %}
-  {%- if (site.prev_next_buttons_location == 'bottom' or  site.prev_next_buttons_location =='both') and (previous_page or next_page) %}
+  {%- if (site.prev_next_buttons_location == 'top' or  site.prev_next_buttons_location =='both') and (previous_page or next_page) %}
     <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       {%- if next_page %}
         <a href="{{ next_page.url | url }}" class="btn btn-neutral float-right" title="{{ next_page.title }}">Next <span class="icon icon-circle-arrow-right"></span></a>
