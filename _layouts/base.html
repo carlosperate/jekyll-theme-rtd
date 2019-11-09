@@ -35,7 +35,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-        <a href="{{ site.url | url }}" class="icon icon-home"> {{ site.title }}</a>
+        <a href="{{ site.url | absolute_url }}" class="icon icon-home"> {{ site.title }}</a>
         {% unless site.search_enabled == false %}{% include searchbox.html %}{% endunless %}
       </div>
 
@@ -70,7 +70,7 @@
               <p class="caption"><span class="caption-text">{{ nav_item.title }}</span></p>
               <ul{% if nav_item.active %} class="current"{% endif %}>
                   <li class="toctree-l{{ navlevel }}{% if nav_item.active %} current{% endif %}">
-                      <a class="reference internal current" href="{{ nav_item.url }}">{{ nav_item.title }}</a>
+                      <a class="reference internal current" href="{{ nav_item.url | absolute_url}}">{{ nav_item.title }}</a>
                   </li>
               </ul>
             {%- else -%}
@@ -90,7 +90,7 @@
       {% comment %} MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE {% endcomment %}
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="{{ site.url | url }}">{{ site.title }}</a>
+        <a href="{{ site.url | absolute_url }}">{{ site.title }}</a>
       </nav>
 
       {% comment %} PAGE CONTENT {% endcomment %}
@@ -122,11 +122,12 @@
     window.addEventListener('load', function() {
       SphinxRtdTheme.Navigation.enable({{ site.sticky_navigation | default: 'false' }});
     });
+
+    /* site.github
+    {{ site.github }}
+    */
   </script>
   <!-- Build Date: {{ site.time | date: "%Y-%m-%d %H:%M" }} -->
-
-
-  
 </body>
 </html>
 

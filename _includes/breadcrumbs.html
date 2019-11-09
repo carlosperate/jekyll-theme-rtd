@@ -2,11 +2,11 @@
   <ul class="wy-breadcrumbs">
     {%- if page %}
       {%- if page.collection == "posts" %}
-        <li><a href="{{ site.url | url }}">Posts</a> &raquo;</li>
+        <li><a href="{{ site.url | absolute_url }}">Posts</a> &raquo;</li>
         <li>{{ page.title }}</li>
       {%- else %}
         {%- assign page_directories = page.dir | split: '/' %}
-        <li><a href="{{ site.url | url }}">Docs</a></li>
+        <li><a href="{{ site.url | absolute_url }}">Docs</a></li>
         {%- for dir in page_directories %}
         <li>{{ dir | capitalize }} &raquo;</li>
         {%- endfor %}
@@ -24,10 +24,10 @@
   {%- if (site.prev_next_buttons_location == 'top' or  site.prev_next_buttons_location =='both') and (previous_page or next_page) %}
     <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       {%- if next_page %}
-        <a href="{{ next_page.url | url }}" class="btn btn-neutral float-right" title="{{ next_page.title }}">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="{{ next_page.url | absolute_url }}" class="btn btn-neutral float-right" title="{{ next_page.title }}">Next <span class="icon icon-circle-arrow-right"></span></a>
       {%- endif %}
       {%- if previous_page %}
-        <a href="{{ previous_page.url | url }}" class="btn btn-neutral" title="{{ previous_page.title }}"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="{{ previous_page.url | absolute_url }}" class="btn btn-neutral" title="{{ previous_page.title }}"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       {%- endif %}
     </div>
   {%- endif %}
