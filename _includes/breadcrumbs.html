@@ -1,27 +1,22 @@
 <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="{{ nav.homepage.url|url }}">Docs</a> &raquo;</li>
-    {% if page %}
-      {% for doc in page.ancestors %}
-        {% if doc.link %}
-          <li><a href="{{ doc.link|e }}">{{ doc.title }}</a> &raquo;</li>
-        {% else %}
-          <li>{{ doc.title }} &raquo;</li>
-        {% endif %}
-      {% endfor %}
-    {% endif %}
-    {% if page %}<li>{{ page.title }}</li>{% endif %}
+    {%- if page %}
+      {%- if page.collection == "posts" %}
+        <li><a href="{{ site.url | url }}">Posts</a> &raquo;</li>
+        <li>{{ page.title }}</li>
+      {%- else %}
+        {%- assign page_directories = page.dir | split: '/' %}
+        <li><a href="{{ site.url | url }}">Docs</a></li>
+        {%- for dir in page_directories %}
+        <li>{{ dir | capitalize }} &raquo;</li>
+        {%- endfor %}
+        <li>{{ page.title }}</li>
+      {%- endif %}
+    {%- endif %}
     <li class="wy-breadcrumbs-aside">
-      {% if page and page.edit_url %}
-        <a href="{{ page.edit_url }}"
-        {%- if config.repo_name|lower == 'github' %}
-          class="icon icon-github"
-        {%- elsif config.repo_name|lower == 'bitbucket' %}
-          class="icon icon-bitbucket"
-        {%- elsif config.repo_name|lower == 'gitlab' %}
-          class="icon icon-gitlab"
-        {% endif %}> Edit on {{ config.repo_name }}</a>
-      {% endif %}
+      {%- unless site.edit_on_github == false %}
+        <a href="{{ site.repo_url | url }}/blob/master/{{ page.path }}" class="icon icon-github"> Edit on GitHub</a>
+      {%- endunless %}
     </li>
   </ul>
 
