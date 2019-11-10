@@ -35,7 +35,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-        <a href="{{ site.url | absolute_url }}" class="icon icon-home"> {{ site.title }}</a>
+        <a href="{{ site.url | absolute_url }}{{ site.github.baseurl }}" class="icon icon-home"> {{ site.title }}</a>
         {% unless site.search_enabled == false %}{% include searchbox.html %}{% endunless %}
       </div>
 
@@ -90,7 +90,7 @@
       {%- comment %} MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE {% endcomment %}
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="{{ site.url | absolute_url }}">{{ site.title }}</a>
+        <a href="{{ site.url | absolute_url }}{{ site.github.baseurl }}">{{ site.title }}</a>
       </nav>
 
       {%- comment %} PAGE CONTENT {% endcomment %}

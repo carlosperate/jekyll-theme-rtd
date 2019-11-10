@@ -2,11 +2,11 @@
   <ul class="wy-breadcrumbs">
     {%- if page %}
       {%- if page.collection == "posts" %}
-        <li><a href="{{ site.url | absolute_url }}">Posts</a> &raquo;</li>
+        <li><a href="{{ site.url | absolute_url }}{{ site.github.baseurl }}">Posts</a> &raquo;</li>
         <li>{{ page.title }}</li>
       {%- else %}
         {%- assign page_directories = page.dir | split: '/' %}
-        <li><a href="{{ site.url | absolute_url }}">Docs</a></li>
+        <li><a href="{{ site.url | absolute_url }}{{ site.github.baseurl }}">Docs</a></li>
         {%- for dir in page_directories %}
         <li>{{ dir | capitalize }} &raquo;</li>
         {%- endfor %}
