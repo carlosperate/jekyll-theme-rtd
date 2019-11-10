@@ -18,20 +18,20 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
   <link rel="stylesheet" href="{{ 'assets/css/theme.css' | absolute_url }}" />
   <link rel="stylesheet" href="{{ 'assets/css/theme_extra.css' | absolute_url }}" />
-  {%- if site.hljs_style -%}
+  {%- if site.hljs_style %}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/{{site.hljs_style}}.min.css" />
-  {%- else -%}
+  {%- else %}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github-gist.min.css" />
   {%- endif %}
 
-  {%- if site.google_analytics %} {%- include ganalytics.html -%} {% endif %}
+  {%- if site.google_analytics %}{% include ganalytics.html %}{% endif %}
 </head>
 
 <body class="wy-body-for-nav" role="document">
 
   <div class="wy-grid-for-nav">
 
-    {% comment %} SIDE NAV, TOGGLES ON MOBILE {% endcomment %}
+    {%- comment %} SIDE NAV, TOGGLES ON MOBILE {% endcomment %}
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
@@ -87,13 +87,13 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
-      {% comment %} MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE {% endcomment %}
+      {%- comment %} MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE {% endcomment %}
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
         <a href="{{ site.url | absolute_url }}">{{ site.title }}</a>
       </nav>
 
-      {% comment %} PAGE CONTENT {% endcomment %}
+      {%- comment %} PAGE CONTENT {% endcomment %}
       <div class="wy-nav-content">
         <div class="rst-content">
           {% include breadcrumbs.html %}
@@ -122,10 +122,6 @@
     window.addEventListener('load', function() {
       SphinxRtdTheme.Navigation.enable({{ site.sticky_navigation | default: 'false' }});
     });
-
-    /* site.github
-    {{ site.github }}
-    */
   </script>
   <!-- Build Date: {{ site.time | date: "%Y-%m-%d %H:%M" }} -->
 </body>

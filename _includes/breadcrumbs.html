@@ -15,7 +15,7 @@
     {%- endif %}
     <li class="wy-breadcrumbs-aside">
       {%- unless site.edit_on_github == false %}
-        <a href="{{ site.repo_url | url }}/blob/master/{{ page.path }}" class="icon icon-github"> Edit on GitHub</a>
+        <a href="{{ site.repo_url | url }}/blob/master/{%- if site.github_docs_folder %}docs/{% endif %}{{ page.path }}" class="icon icon-github" target="_blank"> Edit on GitHub</a>
       {%- endunless %}
     </li>
   </ul>
