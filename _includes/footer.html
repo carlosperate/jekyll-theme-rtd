@@ -14,9 +14,18 @@
     <hr/>
 
     <div role="contentinfo">
-      {%- if site.site_author %}
-        <p>© Copyright {{ site.time | date: "%Y" }} {{ site.site_author }}.</p>
-      {%- endif %}
+      <p>
+        {%- if site.site_author %}
+          © Copyright {{ site.time | date: "%Y" }} {{ site.site_author }}.
+        {%- endif %}
+        {%- if site.github.build_revision %}
+          {%- if site.repo_url %}
+            <span class="commit">Revision <a href="{{ site.repo_url | url }}/commit/{{ site.github.build_revision }}" target="_blank"><code>{{ site.github.build_revision | truncate: 8, "" }}</code></a>.
+          {%- else %}
+            <span class="commit">Revision <code>{{ site.github.build_revision | truncate: 8, "" }}</code>.</span>
+          {%- endif %}
+        {%- endif %}
+      </p>
     </div>
     Built with
     {%- if site.github %}
@@ -25,5 +34,5 @@
     <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>
     {%- endif %}
     using a <a href="https://github.com/carlosperate/jekyll-theme-rtd" target="_blank">theme</a>
-    based on <a href="https://readthedocs.org" target="_blank">Read the Docs</a>.
+    based on <a href="https://sphinx-rtd-theme.readthedocs.io/en/stable/" target="_blank">Read the Docs</a>.
 </footer>
