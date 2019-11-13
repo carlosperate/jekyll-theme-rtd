@@ -20,6 +20,7 @@ site_author: Carlos Pereira Atencio
 repo_url: 'https://github.com/carlosperate/jekyll-theme-rtd'
 edit_on_github: true
 github_docs_folder: true
+logo: 'https://your.url/image.png'
 site_favicon: 'https://your.url/here.ico'
 sticky_navigation: true
 prev_next_buttons_location: None

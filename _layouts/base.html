@@ -35,7 +35,11 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search">
-          <a href="{{ site.url | absolute_url }}{{ site.github.baseurl }}" class="icon icon-home"> {{ site.title }}</a>
+          {%- if site.logo %}
+            <a href="{{ site.url | absolute_url }}{{ site.github.baseurl }}"><img src="{{ site.logo }}" class="logo" alt="Logo"></a>
+          {%- else %}
+            <a href="{{ site.url | absolute_url }}{{ site.github.baseurl }}" class="icon icon-home"> {{ site.title }}</a>
+          {%- endif %}
           {% unless site.search_enabled == false %}{% include searchbox.html %}{% endunless %}
         </div>
 
