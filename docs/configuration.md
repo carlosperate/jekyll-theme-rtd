@@ -28,6 +28,7 @@ prev_next_buttons_location: bottom
 prev_next_buttons_location: both
 search_enabled: true
 google_analytics: UA-XXXXX-Y
+google_analytics_anonymize_ip: true
 # The highlight.js library provides 79 different colours for their syntax highlighting. The default is github-gist.
 hljs_style: github-gist
 ```
