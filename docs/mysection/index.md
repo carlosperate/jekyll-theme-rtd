@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Index page in mysection
-nav_order: 3
+nav_order: 1
 ---
 
 # Index Page Inside MySection Main Title Header

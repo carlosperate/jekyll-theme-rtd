@@ -2,12 +2,14 @@
 layout: default
 title: A Page Inside MySection
 excerpt: A sample description for SEO.
-nav_order: 4
+nav_order: 2
 ---
 
-# A Page Inside MySection Title Header
+# A Page Inside MySection 
 
 This is an index page. Normally we expect the page title to start with a `#`.
+
+The filename is the same as the kitchen sink example, but within a folder.
 
 ## A MySection Page Header 1
 

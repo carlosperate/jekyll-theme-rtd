@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Index
-nav_order: 2
+nav_order: 1
 ---
 
 # Index Page Main Title Header

@@ -2,11 +2,12 @@
 # This example file is based on index-test.md from Just the Docs Jekyll Theme.
 # Original file copyright (c) 2016 Patrick Marsceill:
 # https://github.com/pmarsceill/just-the-docs/blob/v0.2.7-r/docs/index-test.md
+# Changes have been made to adapt it for this project.
 
 layout: default
 title: Markdown Kitchen Sink Example
 excerpt: A sample description for SEO.
-nav_order: 1
+nav_order: 3
 ---
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
@@ -17,7 +18,7 @@ There should be whitespace between paragraphs.
 
 There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
 
-# Kitchen Title Header
+# Markdown Kitchen Sink Example
 
 This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
 
