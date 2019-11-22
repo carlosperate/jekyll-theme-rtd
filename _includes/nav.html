@@ -1,0 +1,79 @@
+{%- comment -%}
+    This will generate a list (<ul> and <li>) with all the pages not marked to
+    be excluded from the navigation.
+    The entries will be ordered by the "nav_order" front matter, and if the
+    pages are within a folder it will create a section for those entries (only
+    1 level deep).
+
+    Jekyll doesn't offer a way to see if there are next or previous pages, as
+    it is only available for posts. As we have a specific other anyway, this
+    will also create the "previous_page" and "next_page" global variables with
+    URLs to add as links/buttons in other parts of the layout.
+
+    WARNING! The  looping around the list of pages here is not a good method
+    to implement this, but the Liquid template language is very limited.
+{%- endcomment -%}
+
+{%- assign sections = "" %}
+{%- assign last_loop_page = false %}
+{%- assign set_next_page = false %}
+{%- assign nav = site.pages | sort:"nav_order" %}
+
+{%- comment %} First loop to print pages without categories and collect an array of categories {%- endcomment %}
+{%- for nav_item in nav %}
+    {%- if nav_item.hide != true and nav_item.nav_exclude != true %}
+        {%- assign path_array = nav_item.dir | split: "/" %}
+        {%- assign array_size = path_array | size %}
+        {%- if array_size == 0 %}
+            {%- if nav_item.url == page.url %}
+                {%- include toc.html html=content sanitize=true h_max=4 item_class="toctree-l%level%" %}
+                {%- if nav_item.url == page.url %}
+                    {%- assign previous_page = last_loop_page %}
+                    {%- assign set_next_page = true %}
+                {%- endif %}
+            {%- else %}
+                <ul>
+                    <li class="toctree-l1">
+                        <a class="reference internal current" href="{{ nav_item.url | absolute_url}}">{{ nav_item.title }}</a>
+                    </li>
+                </ul>
+                {%- assign last_loop_page = nav_item %}
+                {%- if set_next_page %}
+                    {%- assign next_page = nav_item %}
+                    {%- assign set_next_page = false %}
+                {% endif %}
+            {%- endif %}
+        {%- else %}
+            {%- assign sections = sections | append: path_array[1] | append: "|" %}
+        {%- endif %}
+    {%- endif %}
+{%- endfor %}
+
+{%- assign sections = sections | split: "|" | uniq | sort %}
+{%- for section in sections %}
+    <p class="caption"><span class="caption-text">{{ section }}</span></p>
+    {%- for nav_item in nav %}
+        {%- assign path_array = nav_item.dir | split: "/" %}
+        {%- assign page_section = path_array[1] %}
+        {%- if page_section == section and nav_item.hide != true and nav_item.nav_exclude != true %}
+            {%- if nav_item.url == page.url %}
+                {%- include toc.html html=content sanitize=true h_max=4 item_class="toctree-l%level%" %} 
+                {%- if nav_item.url == page.url %}
+                    {%- assign previous_page = last_loop_page %}
+                    {%- assign set_next_page = true %}
+                {%- endif %}
+            {%- else %}
+                <ul>
+                    <li class="toctree-l1">
+                        <a class="reference internal current" href="{{ nav_item.url | absolute_url}}">{{ nav_item.title }}</a>
+                    </li>
+                </ul>
+                {%- assign last_loop_page = nav_item %}
+                {%- if set_next_page %}
+                    {%- assign next_page = nav_item %}
+                    {%- assign set_next_page = false %}
+                {% endif %}
+            {%- endif %}
+        {%- endif %}
+    {%- endfor %}
+{%- endfor %}

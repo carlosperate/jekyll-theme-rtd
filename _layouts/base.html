@@ -44,47 +44,7 @@
         </div>
 
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          {%- assign nav = site.pages | sort:"nav_order" %}
-          {%- assign sections = "" %}
-          {%- for nav_item in nav %}
-            {%- if nav_item.hide != true and nav_item.nav_exclude != true %}
-              {%- assign path_array = nav_item.dir | split: "/" %}
-              {%- assign array_size = path_array | size %}
-              {%- if array_size == 0 %}
-                {%- if nav_item.url != page.url %}
-                  <ul>
-                    <li class="toctree-l1">
-                      <a class="reference internal current" href="{{ nav_item.url | absolute_url}}">{{ nav_item.title }}</a>
-                    </li>
-                  </ul>
-                {%- else %}
-                  {% include toc.html html=content sanitize=true h_max=4 item_class="toctree-l%level%" %}
-                {%- endif %}
-              {%- else %}
-                {%- assign sections = sections | append: path_array[1] | append: "|" %}
-              {%- endif %}
-            {%- endif %}
-          {%- endfor %}
-
-          {%- assign sections = sections | split: "|" | uniq | sort %}
-          {%- for section in sections %}
-            <p class="caption"><span class="caption-text">{{ section }}</span></p>
-            {%- for nav_item in nav %}
-              {%- assign path_array = nav_item.dir | split: "/" %}
-              {%- assign page_section = path_array[1] %}
-              {%- if page_section == section and nav_item.hide != true and nav_item.nav_exclude != true %}
-                {%- if nav_item.url != page.url %}
-                  <ul>
-                    <li class="toctree-l1">
-                      <a class="reference internal current" href="{{ nav_item.url | absolute_url}}">{{ nav_item.title }}</a>
-                    </li>
-                  </ul>
-                {%- else %}
-                  {% include toc.html html=content sanitize=true h_max=4 item_class="toctree-l%level%" %}
-                {%- endif %}
-              {%- endif %}
-            {%- endfor %}
-          {%- endfor %}
+          {% include nav.html %}
         </div>
       </div>
     </nav>
@@ -130,4 +90,3 @@
   <!-- Build Date: {{ site.time | date: "%Y-%m-%d %H:%M" }} -->
 </body>
 </html>
-
