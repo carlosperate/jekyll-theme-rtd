@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Index page in mysection
+title: Index page in First Section
 nav_order: 1
 ---
 
-# Index Page Inside MySection Main Title Header
+# Index Page in First Section Main Title Header
 
 This is an index page. Normally we expect the page title to start with a `#`.
 
