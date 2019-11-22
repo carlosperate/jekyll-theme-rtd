@@ -34,7 +34,7 @@
             {%- else %}
                 <ul>
                     <li class="toctree-l1">
-                        <a class="reference internal current" href="{{ nav_item.url | absolute_url}}">{{ nav_item.title }}</a>
+                        <a class="reference internal" href="{{ nav_item.url | absolute_url}}">{{ nav_item.title }}</a>
                     </li>
                 </ul>
                 {%- assign last_loop_page = nav_item %}
@@ -65,7 +65,7 @@
             {%- else %}
                 <ul>
                     <li class="toctree-l1">
-                        <a class="reference internal current" href="{{ nav_item.url | absolute_url}}">{{ nav_item.title }}</a>
+                        <a class="reference internal" href="{{ nav_item.url | absolute_url}}">{{ nav_item.title }}</a>
                     </li>
                 </ul>
                 {%- assign last_loop_page = nav_item %}
