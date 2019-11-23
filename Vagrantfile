@@ -26,8 +26,6 @@ Vagrant.configure("2") do |config|
     # Needed to build some gems
     sudo apt-get -y install build-essential zlib1g-dev
     sudo gem install bundler
-    # Install Jekyll and mirrors the GitHub environment
-    sudo gem install github-pages
     # Set up gem environment
     cd /vagrant
     bundle install

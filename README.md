@@ -1,35 +1,16 @@
-# jekyll-theme-rtd
+# Read The Docs Theme for Jekyll and GitHub Pages
 
 Port of the Read the Docs theme to Jekyll to use with GitHub Pages.
 
-```
-vagrant up
-vagrant ssh
-(in ssh session) > cd /vagrant && bundle exec jekyll serve --host 0.0.0.0 --watch --force_polling
-```
-
-This is still a **Work-In-Progress** theme and things will **not** work well.
+This theme is currently a **Work-In-Progress**, and while things might be
+broken it should be already usable.
 
 This theme is ported from the MkDocs port of the Read The Docs Sphinx theme.
-License and copyright for the theme can be found in the
-[LICENSE-mkdocs](LICENSE-mkdocs) file.
-
-To compare the output from MkDocs:
-
-```
-mkdocs build
-```
-
------
-
-Welcome to your new Jekyll theme! In this directory, you'll find the files you need to be able to package up your theme into a gem. Put your layouts in `_layouts`, your includes in `_includes`, your sass files in `_sass` and any other assets in `assets`.
-
-To experiment with this code, add some sample content and run `bundle exec jekyll serve` – this directory is setup just like a Jekyll site!
-
-TODO: Delete this and the text above, and describe your gem
+Full license and copyright information can be found in the
+[License](#license) section.
 
 
-## Installation
+## Add this theme to your Jekyll project
 
 Add this line to your Jekyll site's `Gemfile`:
 
@@ -45,29 +26,98 @@ theme: jekyll-theme-rtd
 
 And then execute:
 
-    $ bundle
+```bash
+$ bundle
+```
 
 Or install it yourself as:
 
-    $ gem install jekyll-theme-rtd
+```bash
+$ gem install jekyll-theme-rtd
+```
 
-## Usage
 
-TODO: Write usage instructions here. Describe your available layouts, includes, sass and/or assets.
+## Development Instructions
+
+These instructions describe two different ways to to set up your environment to
+develop or edit this theme.
+
+The theme is developed like a normal Jekyll site, and it can serve the
+documentation using the theme source code located here.
+
+
+### Run with Vagrant and a Virtual Machine
+
+[Vagrant](https://www.vagrantup.com) provides an easy way to set up and manage
+a Virtual Machine with [VirtualBox](https://www.virtualbox.org). With a single
+command you can automatically create the VM with all the dependencies required
+to build and sever this project.
+
+There is [Vagrantfile](Vagrantfile) included to run an Ubuntu VM with Ruby and
+Jekyll. To set-up everything and serve the website run:
+
+```bash
+$ vagrant up
+```
+
+The first time you run this command it will take a bit longer, as it downloads
+and installs everything. Subsequents runs will be much quicker.
+
+This will serve the website at [http://localhost:4000](http://localhost:4000)
+with a hot-reload enabled, so any changes made on this files will trigger a
+rebuild.
+
+#### Other Vagrant commands
+
+To stop the virtual machine first press `Ctrl+C` to end the Jekyll process and
+execute in your terminal:
+
+```
+vagrant halt
+```
+
+You can also SSH into the virtual machine with:
+
+```
+vagrant ssh
+```
+
+### Run locally with Ruby
+
+This website has been developed using Ruby v2.5.
+You can install the dependencies with:
+
+```bash
+$ gem install bundler
+$ bundle install
+```
+
+### Build with MkDocs for comparison
+
+To compare the output from MkDocs:
+
+```bash
+$ mkdocs build
+```
+
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/carlosperate/jekyll-theme-rtd. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/carlosperate/jekyll-theme-rtd.
 
-## Development
+This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-To set up your environment to develop this theme, run `bundle install`.
-
-Your theme is setup just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
-
-When your theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled.
-To add a custom directory to your theme-gem, please edit the regexp in `rtd.gemspec` accordingly.
 
 ## License
+
+The original theme is from
+[Read The Docs](https://github.com/readthedocs/sphinx_rtd_theme). Copyright (c)
+2013-2018 Dave Snider, Read the Docs, Inc. & contributors and released under
+the [MIT License](https://github.com/readthedocs/sphinx_rtd_theme/blob/0.4.2/LICENSE).
+
+This theme is based on the [MkDocs](https://github.com/mkdocs/mkdocs)
+[`readthedocs` port](https://github.com/mkdocs/mkdocs/tree/1.0.4/mkdocs/themes/readthedocs).
+Copyright © 2014, Tom Christie, all rights reserved, and released under the
+[BSD 2-Clause "Simplified" License](https://github.com/mkdocs/mkdocs/blob/1.0.4/LICENSE).
 
 The theme is available as open source under the terms of the [MIT License](LICENSE).
