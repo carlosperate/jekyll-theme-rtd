@@ -10,8 +10,8 @@ The original [Read The Docs](https://sphinx-rtd-theme.readthedocs.io/en/stable/)
 theme was created for the [Sphinx](https://www.sphinx-doc.org/) documentation
 generator, and so it is designed specifically for docs.
 
-Combined with [GitHub Pages](https://pages.github.com) it's great and easy way
-to document your projects.
+Combined with [GitHub Pages](https://pages.github.com) it's a great and easy
+way to document your projects!
 
 ### 🚧 Warning!
 
@@ -26,13 +26,18 @@ and any known issues are listed with the
 Contributions are very welcomed!
 
 
-## 🗂️ Table of contents
+## 🗂️ Readme Contents
 
-- [🚀 Using this theme with GitHub Pages](#-using-this-theme-with-gitub-pages)
-- [🖥️ Adding this theme to your Jekyll project](#-adding-this-theme-to-your-jekyll-project)
+- [🚀 Using this theme with GitHub Pages](#-using-this-theme-with-github-pages)
+- [🖥️ Adding this theme to your Jekyll project](#%EF%B8%8F-adding-this-theme-to-your-jekyll-project)
 - [👩‍💻 Development Instructions](#-development-instructions)
+    - [Run with Vagrant and a virtual machine](#run-with-vagrant-and-a-virtual-machine)
+    - [Run locally with Ruby](#run-locally-with-ruby)
+    - [Build the docs with MkDocs for comparison](#build-the-docs-with-mkdocs-for-comparison)
 - [👨‍👩‍👧‍👦 Contributing](#-contributing)
 - [⚖️ License](#%EF%B8%8F-license)
+
+Don't forget to also check out the [documentation](https://carlosperate.github.io/jekyll-theme-rtd)!
 
 
 ## 🚀 Using this theme with GitHub Pages
@@ -162,8 +167,8 @@ contributors are expected to adhere to the
 ## ⚖️ License
 
 The original theme is from
-[Read The Docs](https://github.com/readthedocs/sphinx_rtd_theme). Copyright (c)
-2013-2018 Dave Snider, Read the Docs, Inc. & contributors and released under
+[Read The Docs](https://github.com/readthedocs/sphinx_rtd_theme). Copyright ©
+2013-2018 Dave Snider, Read the Docs, Inc. & contributors, and released under
 the [MIT License](LICENSE-rtd).
 
 This theme is based on the [MkDocs](https://github.com/mkdocs/mkdocs)
@@ -171,6 +176,7 @@ This theme is based on the [MkDocs](https://github.com/mkdocs/mkdocs)
 Copyright © 2014, Tom Christie, all rights reserved, and released under the
 [BSD 2-Clause "Simplified" License](LICENSE-mkdocs).
 
-The theme modifications to port it Jekyll can be seen [here](https://github.com/carlosperate/jekyll-theme-rtd/compare/dddce9f13fde24c03aee4533158c43091120d47e...master),
-this and all new features are released under the
+The theme modifications to port it Jekyll can be seen
+[here](https://github.com/carlosperate/jekyll-theme-rtd/compare/dddce9f13fde24c03aee4533158c43091120d47e...master).
+This and all new features are released under the
 [BSD 2-Clause "Simplified" License](LICENSE).
