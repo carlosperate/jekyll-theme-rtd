@@ -2,12 +2,28 @@
 
 Port of the Read the Docs theme to Jekyll to use with GitHub Pages.
 
-This theme is currently a **Work-In-Progress**, and while things might be
-broken it should be already usable.
+![screenshot](assets/img/screenshot.png)
+
+This theme is currently a **Work-In-Progress** but, while some things might be
+broken, it should be already usable.
 
 This theme is ported from the MkDocs port of the Read The Docs Sphinx theme.
 Full license and copyright information can be found in the
 [License](#license) section.
+
+
+## Using with GitHub Pages
+
+Add a `_config.yml` file to your GitHub pages repository (`master`/`gh-pages`
+branch or inside a `docs` folder, depending on your GitHub repository settings)
+with this line:
+
+```yml
+remote_theme: carlosperate/jekyll-theme-rtd
+```
+
+There are more configuration options explain in the docs, or you can have a
+look at the [_config.yml file from this repo](docs/_config.yml).
 
 
 ## Add this theme to your Jekyll project
@@ -94,10 +110,18 @@ $ bundle install
 
 ### Build with MkDocs for comparison
 
-To compare the output from MkDocs:
+As this theme has been ported from the MkDocs port, it can be useful to run
+MkDocs on the same markdown files and compare its output to the Jekyll
+output. A `mkdocs.yml` file is included to configure the project.
+
+Pipenv has been used in this case to manage Python dependencies:
 
 ```bash
-$ mkdocs build
+$ pip install pipenv
+$ pipenv install
+$ pipenv run mkdocs build
+$ cd _site_mkdocs
+$ pipenv run python -m http.server 8080
 ```
 
 
