@@ -13,13 +13,29 @@ generator, and so it is designed specifically for docs.
 Combined with [GitHub Pages](https://pages.github.com) it's great and easy way
 to document your projects.
 
-### Warning!
+### 🚧 Warning!
 
 This theme is currently a **Work-In-Progress** but, while some things might be
 broken, it should be already usable.
 
+Missing features are listed in the GitHub issues with the
+[to-do label](https://github.com/carlosperate/jekyll-theme-rtd/issues?q=is%3Aissue+is%3Aopen+label%3Ato-do),
+and any known issues are listed with the
+[bug label](https://github.com/carlosperate/jekyll-theme-rtd/issues?q=is%3Aissue+is%3Aopen+label%3Abug).
 
-## Use this theme with GitHub Pages
+Contributions are very welcomed!
+
+
+## 🗂️ Table of contents
+
+- [🚀 Using this theme with GitHub Pages](#-using-this-theme-with-gitub-pages)
+- [🖥️ Adding this theme to your Jekyll project](#-adding-this-theme-to-your-jekyll-project)
+- [👩‍💻 Development Instructions](#-development-instructions)
+- [👨‍👩‍👧‍👦 Contributing](#-contributing)
+- [⚖️ License](#%EF%B8%8F-license)
+
+
+## 🚀 Using this theme with GitHub Pages
 
 Add a `_config.yml` file to your GitHub pages repository (that could be the
 `master`/`gh-pages` branch or inside a `docs` folder, depending on the
@@ -34,12 +50,12 @@ There are more configuration options explain in the docs, or you can have a
 look at the [_config.yml file from this repo](docs/_config.yml).
 
 
-## Add this theme to your Jekyll project
+## 🖥️ Adding this theme to your Jekyll project
 
 Add this line to your Jekyll site's `Gemfile`:
 
 ```ruby
-gem "jekyll-theme-rtd"  <-- Not yet publish!
+gem "jekyll-theme-rtd"  <-- Not yet published!
 ```
 
 And add this line to your Jekyll site's `_config.yml`:
@@ -61,7 +77,7 @@ $ gem install jekyll-theme-rtd
 ```
 
 
-## Development Instructions
+## 👩‍💻 Development Instructions
 
 These instructions describe two different ways to to set up your environment to
 develop or edit this theme.
@@ -133,7 +149,7 @@ $ pipenv run python -m http.server 8080
 ```
 
 
-## Contributing
+## 👨‍👩‍👧‍👦 Contributing
 
 Bug reports and pull requests are welcome on GitHub at
 https://github.com/carlosperate/jekyll-theme-rtd.
@@ -143,7 +159,7 @@ contributors are expected to adhere to the
 [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
-## License
+## ⚖️ License
 
 The original theme is from
 [Read The Docs](https://github.com/readthedocs/sphinx_rtd_theme). Copyright (c)
