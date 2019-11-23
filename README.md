@@ -1,22 +1,30 @@
 # Read The Docs Theme for Jekyll and GitHub Pages
 
-Port of the Read the Docs theme to Jekyll to use with GitHub Pages.
+Port of the Read the Docs theme to Jekyll that can be used with GitHub Pages.
+
+You can preview it in [the documentation](https://carlosperate.github.io/jekyll-theme-rtd):
 
 ![screenshot](assets/img/screenshot.png)
+
+The original [Read The Docs](https://sphinx-rtd-theme.readthedocs.io/en/stable/)
+theme was created for the [Sphinx](https://www.sphinx-doc.org/) documentation
+generator, and so it is designed specifically for docs.
+
+Combined with [GitHub Pages](https://pages.github.com) it's great and easy way
+to document your projects.
+
+### Warning!
 
 This theme is currently a **Work-In-Progress** but, while some things might be
 broken, it should be already usable.
 
-This theme is ported from the MkDocs port of the Read The Docs Sphinx theme.
-Full license and copyright information can be found in the
-[License](#license) section.
 
+## Use this theme with GitHub Pages
 
-## Using with GitHub Pages
-
-Add a `_config.yml` file to your GitHub pages repository (`master`/`gh-pages`
-branch or inside a `docs` folder, depending on your GitHub repository settings)
-with this line:
+Add a `_config.yml` file to your GitHub pages repository (that could be the
+`master`/`gh-pages` branch or inside a `docs` folder, depending on the
+[publishing source](https://help.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+configured in your GitHub repository) with this line:
 
 ```yml
 remote_theme: carlosperate/jekyll-theme-rtd
@@ -31,7 +39,7 @@ look at the [_config.yml file from this repo](docs/_config.yml).
 Add this line to your Jekyll site's `Gemfile`:
 
 ```ruby
-gem "jekyll-theme-rtd"
+gem "jekyll-theme-rtd"  <-- Not yet publish!
 ```
 
 And add this line to your Jekyll site's `_config.yml`:
@@ -62,7 +70,7 @@ The theme is developed like a normal Jekyll site, and it can serve the
 documentation using the theme source code located here.
 
 
-### Run with Vagrant and a Virtual Machine
+### Run with Vagrant and a virtual machine
 
 [Vagrant](https://www.vagrantup.com) provides an easy way to set up and manage
 a Virtual Machine with [VirtualBox](https://www.virtualbox.org). With a single
@@ -108,13 +116,13 @@ $ gem install bundler
 $ bundle install
 ```
 
-### Build with MkDocs for comparison
+### Build the docs with MkDocs for comparison
 
 As this theme has been ported from the MkDocs port, it can be useful to run
-MkDocs on the same markdown files and compare its output to the Jekyll
+MkDocs on the documentation markdown file and compare its output to the Jekyll
 output. A `mkdocs.yml` file is included to configure the project.
 
-Pipenv has been used in this case to manage Python dependencies:
+Pipenv has been used to manage Python dependencies:
 
 ```bash
 $ pip install pipenv
@@ -127,9 +135,12 @@ $ pipenv run python -m http.server 8080
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/carlosperate/jekyll-theme-rtd.
+Bug reports and pull requests are welcome on GitHub at
+https://github.com/carlosperate/jekyll-theme-rtd.
 
-This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+This project is intended to be a safe, welcoming space for collaboration, and
+contributors are expected to adhere to the
+[Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License
@@ -137,11 +148,13 @@ This project is intended to be a safe, welcoming space for collaboration, and co
 The original theme is from
 [Read The Docs](https://github.com/readthedocs/sphinx_rtd_theme). Copyright (c)
 2013-2018 Dave Snider, Read the Docs, Inc. & contributors and released under
-the [MIT License](https://github.com/readthedocs/sphinx_rtd_theme/blob/0.4.2/LICENSE).
+the [MIT License](LICENSE-rtd).
 
 This theme is based on the [MkDocs](https://github.com/mkdocs/mkdocs)
 [`readthedocs` port](https://github.com/mkdocs/mkdocs/tree/1.0.4/mkdocs/themes/readthedocs).
 Copyright © 2014, Tom Christie, all rights reserved, and released under the
-[BSD 2-Clause "Simplified" License](https://github.com/mkdocs/mkdocs/blob/1.0.4/LICENSE).
+[BSD 2-Clause "Simplified" License](LICENSE-mkdocs).
 
-The theme is available as open source under the terms of the [MIT License](LICENSE).
+The theme modifications to port it Jekyll can be seen [here](https://github.com/carlosperate/jekyll-theme-rtd/compare/dddce9f13fde24c03aee4533158c43091120d47e...master),
+this and all new features are released under the
+[BSD 2-Clause "Simplified" License](LICENSE).
