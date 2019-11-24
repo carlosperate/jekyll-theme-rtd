@@ -4,9 +4,12 @@ title: A Page Deeper Inside
 excerpt: A sample description for SEO.
 ---
 
-# A Much Deeper Section
+# A Second Level Section
 
-This is an index page. Normally we expect the page title to start with a `#`.
+This is an page with the same filename as another page, but inside a subfolder.
+This is two levels down, so while it shouldn't show up in the Navigation bar
+on the left, you should still be able to seee the levels in the breadcrumbs at
+the top.
 
 ## Deeper Header 1
 

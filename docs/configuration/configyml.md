@@ -1,20 +1,24 @@
 ---
 layout: default
 title: Theme Configuration
-nav_order: 2
+nav_order: 1
 ---
 
-# Configuring the theme
+# Theme Configuration
 
 The docs should have an index page.
 
-## _config.yml
+## Generic _config.yml configuration
 
 
 ```yml
 title: Read The Docs Jekyll Theme
 description: Port of the Read the Docs theme to Jekyll to use with GitHub Pages.
+```
 
+## Theme Specific Configuration 
+
+```yml
 # Specific to this theme
 site_author: Carlos Pereira Atencio
 repo_url: 'https://github.com/carlosperate/jekyll-theme-rtd'
@@ -32,25 +36,4 @@ google_analytics: UA-XXXXX-Y
 google_analytics_anonymize_ip: true
 # The highlight.js library provides 79 different colours for their syntax highlighting. The default is github-gist.
 hljs_style: github-gist
-```
-
-## Front Matter
-
-```yml
----
-layout: default
-title: Page Title Goes Here
----
-
-```
-
-
-```yml
----
-excerpt: Short description to include as an opening and SEO metatags.
-nav_order: 4
-nav_exclude: false
-canonical_url: https://www.google.com
-search_exclude: false
----
 ```
