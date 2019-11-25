@@ -1,19 +1,23 @@
 ---
 layout: default
-title: Index page in First Section
+title: Demo Pages Index
 nav_order: 1
 ---
 
-# Index Page in Demo Pages
+# Demo Pages Index
 
-This is an index page. Normally we expect the page title to start with a `#`.
+This is an index page, so the URL for this page doesn't need to end in
+`index.html`.
 
-## MySection Index Header 1
+The rest of the content is a standard Lorem Ipsum to see what big blocks of
+text might look like.
+
+## Index Header 1
 
 This is a secondary header. Each many section of the document wil have one of
 these `##`.
 
-### MySection Index Header 1.1
+### Index Header 1.1
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
@@ -36,11 +40,11 @@ voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem
 eum fugiat quo voluptas nulla pariatur?
 
 
-## MySection Index Header 2
+## Index Header 2
 
 The content for the header 2 intro goes here.
 
-### MySection Index Header 2.1
+### Index Header 2.1
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
@@ -49,7 +53,7 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
 eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
 in culpa qui officia deserunt mollit anim id est laborum.
 
-### MySection Index Header 2.2
+### Index Header 2.2
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
@@ -59,11 +63,11 @@ eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
 in culpa qui officia deserunt mollit anim id est laborum.
 
 
-## MySection Index Header 3
+## Index Header 3
 
 The content for the header 3 intro goes here.
 
-### MySection Index Header 3.1
+### Index Header 3.1
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
@@ -72,7 +76,7 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
 eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
 in culpa qui officia deserunt mollit anim id est laborum.
 
-### MySection Index Header 3.2
+### Index Header 3.2
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
@@ -81,7 +85,7 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
 eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
 in culpa qui officia deserunt mollit anim id est laborum.
 
-#### MySection Index Header 3.2.1
+#### Index Header 3.2.1
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
@@ -91,7 +95,7 @@ eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
 in culpa qui officia deserunt mollit anim id est laborum.
 
 
-##### MySection Index Header 3.2.1.1
+##### Index Header 3.2.1.1
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
