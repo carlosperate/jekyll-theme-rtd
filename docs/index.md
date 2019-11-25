@@ -1,91 +1,82 @@
 ---
 layout: default
 title: Index
-nav_order: 1
+nav_exclude: true
 ---
 
-# Index Page Main Title Header
+# Read The Docs Theme for Jekyll and GitHub Pages
 
-This is an index page. Normally we expect the page title to start with a `#`.
+This is a port of the
+[Read The Docs](https://sphinx-rtd-theme.readthedocs.io) theme to
+[Jekyll](https://jekyllrb.com/), so that it can be used with GitHub Pages.
 
-## Index Header 1
+You are previewing the theme right now, as you navigate
+[this documentation](https://carlosperate.github.io/jekyll-theme-rtd):
 
-This is a secondary header. Each many section of the document wil have one of
-these `##`.
+![screenshot](assets/img/screenshot.png)
 
-### Index Header 1.1
+The original [Read The Docs](https://readthedocs.org)
+[theme]((https://sphinx-rtd-theme.readthedocs.io)) was created for the
+[Sphinx](https://www.sphinx-doc.org/) documentation generator, and so it is
+designed specifically for docs.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-in culpa qui officia deserunt mollit anim id est laborum.
+Combined with [GitHub Pages](https://pages.github.com) it's a great and easy
+way to document your projects!
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
-ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque
-porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
-adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
-dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
-nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex
-ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea
-voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem
-eum fugiat quo voluptas nulla pariatur?
+### 🚧 Warning!
 
+This theme is currently a **Work-In-Progress** but, while some things might be
+broken, it should be already usable.
 
-## Index Header 2
+Missing features are listed in the GitHub issues with the
+[to-do label](https://github.com/carlosperate/jekyll-theme-rtd/issues?q=is%3Aissue+is%3Aopen+label%3Ato-do),
+and any known issues are listed with the
+[bug label](https://github.com/carlosperate/jekyll-theme-rtd/issues?q=is%3Aissue+is%3Aopen+label%3Abug).
 
-The content for the header 2 intro goes here.
-
-### Index Header 2.1
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-in culpa qui officia deserunt mollit anim id est laborum.
-
-### Index Header 2.2
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-in culpa qui officia deserunt mollit anim id est laborum.
+Contributions are very welcomed!
 
 
-## Index Header 3
+## Okay, but what is Jekyll, Read The Docs, GitHub Pages or why do I need to know any of this?
 
-The content for the header 3 intro goes here.
+Well, you don't! For a quick walkthough to get your docs up an running with
+this theme see the [Quick Start Guide](quickstart.html).
 
-### Index Header 3.1
+----
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-in culpa qui officia deserunt mollit anim id est laborum.
+If you are interested to know more about all this continue reading :)
 
-### Index Header 3.2
+[Jekyll](https://jekyllrb.com/) is a static site generator, you give it some
+markdown files, select a theme, and it builds a static website.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-in culpa qui officia deserunt mollit anim id est laborum.
+But you still need to find a way to host it, and that's where GitHub Pages
+enters the game.
 
-### Index Header 3.3
+[GitHub Pages](https://pages.github.com) is a service from
+[GitHub](https://github.com) that allows you to easily build and host a website
+from a GitHub repository.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-in culpa qui officia deserunt mollit anim id est laborum.
+Simply create a `docs` folder, add some markdown files, and with a couple of
+clicks you can configure the
+[GitHub Pages publishing source](https://help.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+to automatically build and publish a website for your project!
+
+GitHub Pages uses Jekyll underneath, so this is a theme for Jekyll that can be
+used with GitHub Pages as well.
+
+**Okay, but what is Read The docs then?**
+
+[Read The Docs](https://readthedocs.org/) is a website offering free hosting
+for your project documentation. It is very flexible, but the easiest way to use
+it is with [Sphinx](https://www.sphinx-doc.org/). Similarly to Jekyll, Sphinx
+is a static site generator specifically made for project documentation, and
+Read The Docs provides a really nice theme for it.
+
+I love the
+[Read The Docs theme for Sphinx](https://sphinx-rtd-theme.readthedocs.io), but
+you still have to set up a Sphinx project, a Read The Docs account, and
+configure the integration to automatically publish your documentation from
+your GitHub repository.
+
+For a project that is already in GitHub nothing beats the simplicity of GitHub
+Pages, and so I ported the Sphinx theme to Jekyll to be able to use it with
+this service.

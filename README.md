@@ -2,11 +2,12 @@
 
 Port of the Read the Docs theme to Jekyll that can be used with GitHub Pages.
 
-You can preview it in [the documentation](https://carlosperate.github.io/jekyll-theme-rtd):
+You can preview it in the
+[documentation](https://carlosperate.github.io/jekyll-theme-rtd):
 
-![screenshot](assets/img/screenshot.png)
+![theme screenshot](docs/assets/img/screenshot.png)
 
-The original [Read The Docs](https://sphinx-rtd-theme.readthedocs.io/en/stable/)
+The original [Read The Docs](https://sphinx-rtd-theme.readthedocs.io)
 theme was created for the [Sphinx](https://www.sphinx-doc.org/) documentation
 generator, and so it is designed specifically for docs.
 
