@@ -32,7 +32,7 @@ Contributions are very welcomed!
 - [🚀 Using this theme with GitHub Pages](#-using-this-theme-with-github-pages)
 - [🖥️ Adding this theme to your Jekyll project](#%EF%B8%8F-adding-this-theme-to-your-jekyll-project)
 - [👩‍💻 Developer Documentation](#-developer-documentation)
-    - [Run with Vagrant in a virtual machine](#run-with-vagrant-in-a-virtual-machine)
+    - [Run in a virtual machine with Vagrant](#run-in-a-virtual-machine-with-vagrant)
     - [Run locally with Ruby](#run-locally-with-ruby)
     - [Build the docs using the remote theme](#build-the-docs-using-the-remote-theme)
     - [Build the docs with MkDocs for comparison](#build-the-docs-with-mkdocs-for-comparison)
@@ -95,8 +95,7 @@ develop or edit this theme.
 The theme is developed like a normal Jekyll site, and it can serve the
 documentation using the theme source code located here.
 
-
-### Run with Vagrant in a virtual machine
+### Run in a virtual machine with Vagrant
 
 [Vagrant](https://www.vagrantup.com) provides an easy way to set up and manage
 a Virtual Machine with [VirtualBox](https://www.virtualbox.org). With a single
@@ -149,20 +148,30 @@ root of the website, so when it is built locally it will see all pages as being
 inside a "docs" folder, and therefore in the "docs" category in the left
 navigation bar and page URLs.
 
-On the other hand the website built and served with
-[GitHub Pages](https://carlosperate.github.io/jekyll-theme-rtd) root is the
-"docs" folder, so the left navigation bar and page URLs will reflect that.
+On the other hand the root of the website built and served with
+[GitHub Pages](https://carlosperate.github.io/jekyll-theme-rtd) is the
+"docs" folder, so the left navigation bar will show the child folder as
+categories and the URLs will be different.
 
-For theme documentation development it can be useful to build and sever the
+For updating the theme documentation it can be useful to build and sever the
 docs folder with the same configuration as GitHub Pages. Of course, this would
-mean that the theme used will be state of `master` currently on GitHub instead
-of the local files, but that is fine to preview the docs.
+mean that the theme used will be the current snapshot of `master` on GitHub
+instead of the local files, but that is not important to just preview the docs.
 
 To do this, add the following lines to the `docs/_config.yml` file:
 
 ```yml
 plugins:
   - jekyll-remote-theme
+```
+
+Then execute Jekyll from the docs folder:
+
+```
+$ vagrant up --no-provision
+$ vagrant ssh
+$ cd /vagrant/docs
+$ bundle exec jekyll serve --host 0.0.0.0 --watch --force_polling
 ```
 
 ### Build the docs with MkDocs for comparison
