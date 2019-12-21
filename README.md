@@ -9,10 +9,12 @@ You can preview it in the
 
 The original [Read The Docs](https://sphinx-rtd-theme.readthedocs.io)
 theme was created for [Sphinx](https://www.sphinx-doc.org/), and so it is
-designed specifically for docs.
+designed specifically for documentation.
 
 Combined with [GitHub Pages](https://pages.github.com) it's a great and easy
 way to document your projects!
+
+Check out the [quick start guide]() to see how easy it is to 
 
 ### 🚧 Warning!
 
@@ -29,8 +31,12 @@ Contributions are very welcomed!
 
 ## 🗂️ Readme Contents
 
+This README only contains the developer documentation to edit this theme.
+
+To learn how to use this theme for your docs check out the
+[Read The Docs Theme for Jekyll user documentation](https://carlosperate.github.io/jekyll-theme-rtd).
+
 - [🚀 Using this theme with GitHub Pages](#-using-this-theme-with-github-pages)
-- [🖥️ Adding this theme to your Jekyll project](#%EF%B8%8F-adding-this-theme-to-your-jekyll-project)
 - [👩‍💻 Developer Documentation](#-developer-documentation)
     - [Run in a virtual machine with Vagrant](#run-in-a-virtual-machine-with-vagrant)
     - [Run locally with Ruby](#run-locally-with-ruby)
@@ -38,9 +44,6 @@ Contributions are very welcomed!
     - [Build the docs with MkDocs for comparison](#build-the-docs-with-mkdocs-for-comparison)
 - [👨‍👩‍👧‍👦 Contributing](#-contributing)
 - [⚖️ License](#%EF%B8%8F-license)
-
-Don't forget to also check out the
-[user documentation](https://carlosperate.github.io/jekyll-theme-rtd)!
 
 
 ## 🚀 Using this theme with GitHub Pages
@@ -57,34 +60,6 @@ remote_theme: carlosperate/jekyll-theme-rtd
 There are more configuration options explained in the
 [\_config.yml documentation](https://carlosperate.github.io/jekyll-theme-rtd/configuration/configyml.html),
 or you can have a look at the [\_config.yml from this repo](docs/_config.yml).
-
-
-## 🖥️ Adding this theme to your Jekyll project
-
-Add this line to your Jekyll site's `Gemfile` (this gem hasn't been published
-yet!!):
-
-```ruby
-gem "jekyll-theme-rtd"
-```
-
-Add this line to your Jekyll site's `_config.yml`:
-
-```yaml
-theme: jekyll-theme-rtd
-```
-
-And then execute:
-
-```bash
-$ bundle
-```
-
-Or install it yourself with:
-
-```bash
-$ gem install jekyll-theme-rtd
-```
 
 
 ## 👩‍💻 Developer Documentation
@@ -170,8 +145,8 @@ Then execute Jekyll from the docs folder:
 ```
 $ vagrant up --no-provision
 $ vagrant ssh
-$ cd /vagrant/docs
-$ bundle exec jekyll serve --host 0.0.0.0 --watch --force_polling
+(ssh session) $ cd /vagrant/docs
+(ssh session) $ bundle exec jekyll serve --host 0.0.0.0 --watch --force_polling
 ```
 
 ### Build the docs with MkDocs for comparison
