@@ -31,10 +31,10 @@ Contributions are very welcomed!
 
 ## 🗂️ Readme Contents
 
-This README only contains the developer documentation to edit this theme.
+This README contains mostly the developer documentation to edit this theme.
 
-To learn how to use this theme for your docs check out the
-[Read The Docs Theme for Jekyll user documentation](https://carlosperate.github.io/jekyll-theme-rtd).
+To learn how to use this theme for your own website or docs check out the
+[user documentation](https://carlosperate.github.io/jekyll-theme-rtd).
 
 - [🚀 Using this theme with GitHub Pages](#-using-this-theme-with-github-pages)
 - [👩‍💻 Developer Documentation](#-developer-documentation)
@@ -48,19 +48,8 @@ To learn how to use this theme for your docs check out the
 
 ## 🚀 Using this theme with GitHub Pages
 
-Add a `_config.yml` file to your GitHub pages repository (the `gh-pages` branch
-or inside a `docs` folder in `master`, depending on the configured
-[publishing source](https://help.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
-) with this line:
-
-```yml
-remote_theme: carlosperate/jekyll-theme-rtd
-```
-
-There are more configuration options explained in the
-[\_config.yml documentation](https://carlosperate.github.io/jekyll-theme-rtd/configuration/configyml.html),
-or you can have a look at the [\_config.yml from this repo](docs/_config.yml).
-
+The fastest way to use this theme is with GitHub Pages, check out the
+[Quick Start Guide from the user documentation](https://carlosperate.github.io/jekyll-theme-rtd/quickstart.html).
 
 ## 👩‍💻 Developer Documentation
 

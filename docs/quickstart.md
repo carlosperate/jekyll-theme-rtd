@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Quick Start With GitHub Pages
+title: 🚀 Quick Start With GitHub Pages
 nav_order: 1
 ---
 
-# Quick Start With GitHub Pages
+# 🚀 Quick Start With GitHub Pages
 
 There are several ways to configure the
 [GitHub Pages publishing source](https://help.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site),
