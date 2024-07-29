@@ -4,7 +4,7 @@ title: LINDA+ Documentation
 nav_order: 1
 ---
 
-# Local Development Index Page
+# LLINDA+
 
 This is the documentation page of the LINDA+ software.
 
