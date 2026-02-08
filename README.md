@@ -38,8 +38,7 @@ To learn how to use this theme for your own website or docs check out the
 
 - [🚀 Using this theme with GitHub Pages](#-using-this-theme-with-github-pages)
 - [👩‍💻 Developer Documentation](#-developer-documentation)
-    - [Run in a virtual machine with Vagrant](#run-in-a-virtual-machine-with-vagrant)
-    - [Run locally with Ruby](#run-locally-with-ruby)
+    - [Run with Docker](#run-with-docker)
     - [Build the docs using the remote theme](#build-the-docs-using-the-remote-theme)
     - [Build the docs with MkDocs for comparison](#build-the-docs-with-mkdocs-for-comparison)
 - [👨‍👩‍👧‍👦 Contributing](#-contributing)
@@ -53,90 +52,60 @@ The fastest way to use this theme is with GitHub Pages, check out the
 
 ## 👩‍💻 Developer Documentation
 
-These instructions describe two different ways to to set up your environment to
+These instructions describe different ways to to set up your environment to
 develop or edit this theme.
 
-The theme is developed like a normal Jekyll site, and it can serve the
-documentation using the theme source code located here.
+The theme is developed like a normal Jekyll site, and it uses the theme
+documentation as the site content.
 
-### Run in a virtual machine with Vagrant
+### Run with Docker
 
-[Vagrant](https://www.vagrantup.com) provides an easy way to set up and manage
-a Virtual Machine with [VirtualBox](https://www.virtualbox.org). With a single
-command you can automatically create the VM with all the dependencies required
-to build and sever this project.
+[Docker](https://www.docker.com) provides an easy way to set up the
+development environment without installing Ruby or any other dependencies
+on your machine. With two simple commands you can build and serve this project.
 
-There is a [Vagrantfile](Vagrantfile) included to run an Ubuntu VM with Ruby
-and Jekyll. To set-up everything and serve the website run:
+A [Dockerfile](Dockerfile) is included to run an environment with Ruby and
+Jekyll. First, build the Docker image:
 
 ```bash
-$ vagrant up
+$ docker build -t jekyll-theme-rtd .
 ```
 
-The first time you run this command it will take a bit longer, as it downloads
-and installs everything. Subsequent runs will be much quicker.
+And then serve the website:
+
+```bash
+$ docker run --rm -p 4000:4000 -p 35729:35729 -v $(pwd):/srv/jekyll jekyll-theme-rtd
+```
 
 This will serve the website at [http://localhost:4000](http://localhost:4000)
-with a hot-reload enabled, so any changes made on these files will trigger a
-rebuild.
+with live-reload enabled, so any changes made on these files will trigger a
+rebuild and automatically refresh the browser.
 
-#### Other Vagrant commands
-
-To stop the virtual machine first press `Ctrl+C` to end the Jekyll process and
-execute in your terminal:
-
-```
-$ vagrant halt
-```
-
-You can also SSH into the virtual machine with:
-
-```
-$ vagrant ssh
-```
-
-### Run locally with Ruby
-
-This website has been developed using Ruby v2.5. You can install the
-dependencies with:
-
-```bash
-$ gem install bundler
-$ bundle install
-```
+Building the docker image pre-installs the required Ruby Gems, but the built
+image still goes triggers a gem installation step every time it is launched,
+in case there has been changes. It's recommended to rebuild the image if there
+are any changes made to the `Gemfile` or gemspec dependencies.
 
 ### Build the docs using the remote theme
 
-The Jekyll project here is configured with the root of this repository as the
-root of the website, so when it is built locally it will see all pages as being
-inside a "docs" folder, and therefore in the "docs" category in the left
-navigation bar and page URLs.
+This method is meant to replicate how GitHub Pages builds the "docs" folder for
+[https://carlosperate.github.io/jekyll-theme-rtd](https://carlosperate.github.io/jekyll-theme-rtd).
 
-On the other hand the root of the website built and served with
-[GitHub Pages](https://carlosperate.github.io/jekyll-theme-rtd) is the
-"docs" folder, so the left navigation bar will show the child folder as
-categories and the URLs will be different.
+There are two main differences with this method:
 
-For updating the theme documentation it can be useful to build and sever the
-docs folder with the same configuration as GitHub Pages. Of course, this would
-mean that the theme used will be the current snapshot of `master` on GitHub
-instead of the local files, but that is not important to just preview the docs.
+1. The root directory is the "docs" folder instead of the project root
+  directory, so the navigation hierarchy is different.
+2. This method uses the `remote_theme` Jekyll plugin, so it uses the files
+  currently pushed and available in the GitHub repository `main` branch,
+  not the local files from your machine.
 
-To do this, add the following lines to the `docs/_config.yml` file:
+To do this, we add the `-w /srv/jekyll/docs` to the docker command:
 
-```yml
-plugins:
-  - jekyll-remote-theme
+```bash
+$ docker run --rm -p 4000:4000 -p 35729:35729 -v $(pwd):/srv/jekyll -w /srv/jekyll/docs jekyll-theme-rtd
 ```
 
-Then execute Jekyll from the docs folder:
-
-```
-$ vagrant up --no-provision
-$ vagrant ssh
-(ssh session) $ cd /vagrant/docs
-(ssh session) $ bundle exec jekyll serve --host 0.0.0.0 --watch --force_polling
-```
+And, as before, the website is served at [http://localhost:4000](http://localhost:4000).
 
 ### Build the docs with MkDocs for comparison
 

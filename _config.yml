@@ -1,6 +1,13 @@
 title: Read The Docs Jekyll Theme
 description: Port of the Read the Docs theme to Jekyll to use with GitHub Pages.
 
+# TODO: Need to figure out how to make this work
+# source: docs/
+# Plugin used to build from docs folder, but point to theme in root directory
+#plugins:
+#  - jekyll-remote-theme
+#remote_theme: /srv/jekyll/
+
 # Development server config, needed to load some of the content
 webrick:
   headers:

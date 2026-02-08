@@ -2,7 +2,6 @@
 # Project #
 ###########
 .vscode/
-.vagrant/
 .sass-cache
 _site/
 _site_mkdocs/
