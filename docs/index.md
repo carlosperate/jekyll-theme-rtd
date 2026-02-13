@@ -31,6 +31,8 @@ way to document your projects!
   [Theme Configuration](https://carlosperate.github.io/jekyll-theme-rtd/configuration/configyml.html)
   and the [Pages Configuration](https://carlosperate.github.io/jekyll-theme-rtd/configuration/frontmatter.html)
   pages.
+- The Demo Pages don't have any documentation, but generic content to show how
+  all the Markdown features are rendered with this theme.
 
 ## 🚧 Warning!
 

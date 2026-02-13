@@ -8,10 +8,11 @@ nav_order: 3
 
 ## What is Jekyll, Read The Docs, GitHub Pages or why do I need to know any of this?
 
-Well, you don't! For a quick walkthrough to get your docs up an running with
-this theme see the [Quick Start Guide](quickstart.html).
+Well, you don't knew to know all of this!
+For a quick walkthrough to get your docs up an running with this theme see the
+[Quick Start Guide](quickstart.html).
 
-If you are interested to know more about all this continue reading :)
+If you are interested to know more about all this continue reading.
 
 - [Jekyll](https://jekyllrb.com/) is a static site generator, you give it some
 markdown files, select a theme, and it builds a static website.
@@ -23,7 +24,7 @@ enters the game.
 [GitHub](https://github.com) that allows you to easily build and host a website
 from a GitHub repository.
 
-There are a couple of different ways to configure GitHub pages, the easiest
+There are a few different ways to configure GitHub pages, the easiest
 would be to create a `docs` folder, add some markdown files, and with a couple
 of clicks
 [configure GitHub Pages](https://help.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
@@ -51,5 +52,5 @@ that it can be easily used with GitHub Pages.
 
 ## Other FAQs
 
-We don't have Frequently Asked Questions yet, if you have any please
+We don't have more Frequently Asked Questions yet, if you have others please
 [open a new issue in the theme GitHub repository](https://github.com/carlosperate/jekyll-theme-rtd/issues/new).

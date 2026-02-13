@@ -6,33 +6,25 @@ nav_order: 2
 
 # Install Theme In A Jekyll Project
 
-**WARNING!** This theme hasn't been published as a Gem yet, so while these
-instructions should be correct once it has been published, currently it won't
-work.
+This theme is not published as a Gem. Instead, you can use it in your Jekyll
+project via the `jekyll-remote-theme` plugin, which allows you to use any
+GitHub-hosted theme.
 
----
-
-You can add this port of the Read The Docs theme to your Jekyll project as
-you would normally do with any other
-[gem-based Jekyll theme](https://jekyllrb.com/docs/themes/).
-
-There are two simple methods to do this:
-
-1. Editing your project Gemfile
-2. Manually installing the gem
-
-## Edit your project Gemfile
+## Install using jekyll-remote-theme
 
 Add this line to your Jekyll site's `Gemfile`:
 
 ```ruby
-gem "jekyll-theme-rtd"
+gem "jekyll-remote-theme"
 ```
 
-Add this line to your Jekyll site's `_config.yml`:
+Add these lines to your Jekyll site's `_config.yml`:
 
 ```yaml
-theme: jekyll-theme-rtd
+plugins:
+  - jekyll-remote-theme
+
+remote_theme: carlosperate/jekyll-theme-rtd
 ```
 
 And then execute:
@@ -41,19 +33,17 @@ And then execute:
 $ bundle
 ```
 
-## Manually install gem
+## Pin to a specific version
 
-Or install the gem yourself with:
-
-```bash
-$ gem install jekyll-theme-rtd
-```
-
-And add this line to your Jekyll site's `_config.yml`:
+The latest version of `jekyll-remote-theme` also lets you select a specific
+version, tag, or branch. To pin your site to a specific release:
 
 ```yaml
-theme: jekyll-theme-rtd
+remote_theme: carlosperate/jekyll-theme-rtd@v1.0.0
 ```
+
+This ensures your site continues to use a known version even when the theme
+is updated.
 
 ## Local Jekyll to test GH Pages
 
