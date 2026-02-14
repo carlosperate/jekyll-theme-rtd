@@ -1,0 +1,11 @@
+/*
+ * This file contains the tweaks specific for this Jekyll Read the Docs port.
+ * This is so that the original theme.css and theme_extra.css files can be
+ * easily compared with the upstream ones from MkDocs:
+ * https://github.com/mkdocs/mkdocs/commits/master/mkdocs/themes/readthedocs
+ */
+
+/* Footer revision string. */
+.commit code {
+    font-size: 0.9em !important;
+}

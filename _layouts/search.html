@@ -1,8 +1,5 @@
 ---
 layout: base
-title: Search
-nav_exclude: true
-search_exclude: true
 ---
 
   <h1 id="search">Search Results</h1>
@@ -12,7 +9,7 @@ search_exclude: true
   </div>
 
   <!-- We only need to load the search dependencies in this page. -->
-  <script src="https://unpkg.com/lunr/lunr.js"></script>
+  <script src="{{ 'assets/js/lunr-2.3.9.min.js' | relative_url }}"></script>
   <script type="text/javascript">
     "use strict";
 
@@ -64,7 +61,7 @@ search_exclude: true
           this.field('author');
           this.field('content');
         });
-        $.getJSON('/search_data.json').then(function(search_data) {
+        $.getJSON("{{ 'assets/search/search_data.json' | absolute_url }}").then(function(search_data) {
           var idx = lunr(function() {
             this.field('id');
             this.field('title', { boost: 10 });
