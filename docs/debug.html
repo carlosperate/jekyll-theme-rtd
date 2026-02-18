@@ -1,0 +1,862 @@
+---
+title: Debug Variables & Filters
+layout: default
+search_exclude: true
+nav_exclude: true
+noindex: true
+---
+
+<!--
+  ============================================================================
+  ⚠️  DEBUG PAGE — READ BEFORE ENABLING  ⚠️
+  ============================================================================
+
+  This page dumps ALL Jekyll, Liquid, and GitHub Pages variables so you can
+  inspect them during development. It is extremely useful for troubleshooting
+  builds, especially on GitHub Pages where `site.github.*` variables differ
+  from a local environment.
+
+  HOW TO ENABLE / DISABLE:
+    Change the variable below from "false" to "true" (one-line change).
+
+  WARNINGS & RISKS:
+    1. SENSITIVE DATA — The page prints `site.github | inspect`, which may
+       expose repository metadata, organisation members, and contributor
+       lists. It also prints filesystem paths (`site.source`,
+       `site.destination`) and the full `site | inspect` dump.
+    2. SEO — The front matter already sets `noindex: true` so search engines
+       should not index this page, but leaked links can still be crawled.
+       Consider deleting the file entirely when not in use.
+    5. PRODUCTION — Never deploy this page enabled to a public site.
+       Disable it (set the variable below to "false") or remove the file
+       before publishing.
+  ============================================================================
+-->
+
+{% assign debug_enabled = true %}
+
+{% unless debug_enabled %}
+<div style="padding: 2em; text-align: center;">
+  <h2>🔒 Debug page disabled</h2>
+  <p>To enable this page, open <code>debug.html</code> and change
+     <code>{% raw %}{% assign debug_enabled = false %}{% endraw %}</code> to
+     <code>{% raw %}{% assign debug_enabled = true %}{% endraw %}</code>.</p>
+</div>
+{% else %}
+
+<style>
+  .debug-page { font-family: monospace; font-size: 13px; }
+  .debug-page h2 { color: #2980b9; border-bottom: 2px solid #2980b9; padding-bottom: 6px; margin-top: 2em; }
+  .debug-page h3 { color: #27ae60; margin-top: 1.5em; }
+  .debug-page table { border-collapse: collapse; width: 100%; margin-bottom: 1em; table-layout: fixed; }
+  .debug-page th, .debug-page td { border: 1px solid #ddd; padding: 6px 10px; text-align: left; vertical-align: top; word-wrap: break-word; overflow-wrap: break-word; }
+  .debug-page th { background: #f5f5f5; width: 30%; }
+  .debug-page td { max-width: 0; }
+  .debug-page .val { color: #c0392b; }
+  .debug-page .nil { color: #999; font-style: italic; }
+  .debug-page pre { background: #f8f8f8; padding: 8px; border: 1px solid #ddd; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word; }
+  .debug-page details { margin: 0.5em 0; }
+  .debug-page summary { cursor: pointer; font-weight: bold; color: #2980b9; }
+</style>
+
+<div class="debug-page">
+
+<p><em>Generated at: {{ site.time | date: "%Y-%m-%d %H:%M:%S %Z" }}</em></p>
+<p><em>Jekyll environment: {{ jekyll.environment | default: "not set" }}</em></p>
+
+<!-- ============================================================ -->
+<h2>1. Global Variables</h2>
+<!-- ============================================================ -->
+
+<table>
+  <tr><th>Variable</th><th>Value</th></tr>
+  <tr>
+    <td>content</td>
+    <td class="nil">(only available in layouts, not pages)</td>
+  </tr>
+</table>
+
+<!-- ============================================================ -->
+<h2>2. Jekyll Variables</h2>
+<!-- ============================================================ -->
+
+<table>
+  <tr><th>Variable</th><th>Value</th></tr>
+  <tr><td>jekyll.version</td><td class="val">{{ jekyll.version }}</td></tr>
+  <tr><td>jekyll.environment</td><td class="val">{{ jekyll.environment }}</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2>3. Theme Variables</h2>
+<!-- ============================================================ -->
+
+<table>
+  <tr><th>Variable</th><th>Value</th></tr>
+  <tr><td>theme.root</td><td class="val">{{ theme.root | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>theme.authors</td><td class="val">{{ theme.authors | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>theme.description</td><td class="val">{{ theme.description | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>theme.version</td><td class="val">{{ theme.version | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>theme.dependencies</td><td class="val">{{ theme.dependencies | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>theme.metadata</td><td class="val">{{ theme.metadata | default: '<span class="nil">nil</span>' }}</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2>4. Site Variables (Built-in)</h2>
+<!-- ============================================================ -->
+
+<table>
+  <tr><th>Variable</th><th>Value</th></tr>
+  <tr><td>site.time</td><td class="val">{{ site.time }}</td></tr>
+  <tr><td>site.time (formatted)</td><td class="val">{{ site.time | date: "%Y-%m-%d %H:%M:%S %Z" }}</td></tr>
+  <tr><td>site.url</td><td class="val">{{ site.url }}</td></tr>
+  <tr><td>site.baseurl</td><td class="val">{{ site.baseurl | default: '<span class="nil">nil/empty</span>' }}</td></tr>
+  <tr>
+    <td>site.pages</td>
+    <td>
+      <details>
+        <summary>{{ site.pages | size }} pages (click to expand)</summary>
+        <ul>
+        {%- for p in site.pages %}
+          <li>{{ p.title | default: "(no title)" }} — <code>{{ p.url }}</code> ({{ p.path }})</li>
+        {%- endfor %}
+        </ul>
+      </details>
+    </td>
+  </tr>
+  <tr>
+    <td>site.posts</td>
+    <td>
+      <details>
+        <summary>{{ site.posts | size }} posts (click to expand)</summary>
+        <ul>
+        {%- for p in site.posts %}
+          <li>{{ p.title | default: "(no title)" }} — <code>{{ p.url }}</code> ({{ p.date | date: "%Y-%m-%d" }})</li>
+        {%- endfor %}
+        </ul>
+      </details>
+    </td>
+  </tr>
+  <tr>
+    <td>site.static_files</td>
+    <td>
+      <details>
+        <summary>{{ site.static_files | size }} static files (click to expand)</summary>
+        <ul>
+        {%- for f in site.static_files %}
+          <li><code>{{ f.path }}</code> ({{ f.extname }})</li>
+        {%- endfor %}
+        </ul>
+      </details>
+    </td>
+  </tr>
+  <tr>
+    <td>site.html_pages</td>
+    <td>
+      <details>
+        <summary>{{ site.html_pages | size }} html pages (click to expand)</summary>
+        <ul>
+        {%- for p in site.html_pages %}
+          <li>{{ p.title | default: "(no title)" }} — <code>{{ p.url }}</code></li>
+        {%- endfor %}
+        </ul>
+      </details>
+    </td>
+  </tr>
+  <tr>
+    <td>site.collections</td>
+    <td>
+      <details>
+        <summary>{{ site.collections | size }} collections (click to expand)</summary>
+        <ul>
+        {%- for c in site.collections %}
+          <li>{{ c.label }} — {{ c.docs | size }} docs</li>
+        {%- endfor %}
+        </ul>
+      </details>
+    </td>
+  </tr>
+  <tr><td>site.documents</td><td class="val">{{ site.documents | size }} documents</td></tr>
+  <tr>
+    <td>site.data</td>
+    <td>
+      {% if site.data.size > 0 %}
+        <details>
+          <summary>{{ site.data | size }} data entries (click to expand)</summary>
+          <pre>{{ site.data | inspect }}</pre>
+        </details>
+      {% else %}
+        <span class="nil">empty / no _data files</span>
+      {% endif %}
+    </td>
+  </tr>
+  <tr>
+    <td>site.categories</td>
+    <td>
+      {% if site.categories.size > 0 %}
+        <details>
+          <summary>{{ site.categories | size }} categories (click to expand)</summary>
+          <ul>
+          {%- for cat in site.categories %}
+            <li>{{ cat[0] }} ({{ cat[1] | size }} posts)</li>
+          {%- endfor %}
+          </ul>
+        </details>
+      {% else %}
+        <span class="nil">empty</span>
+      {% endif %}
+    </td>
+  </tr>
+  <tr>
+    <td>site.tags</td>
+    <td>
+      {% if site.tags.size > 0 %}
+        <details>
+          <summary>{{ site.tags | size }} tags (click to expand)</summary>
+          <ul>
+          {%- for tag in site.tags %}
+            <li>{{ tag[0] }} ({{ tag[1] | size }} posts)</li>
+          {%- endfor %}
+          </ul>
+        </details>
+      {% else %}
+        <span class="nil">empty</span>
+      {% endif %}
+    </td>
+  </tr>
+  <tr><td>site.related_posts</td><td class="val">{{ site.related_posts | size }} posts</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2>5. Site Variables (Theme _config.yml)</h2>
+<!-- ============================================================ -->
+
+<table>
+  <tr><th>Variable</th><th>Value</th></tr>
+  <tr><td>site.title</td><td class="val">{{ site.title }}</td></tr>
+  <tr><td>site.description</td><td class="val">{{ site.description }}</td></tr>
+  <tr><td>site.site_author</td><td class="val">{{ site.site_author | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.repo_url</td><td class="val">{{ site.repo_url | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.edit_on_github</td><td class="val">{{ site.edit_on_github | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.github_docs_folder</td><td class="val">{{ site.github_docs_folder | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.logo</td><td class="val">{{ site.logo | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.sticky_navigation</td><td class="val">{{ site.sticky_navigation | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.prev_next_buttons_location</td><td class="val">{{ site.prev_next_buttons_location | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.search_enabled</td><td class="val">{{ site.search_enabled | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.hljs_style</td><td class="val">{{ site.hljs_style | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.google_analytics</td><td class="val">{{ site.google_analytics | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.google_analytics_anonymize_ip</td><td class="val">{{ site.google_analytics_anonymize_ip | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.site_favicon</td><td class="val">{{ site.site_favicon | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.remote_theme</td><td class="val">{{ site.remote_theme | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.plugins</td><td class="val">{{ site.plugins | default: '<span class="nil">nil</span>' | join: ", " }}</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2>6. site.github.* Variables (GitHub Pages Metadata)</h2>
+<!-- ============================================================ -->
+
+<p>These are injected by the <code>jekyll-github-metadata</code> plugin (used by GitHub Pages).</p>
+
+{% if site.github %}
+<table>
+  <tr><th>Variable</th><th>Value</th></tr>
+  <tr><td>site.github.baseurl</td><td class="val">{{ site.github.baseurl | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.github.build_revision</td><td class="val">{{ site.github.build_revision | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.github.environment</td><td class="val">{{ site.github.environment | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.github.pages_env</td><td class="val">{{ site.github.pages_env | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.github.hostname</td><td class="val">{{ site.github.hostname | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.github.pages_hostname</td><td class="val">{{ site.github.pages_hostname | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.github.api_url</td><td class="val">{{ site.github.api_url | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.github.help_url</td><td class="val">{{ site.github.help_url | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.github.url</td><td class="val">{{ site.github.url | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.github.project_title</td><td class="val">{{ site.github.project_title | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.github.project_tagline</td><td class="val">{{ site.github.project_tagline | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.github.owner_name</td><td class="val">{{ site.github.owner_name | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.github.owner_url</td><td class="val">{{ site.github.owner_url | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.github.owner_gravatar_url</td><td class="val">{{ site.github.owner_gravatar_url | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.github.repository_url</td><td class="val">{{ site.github.repository_url | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.github.repository_nwo</td><td class="val">{{ site.github.repository_nwo | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.github.repository_name</td><td class="val">{{ site.github.repository_name | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.github.zip_url</td><td class="val">{{ site.github.zip_url | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.github.tar_url</td><td class="val">{{ site.github.tar_url | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.github.clone_url</td><td class="val">{{ site.github.clone_url | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.github.releases_url</td><td class="val">{{ site.github.releases_url | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.github.issues_url</td><td class="val">{{ site.github.issues_url | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.github.wiki_url</td><td class="val">{{ site.github.wiki_url | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.github.language</td><td class="val">{{ site.github.language | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.github.is_user_page</td><td class="val">{{ site.github.is_user_page | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.github.is_project_page</td><td class="val">{{ site.github.is_project_page | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.github.show_downloads</td><td class="val">{{ site.github.show_downloads | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.github.private</td><td class="val">{{ site.github.private | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.github.archived</td><td class="val">{{ site.github.archived | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.github.disabled</td><td class="val">{{ site.github.disabled | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr>
+    <td>site.github.license</td>
+    <td>
+      {% if site.github.license %}
+        <pre>{{ site.github.license | inspect }}</pre>
+      {% else %}
+        <span class="nil">nil</span>
+      {% endif %}
+    </td>
+  </tr>
+  <tr>
+    <td>site.github.source</td>
+    <td>
+      {% if site.github.source %}
+        <pre>{{ site.github.source | inspect }}</pre>
+      {% else %}
+        <span class="nil">nil</span>
+      {% endif %}
+    </td>
+  </tr>
+  <tr>
+    <td>site.github.versions</td>
+    <td>
+      {% if site.github.versions %}
+        <details>
+          <summary>Click to expand</summary>
+          <pre>{{ site.github.versions | inspect }}</pre>
+        </details>
+      {% else %}
+        <span class="nil">nil</span>
+      {% endif %}
+    </td>
+  </tr>
+  <tr>
+    <td>site.github.public_repositories</td>
+    <td>
+      {% if site.github.public_repositories %}
+        {{ site.github.public_repositories | size }} repos
+        <details>
+          <summary>Click to expand</summary>
+          <ul>
+          {%- for repo in site.github.public_repositories %}
+            <li><a href="{{ repo.html_url }}">{{ repo.name }}</a></li>
+          {%- endfor %}
+          </ul>
+        </details>
+      {% else %}
+        <span class="nil">nil</span>
+      {% endif %}
+    </td>
+  </tr>
+  <tr>
+    <td>site.github.organization_members</td>
+    <td>
+      {% if site.github.organization_members %}
+        {{ site.github.organization_members | size }} members
+      {% else %}
+        <span class="nil">nil</span>
+      {% endif %}
+    </td>
+  </tr>
+  <tr>
+    <td>site.github.contributors</td>
+    <td>
+      {% if site.github.contributors %}
+        <details>
+          <summary>{{ site.github.contributors | size }} contributors (click to expand)</summary>
+          <ul>
+          {%- for c in site.github.contributors %}
+            <li><a href="{{ c.html_url }}">{{ c.login }}</a></li>
+          {%- endfor %}
+          </ul>
+        </details>
+      {% else %}
+        <span class="nil">nil</span>
+      {% endif %}
+    </td>
+  </tr>
+  <tr>
+    <td>site.github.releases</td>
+    <td>
+      {% if site.github.releases %}
+        <details>
+          <summary>{{ site.github.releases | size }} releases (click to expand)</summary>
+          <ul>
+          {%- for r in site.github.releases %}
+            <li>{{ r.tag_name }} — {{ r.name }}</li>
+          {%- endfor %}
+          </ul>
+        </details>
+      {% else %}
+        <span class="nil">nil</span>
+      {% endif %}
+    </td>
+  </tr>
+  <tr>
+    <td>site.github.latest_release</td>
+    <td>
+      {% if site.github.latest_release %}
+        <pre>{{ site.github.latest_release | inspect }}</pre>
+      {% else %}
+        <span class="nil">nil</span>
+      {% endif %}
+    </td>
+  </tr>
+</table>
+
+<details>
+  <summary><strong>Full site.github dump (inspect)</strong></summary>
+  <pre>{{ site.github | inspect }}</pre>
+</details>
+
+{% else %}
+<p><strong><span class="nil">site.github is not available.</span></strong> This variable is only populated by the <code>jekyll-github-metadata</code> plugin (automatically enabled on GitHub Pages).</p>
+{% endif %}
+
+<!-- ============================================================ -->
+<h2>7. Page Variables (this page)</h2>
+<!-- ============================================================ -->
+
+<table>
+  <tr><th>Variable</th><th>Value</th></tr>
+  <tr><td>page.title</td><td class="val">{{ page.title }}</td></tr>
+  <tr><td>page.url</td><td class="val">{{ page.url }}</td></tr>
+  <tr><td>page.path</td><td class="val">{{ page.path }}</td></tr>
+  <tr><td>page.dir</td><td class="val">{{ page.dir }}</td></tr>
+  <tr><td>page.name</td><td class="val">{{ page.name }}</td></tr>
+  <tr><td>page.slug</td><td class="val">{{ page.slug | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>page.ext</td><td class="val">{{ page.ext | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>page.date</td><td class="val">{{ page.date | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>page.id</td><td class="val">{{ page.id | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>page.collection</td><td class="val">{{ page.collection | default: '<span class="nil">nil/empty</span>' }}</td></tr>
+  <tr><td>page.categories</td><td class="val">{{ page.categories | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>page.tags</td><td class="val">{{ page.tags | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>page.excerpt</td><td class="val">{{ page.excerpt | strip_html | truncate: 200 | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>page.content (length)</td><td class="val">{{ page.content | size }} chars</td></tr>
+  <tr><td>page.layout</td><td class="val">{{ page.layout }}</td></tr>
+  <tr><td>page.next</td><td class="val">{% if page.next %}{{ page.next.title }} ({{ page.next.url }}){% else %}<span class="nil">nil</span>{% endif %}</td></tr>
+  <tr><td>page.previous</td><td class="val">{% if page.previous %}{{ page.previous.title }} ({{ page.previous.url }}){% else %}<span class="nil">nil</span>{% endif %}</td></tr>
+</table>
+
+<h3>Theme-specific front matter variables</h3>
+<table>
+  <tr><th>Variable</th><th>Value</th></tr>
+  <tr><td>page.canonical_url</td><td class="val">{{ page.canonical_url | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>page.search_exclude</td><td class="val">{{ page.search_exclude | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>page.nav_exclude</td><td class="val">{{ page.nav_exclude | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>page.hide</td><td class="val">{{ page.hide | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>page.nav_order</td><td class="val">{{ page.nav_order | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>page.author</td><td class="val">{{ page.author | default: '<span class="nil">nil</span>' }}</td></tr>
+</table>
+
+<details>
+  <summary><strong>Full page dump (inspect)</strong></summary>
+  <pre>{{ page | inspect }}</pre>
+</details>
+
+<!-- ============================================================ -->
+<h2>8. Layout Variables</h2>
+<!-- ============================================================ -->
+
+<table>
+  <tr><th>Variable</th><th>Value</th></tr>
+  <tr><td>layout (inspect)</td><td class="val"><pre>{{ layout | inspect }}</pre></td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2>9. Liquid Filters — Used in This Theme</h2>
+<!-- ============================================================ -->
+
+<p>Filters are not variables — they are functions applied with the <code>|</code> pipe operator.
+Below we demonstrate each filter used in the theme's templates with a sample input so you can see the actual output.</p>
+
+{% assign sample_text = "Hello World & Friends <b>bold</b>" %}
+{% assign sample_url = "/some/page.html" %}
+{% assign sample_date = site.time %}
+{% assign sample_array = "alpha,beta,gamma,delta" | split: "," %}
+{% assign sample_markdown = "**bold** and _italic_" %}
+{% assign sample_number = 42 %}
+
+<h3>URL Filters (Jekyll-specific)</h3>
+<table>
+  <tr><th>Filter</th><th>Input</th><th>Output</th></tr>
+  <tr>
+    <td>absolute_url</td>
+    <td><code>{{ sample_url }}</code></td>
+    <td class="val">{{ sample_url | absolute_url }}</td>
+  </tr>
+  <tr>
+    <td>relative_url</td>
+    <td><code>{{ sample_url }}</code></td>
+    <td class="val">{{ sample_url | relative_url }}</td>
+  </tr>
+</table>
+
+<h3>Date Filters</h3>
+<table>
+  <tr><th>Filter</th><th>Input</th><th>Output</th></tr>
+  <tr>
+    <td>date: "%Y-%m-%d %H:%M"</td>
+    <td><code>site.time</code></td>
+    <td class="val">{{ sample_date | date: "%Y-%m-%d %H:%M" }}</td>
+  </tr>
+  <tr>
+    <td>date: "%Y"</td>
+    <td><code>site.time</code></td>
+    <td class="val">{{ sample_date | date: "%Y" }}</td>
+  </tr>
+  <tr>
+    <td>date_to_xmlschema</td>
+    <td><code>site.time</code></td>
+    <td class="val">{{ sample_date | date_to_xmlschema }}</td>
+  </tr>
+  <tr>
+    <td>date_to_rfc822</td>
+    <td><code>site.time</code></td>
+    <td class="val">{{ sample_date | date_to_rfc822 }}</td>
+  </tr>
+  <tr>
+    <td>date_to_string</td>
+    <td><code>site.time</code></td>
+    <td class="val">{{ sample_date | date_to_string }}</td>
+  </tr>
+  <tr>
+    <td>date_to_long_string</td>
+    <td><code>site.time</code></td>
+    <td class="val">{{ sample_date | date_to_long_string }}</td>
+  </tr>
+</table>
+
+<h3>String Filters</h3>
+<table>
+  <tr><th>Filter</th><th>Input</th><th>Output</th></tr>
+  <tr>
+    <td>capitalize</td>
+    <td><code>"hello world"</code></td>
+    <td class="val">{{ "hello world" | capitalize }}</td>
+  </tr>
+  <tr>
+    <td>downcase</td>
+    <td><code>"Hello WORLD"</code></td>
+    <td class="val">{{ "Hello WORLD" | downcase }}</td>
+  </tr>
+  <tr>
+    <td>upcase</td>
+    <td><code>"hello"</code></td>
+    <td class="val">{{ "hello" | upcase }}</td>
+  </tr>
+  <tr>
+    <td>slugify</td>
+    <td><code>"The _config.yml file"</code></td>
+    <td class="val">{{ "The _config.yml file" | slugify }}</td>
+  </tr>
+  <tr>
+    <td>slugify: "pretty"</td>
+    <td><code>"The _config.yml file"</code></td>
+    <td class="val">{{ "The _config.yml file" | slugify: "pretty" }}</td>
+  </tr>
+  <tr>
+    <td>truncate: 15, "..."</td>
+    <td><code>"{{ sample_text }}"</code></td>
+    <td class="val">{{ sample_text | truncate: 15, "..." }}</td>
+  </tr>
+  <tr>
+    <td>truncate: 8, ""</td>
+    <td><code>"abcdef1234"</code></td>
+    <td class="val">{{ "abcdef1234" | truncate: 8, "" }}</td>
+  </tr>
+  <tr>
+    <td>strip</td>
+    <td><code>"  hello  "</code></td>
+    <td class="val">"{{ "  hello  " | strip }}"</td>
+  </tr>
+  <tr>
+    <td>lstrip</td>
+    <td><code>"  hello  "</code></td>
+    <td class="val">"{{ "  hello  " | lstrip }}"</td>
+  </tr>
+  <tr>
+    <td>rstrip</td>
+    <td><code>"  hello  "</code></td>
+    <td class="val">"{{ "  hello  " | rstrip }}"</td>
+  </tr>
+  <tr>
+    <td>replace: "world", "Jekyll"</td>
+    <td><code>"hello world"</code></td>
+    <td class="val">{{ "hello world" | replace: "world", "Jekyll" }}</td>
+  </tr>
+  <tr>
+    <td>prepend: "pre-"</td>
+    <td><code>"text"</code></td>
+    <td class="val">{{ "text" | prepend: "pre-" }}</td>
+  </tr>
+  <tr>
+    <td>append: "-post"</td>
+    <td><code>"text"</code></td>
+    <td class="val">{{ "text" | append: "-post" }}</td>
+  </tr>
+  <tr>
+    <td>normalize_whitespace</td>
+    <td><code>"a  b\n  c"</code></td>
+    <td class="val">{{ "a  b
+  c" | normalize_whitespace }}</td>
+  </tr>
+  <tr>
+    <td>smartify</td>
+    <td><code>"It's a 'test' of \"quotes\""</code></td>
+    <td class="val">{{ "It's a 'test' of \"quotes\"" | smartify }}</td>
+  </tr>
+  <tr>
+    <td>number_of_words</td>
+    <td><code>"Hello world, how are you?"</code></td>
+    <td class="val">{{ "Hello world, how are you?" | number_of_words }}</td>
+  </tr>
+</table>
+
+<h3>HTML/XML/Escape Filters</h3>
+<table>
+  <tr><th>Filter</th><th>Input</th><th>Output</th></tr>
+  <tr>
+    <td>xml_escape</td>
+    <td><code>{{ sample_text | escape }}</code></td>
+    <td class="val">{{ sample_text | xml_escape }}</td>
+  </tr>
+  <tr>
+    <td>escape</td>
+    <td><code>{{ sample_text | escape }}</code></td>
+    <td class="val">{{ sample_text | escape }}</td>
+  </tr>
+  <tr>
+    <td>strip_html</td>
+    <td><code>{{ sample_text | escape }}</code></td>
+    <td class="val">{{ sample_text | strip_html }}</td>
+  </tr>
+  <tr>
+    <td>newline_to_br</td>
+    <td><code>"line1\nline2"</code></td>
+    <td class="val">{{ "line1
+line2" | newline_to_br }}</td>
+  </tr>
+  <tr>
+    <td>markdownify</td>
+    <td><code>{{ sample_markdown }}</code></td>
+    <td class="val">{{ sample_markdown | markdownify }}</td>
+  </tr>
+  <tr>
+    <td>cgi_escape</td>
+    <td><code>"foo, bar; baz?"</code></td>
+    <td class="val">{{ "foo, bar; baz?" | cgi_escape }}</td>
+  </tr>
+  <tr>
+    <td>uri_escape</td>
+    <td><code>"foo bar?q=hello"</code></td>
+    <td class="val">{{ "foo bar?q=hello" | uri_escape }}</td>
+  </tr>
+</table>
+
+<h3>Array Filters</h3>
+<table>
+  <tr><th>Filter</th><th>Input</th><th>Output</th></tr>
+  <tr>
+    <td>split: ","</td>
+    <td><code>"a,b,c"</code></td>
+    <td class="val">{{ "a,b,c" | split: "," | inspect }}</td>
+  </tr>
+  <tr>
+    <td>join: " | "</td>
+    <td><code>["alpha","beta","gamma","delta"]</code></td>
+    <td class="val">{{ sample_array | join: " | " }}</td>
+  </tr>
+  <tr>
+    <td>sort</td>
+    <td><code>["delta","alpha","gamma","beta"]</code></td>
+    <td class="val">{{ "delta,alpha,gamma,beta" | split: "," | sort | join: ", " }}</td>
+  </tr>
+  <tr>
+    <td>uniq</td>
+    <td><code>["a","b","a","c","b"]</code></td>
+    <td class="val">{{ "a,b,a,c,b" | split: "," | uniq | join: ", " }}</td>
+  </tr>
+  <tr>
+    <td>size</td>
+    <td><code>["alpha","beta","gamma","delta"]</code></td>
+    <td class="val">{{ sample_array | size }}</td>
+  </tr>
+  <tr>
+    <td>first</td>
+    <td><code>["alpha","beta","gamma","delta"]</code></td>
+    <td class="val">{{ sample_array | first }}</td>
+  </tr>
+  <tr>
+    <td>last</td>
+    <td><code>["alpha","beta","gamma","delta"]</code></td>
+    <td class="val">{{ sample_array | last }}</td>
+  </tr>
+  <tr>
+    <td>reverse</td>
+    <td><code>["alpha","beta","gamma","delta"]</code></td>
+    <td class="val">{{ sample_array | reverse | join: ", " }}</td>
+  </tr>
+  <tr>
+    <td>push: "epsilon"</td>
+    <td><code>["alpha","beta"]</code></td>
+    <td class="val">{{ "alpha,beta" | split: "," | push: "epsilon" | join: ", " }}</td>
+  </tr>
+  <tr>
+    <td>array_to_sentence_string</td>
+    <td><code>["alpha","beta","gamma"]</code></td>
+    <td class="val">{{ "alpha,beta,gamma" | split: "," | array_to_sentence_string }}</td>
+  </tr>
+  <tr>
+    <td>jsonify</td>
+    <td><code>["alpha","beta"]</code></td>
+    <td class="val">{{ "alpha,beta" | split: "," | jsonify }}</td>
+  </tr>
+  <tr>
+    <td>where (example)</td>
+    <td><code>site.pages where path contains ".md"</code></td>
+    <td class="val">{{ site.pages | where_exp: "p", "p.path contains '.md'" | size }} pages match</td>
+  </tr>
+  <tr>
+    <td>sort: "title"</td>
+    <td><code>site.pages</code></td>
+    <td>
+      <details>
+        <summary>{{ site.pages | size }} sorted pages</summary>
+        <ul>
+        {%- for p in site.pages | sort: "title" %}
+          <li>{{ p.title | default: "(no title)" }} — {{ p.url }}</li>
+        {%- endfor %}
+        </ul>
+      </details>
+    </td>
+  </tr>
+  <tr>
+    <td>group_by: "layout"</td>
+    <td><code>site.pages</code></td>
+    <td>
+      <details>
+        <summary>Click to expand</summary>
+        <ul>
+        {%- assign grouped = site.pages | group_by: "layout" -%}
+        {%- for g in grouped %}
+          <li><strong>{{ g.name | default: "(none)" }}</strong>: {{ g.items | size }} pages</li>
+        {%- endfor %}
+        </ul>
+      </details>
+    </td>
+  </tr>
+</table>
+
+<h3>Math Filters</h3>
+<table>
+  <tr><th>Filter</th><th>Input</th><th>Output</th></tr>
+  <tr>
+    <td>minus: 10</td>
+    <td><code>42</code></td>
+    <td class="val">{{ sample_number | minus: 10 }}</td>
+  </tr>
+  <tr>
+    <td>plus: 8</td>
+    <td><code>42</code></td>
+    <td class="val">{{ sample_number | plus: 8 }}</td>
+  </tr>
+  <tr>
+    <td>times: 3</td>
+    <td><code>42</code></td>
+    <td class="val">{{ sample_number | times: 3 }}</td>
+  </tr>
+  <tr>
+    <td>divided_by: 5</td>
+    <td><code>42</code></td>
+    <td class="val">{{ sample_number | divided_by: 5 }}</td>
+  </tr>
+  <tr>
+    <td>modulo: 5</td>
+    <td><code>42</code></td>
+    <td class="val">{{ sample_number | modulo: 5 }}</td>
+  </tr>
+  <tr>
+    <td>abs</td>
+    <td><code>-42</code></td>
+    <td class="val">{{ -42 | abs }}</td>
+  </tr>
+  <tr>
+    <td>ceil</td>
+    <td><code>4.2</code></td>
+    <td class="val">{{ 4.2 | ceil }}</td>
+  </tr>
+  <tr>
+    <td>floor</td>
+    <td><code>4.8</code></td>
+    <td class="val">{{ 4.8 | floor }}</td>
+  </tr>
+  <tr>
+    <td>round</td>
+    <td><code>4.5</code></td>
+    <td class="val">{{ 4.5 | round }}</td>
+  </tr>
+</table>
+
+<h3>Misc Filters</h3>
+<table>
+  <tr><th>Filter</th><th>Input</th><th>Output</th></tr>
+  <tr>
+    <td>default: "fallback"</td>
+    <td><code>nil</code></td>
+    <td class="val">{{ nil | default: "fallback" }}</td>
+  </tr>
+  <tr>
+    <td>inspect</td>
+    <td><code>["alpha","beta"]</code></td>
+    <td class="val">{{ "alpha,beta" | split: "," | inspect }}</td>
+  </tr>
+  <tr>
+    <td>to_integer</td>
+    <td><code>"42"</code></td>
+    <td class="val">{{ "42" | to_integer | plus: 0 }}</td>
+  </tr>
+  <tr>
+    <td>slice: 0, 5</td>
+    <td><code>"Hello World"</code></td>
+    <td class="val">{{ "Hello World" | slice: 0, 5 }}</td>
+  </tr>
+  <tr>
+    <td>sample</td>
+    <td><code>["alpha","beta","gamma","delta"]</code></td>
+    <td class="val">{{ sample_array | sample }}</td>
+  </tr>
+</table>
+
+<!-- ============================================================ -->
+<h2>10. Full site Variable Dump</h2>
+<!-- ============================================================ -->
+
+<p>All top-level keys available in the <code>site</code> object (excluding pages/posts/documents/collections for brevity):</p>
+
+<details>
+  <summary><strong>site | inspect (⚠️ may be very large)</strong></summary>
+  <pre>
+{%- assign site_keys = "time,url,baseurl,title,description,source,destination,collections_dir,permalink,timezone,quiet,verbose,defaults,liquid,kramdown,highlighter,lsi,safe,include,exclude,keep_files,encoding,markdown_ext,strict_front_matter,show_drafts,limit_posts,future,unpublished,whitelist,plugins,plugins_dir,layouts_dir,data_dir,includes_dir,sass,incremental,host,port,show_dir_listing,excerpt_separator,server,livereload,livereload_ignore,livereload_min_delay,livereload_max_delay,livereload_port,detach,serving" | split: "," -%}
+{%- for key in site_keys %}
+site.{{ key }}: {{ site[key] | inspect }}
+{%- endfor %}
+  </pre>
+</details>
+
+<!-- ============================================================ -->
+<h2>11. Environment Info</h2>
+<!-- ============================================================ -->
+
+<table>
+  <tr><th>Variable</th><th>Value</th></tr>
+  <tr><td>jekyll.version</td><td class="val">{{ jekyll.version }}</td></tr>
+  <tr><td>jekyll.environment</td><td class="val">{{ jekyll.environment }}</td></tr>
+  <tr><td>site.safe</td><td class="val">{{ site.safe }}</td></tr>
+  <tr><td>site.source</td><td class="val">{{ site.source }}</td></tr>
+  <tr><td>site.destination</td><td class="val">{{ site.destination }}</td></tr>
+  <tr><td>site.encoding</td><td class="val">{{ site.encoding }}</td></tr>
+  <tr><td>site.markdown</td><td class="val">{{ site.markdown | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.highlighter</td><td class="val">{{ site.highlighter }}</td></tr>
+  <tr><td>site.permalink</td><td class="val">{{ site.permalink }}</td></tr>
+  <tr><td>site.timezone</td><td class="val">{{ site.timezone | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.host</td><td class="val">{{ site.host | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.port</td><td class="val">{{ site.port | default: '<span class="nil">nil</span>' }}</td></tr>
+  <tr><td>site.serving</td><td class="val">{{ site.serving | default: '<span class="nil">nil</span>' }}</td></tr>
+</table>
+
+</div>
+
+{% endunless %}

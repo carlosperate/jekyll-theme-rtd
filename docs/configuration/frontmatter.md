@@ -37,6 +37,7 @@ nav_order: 4
 nav_exclude: false
 canonical_url: https://www.google.com
 search_exclude: false
+noindex: false
 ---
 ```
 
@@ -52,3 +53,8 @@ search_exclude: false
   URLs.
 - **`search_exclude`**: When set to `true`, the page is excluded from the
   site's search index and will not appear in search results.
+- **`noindex`**: When set to `true`, a
+  `<meta name="robots" content="noindex, nofollow">` tag is added to the
+  page's `<head>`. This tells search engines not to index the page or follow
+  its links. Useful for draft, debug, or internal pages that should not appear
+  in search engine results.

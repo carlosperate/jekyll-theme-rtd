@@ -2,19 +2,32 @@
 
 Port of the Read the Docs theme to Jekyll that can be used with GitHub Pages.
 
-You can preview it in the
-[user documentation](https://carlosperate.github.io/jekyll-theme-rtd):
+You can preview it in this
+[theme documentation](https://carlosperate.github.io/jekyll-theme-rtd)
+where you can find the user documentation, configuration options, etc:
 
-![theme screenshot](docs/assets/img/screenshot.png)
+[![theme screenshot](docs/assets/img/screenshot.png)](https://carlosperate.github.io/jekyll-theme-rtd)
 
 The original [Read The Docs](https://sphinx-rtd-theme.readthedocs.io)
 theme was created for [Sphinx](https://www.sphinx-doc.org/), and so it is
 designed specifically for documentation.
-
 Combined with [GitHub Pages](https://pages.github.com) it's a great and easy
 way to document your projects!
 
-Check out the [quick start guide]() to see how easy it is to 
+Check out the [🚀 quick start guide](https://carlosperate.github.io/jekyll-theme-rtd/quickstart.html)
+to see how easy it is to get started.
+
+Features:
+
+- ✅ Responsive design with a collapsible sidebar navigation
+- ✅ "Edit on GitHub" link for each page
+- 🟠 Built-in search functionality using [Lunr.js](https://lunrjs.com/)
+- ✅ Source code highlighting using the [highlight.js](https://highlightjs.org)
+- ✅ Specifically developed to be compatible with GitHub Pages
+- ✅ SEO-friendly meta tags and canonical URLs
+- ✅ Configurable with custom options in `_config.yml` and front matter
+- TODO: Social media preview images
+
 
 ### 🚧 Warning!
 
@@ -29,36 +42,24 @@ and any known issues are listed with the
 Contributions are very welcomed!
 
 
-## 🗂️ Readme Contents
+## 👩‍💻 Developer Documentation
 
 This README contains mostly the developer documentation to edit this theme.
 
 To learn how to use this theme for your own website or docs check out the
-[user documentation](https://carlosperate.github.io/jekyll-theme-rtd).
-
-- [🚀 Using this theme with GitHub Pages](#-using-this-theme-with-github-pages)
-- [👩‍💻 Developer Documentation](#-developer-documentation)
-    - [Run with Docker](#run-with-docker)
-    - [Build the docs using the remote theme](#build-the-docs-using-the-remote-theme)
-    - [Build the docs with MkDocs for comparison](#build-the-docs-with-mkdocs-for-comparison)
-- [👨‍👩‍👧‍👦 Contributing](#-contributing)
-- [⚖️ License](#%EF%B8%8F-license)
-
-
-## 🚀 Using this theme with GitHub Pages
-
-The fastest way to use this theme is with GitHub Pages, check out the
-[Quick Start Guide from the user documentation](https://carlosperate.github.io/jekyll-theme-rtd/quickstart.html).
-
-## 👩‍💻 Developer Documentation
-
-These instructions describe different ways to to set up your environment to
-develop or edit this theme.
+[Read The Docs Theme for Jekyll and GitHub Pages documentation](https://carlosperate.github.io/jekyll-theme-rtd).
 
 The theme is developed like a normal Jekyll site, and it uses the theme
 documentation as the site content.
 
-### Run with Docker
+- [🚀 Run with Docker](#-run-with-docker)
+  - [Build the docs using the remote theme](#-build-the-docs-using-the-remote-theme)
+- [🐛 Debug Config](#-debug-config)
+- [🆚 Build the docs with MkDocs for comparison](#-build-the-docs-with-mkdocs-for-comparison)
+- [👨‍👩‍👧‍👦 Contributing](#-contributing)
+- [⚖️ License](#%EF%B8%8F-license)
+
+## 🚀 Run with Docker
 
 [Docker](https://www.docker.com) provides an easy way to set up the
 development environment without installing Ruby or any other dependencies
@@ -107,7 +108,22 @@ $ docker run --rm -p 4000:4000 -p 35729:35729 -v $(pwd):/srv/jekyll -w /srv/jeky
 
 And, as before, the website is served at [http://localhost:4000](http://localhost:4000).
 
-### Build the docs with MkDocs for comparison
+
+## 🐛 Debug Config
+
+A debug utility page is included in the `docs/` folder that prints all
+Jekyll, Liquid, and GitHub Pages variables at build time. It is very useful
+for inspecting `site.github.*` metadata and troubleshooting configuration
+issues during development.
+
+See the
+[Debug Config](https://carlosperate.github.io/jekyll-theme-rtd/configuration/debug.html)
+docs page for full details, usage instructions, and security considerations.
+
+The source file is at [`docs/debug.html`](docs/debug.html).
+
+
+## 🆚 Build the docs with MkDocs for comparison
 
 As this theme has been ported from the MkDocs port, it can be useful to run
 MkDocs on the documentation markdown file and compare its output to the Jekyll
