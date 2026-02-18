@@ -33,7 +33,7 @@ noindex: true
   ============================================================================
 -->
 
-{% assign debug_enabled = true %}
+{% assign debug_enabled = false %}
 
 {% unless debug_enabled %}
 <div style="padding: 2em; text-align: center;">
@@ -595,8 +595,8 @@ Below we demonstrate each filter used in the theme's templates with a sample inp
   </tr>
   <tr>
     <td>smartify</td>
-    <td><code>"It's a 'test' of \"quotes\""</code></td>
-    <td class="val">{{ "It's a 'test' of \"quotes\"" | smartify }}</td>
+    <td><code>"It's a 'test'"</code></td>
+    <td class="val">{% capture smartify_input %}It's a 'test'{% endcapture %}{{ smartify_input | smartify }}</td>
   </tr>
   <tr>
     <td>number_of_words</td>
@@ -716,7 +716,8 @@ line2" | newline_to_br }}</td>
       <details>
         <summary>{{ site.pages | size }} sorted pages</summary>
         <ul>
-        {%- for p in site.pages | sort: "title" %}
+        {%- assign sorted_pages = site.pages | sort: "title" -%}
+        {%- for p in sorted_pages %}
           <li>{{ p.title | default: "(no title)" }} — {{ p.url }}</li>
         {%- endfor %}
         </ul>

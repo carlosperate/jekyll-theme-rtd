@@ -9,6 +9,7 @@
   {% elsif page and page.path == "index.md" %}<meta name="description" content="{{ site.description }}">{% endif %}
   {% if site.site_author %}<meta name="author" content="{{ site.site_author }}">{% endif %}
   {% if page and page.canonical_url %}<link rel="canonical" href="{{ page.canonical_url }}">{% endif %}
+  {% if page.noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
 
   {% if config.site_favicon %}<link rel="shortcut icon" href="{{ config.site_favicon | url }}">
   {% else %}<link rel="shortcut icon" href="{{ 'assets/img/favicon.ico' | absolute_url  }}">{% endif %}
@@ -37,7 +38,7 @@
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search">
           {%- if site.logo %}
-            <a href="{{ site.url | absolute_url }}{{ site.github.baseurl }}"><img src="{{ site.logo }}" class="logo" alt="Logo"></a>
+            <a href="{{ site.url | absolute_url }}{{ site.github.baseurl }}"><img src="{{ site.logo | absolute_url}}" class="logo" alt="Logo"></a>
           {%- else %}
             <a href="{{ site.url | absolute_url }}{{ site.github.baseurl }}" class="icon icon-home"> {{ site.title }}</a>
           {%- endif %}
