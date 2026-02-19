@@ -1,10 +1,5 @@
 title: Read The Docs Jekyll Theme
 description: Port of the Read the Docs theme to Jekyll to use with GitHub Pages.
-url: "https://www.embeddedlog.com"
-baseurl: "/jekyll-theme-rtd"
-# Destination configured so that when building and serving locally from the
-# docs folder, the build output folder name matches the baseurl
-destination: jekyll-theme-rtd
 plugins: [jekyll-remote-theme]
 remote_theme: carlosperate/jekyll-theme-rtd
 
