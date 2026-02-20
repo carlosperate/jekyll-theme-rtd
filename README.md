@@ -3,8 +3,7 @@
 Port of the Read the Docs theme to Jekyll that can be used with GitHub Pages.
 
 You can preview it in this
-[theme documentation](https://carlosperate.github.io/jekyll-theme-rtd)
-where you can find the user documentation, configuration options, etc:
+[theme documentation](https://carlosperate.github.io/jekyll-theme-rtd):
 
 [![theme screenshot](docs/assets/img/screenshot.png)](https://carlosperate.github.io/jekyll-theme-rtd)
 
@@ -26,7 +25,8 @@ Features:
 - ✅ Specifically developed to be compatible with GitHub Pages
 - ✅ SEO-friendly meta tags and canonical URLs
 - ✅ Configurable with custom options in `_config.yml` and front matter
-- TODO: Social media preview images
+- 🧑‍💻 TODO: Social media preview images
+- 🧑‍💻 TODO: Admonition notes
 
 ### 🚧 Warning!
 
@@ -34,110 +34,26 @@ This theme is currently a **Work-In-Progress** but, while some things might be
 broken, it should be already usable.
 
 Missing features are listed in the GitHub issues with the
-[to-do label](https://github.com/carlosperate/jekyll-theme-rtd/issues?q=is%3Aissue+is%3Aopen+label%3Ato-do),
-and any known issues are listed with the
-[bug label](https://github.com/carlosperate/jekyll-theme-rtd/issues?q=is%3Aissue+is%3Aopen+label%3Abug).
+[enhancement](https://github.com/carlosperate/jekyll-theme-rtd/issues?q=is%3Aissue%20state%3Aopen%20label%3Aenhancement)
+or [new feature](https://github.com/carlosperate/jekyll-theme-rtd/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22new%20feature%22)
+labels, and any known issues are listed with the
+[bug](https://github.com/carlosperate/jekyll-theme-rtd/issues?q=is%3Aissue+is%3Aopen+label%3Abug)
+label.
 
 Contributions are very welcomed!
 
 
-## 👩‍💻 Developer Documentation
+## 👨‍👩‍👧‍👦 Contributing
 
-This README contains mostly the developer documentation to edit this theme.
+Bug reports and pull requests are welcome on GitHub at
+https://github.com/carlosperate/jekyll-theme-rtd.
 
-To learn how to use this theme for your own website or docs check out the
-[Read The Docs Theme for Jekyll and GitHub Pages documentation](https://carlosperate.github.io/jekyll-theme-rtd).
+For information about contributing, see the
+[developer documentation](https://carlosperate.github.io/jekyll-theme-rtd/dev.html).
 
-The theme is developed like a normal Jekyll site, and it uses the theme
-documentation as the site content.
-
-- [🚀 Run with Docker](#-run-with-docker)
-  - [Build the docs using the remote theme](#-build-the-docs-using-the-remote-theme)
-- [🐛 Debug Config](#-debug-config)
-- [🆚 Build the docs with MkDocs for comparison](#-build-the-docs-with-mkdocs-for-comparison)
-- [👨‍👩‍👧‍👦 Contributing](#-contributing)
-- [⚖️ License](#%EF%B8%8F-license)
-
-## 🚀 Run with Docker
-
-[Docker](https://www.docker.com) provides an easy way to set up the
-development environment without installing Ruby or any other dependencies
-on your machine. With two simple commands you can build and serve this project.
-
-A [Dockerfile](Dockerfile) is included to run an environment with Ruby and
-Jekyll. First, build the Docker image:
-
-```bash
-$ docker build -t jekyll-theme-rtd .
-```
-
-And then serve the website:
-
-```bash
-$ docker run --rm -p 4000:4000 -p 35729:35729 -v $(pwd):/srv/jekyll jekyll-theme-rtd
-```
-
-This will serve the website at [http://localhost:4000](http://localhost:4000)
-with live-reload enabled, so any changes made on these files will trigger a
-rebuild and automatically refresh the browser.
-
-Building the docker image pre-installs the required Ruby Gems, but the built
-image still goes triggers a gem installation step every time it is launched,
-in case there has been changes. It's recommended to rebuild the image if there
-are any changes made to the `Gemfile` or gemspec dependencies.
-
-### Build the docs using the remote theme
-
-This method is meant to replicate how GitHub Pages builds the "docs" folder for
-[https://carlosperate.github.io/jekyll-theme-rtd](https://carlosperate.github.io/jekyll-theme-rtd).
-
-There are two main differences with this method:
-
-1. The root directory is the "docs" folder instead of the project root
-  directory, so the navigation hierarchy is different.
-2. This method uses the `remote_theme` Jekyll plugin, so it uses the files
-  currently pushed and available in the GitHub repository `main` branch,
-  not the local files from your machine.
-
-To do this, we add the `-w /srv/jekyll/docs` to the docker command:
-
-```bash
-$ docker run --rm -p 4000:4000 -p 35729:35729 -v $(pwd):/srv/jekyll -w /srv/jekyll/docs jekyll-theme-rtd
-```
-
-And, as before, the website is served at [http://localhost:4000](http://localhost:4000).
-
-
-## 🐛 Debug Config
-
-A debug utility page is included in the `docs/` folder that prints all
-Jekyll, Liquid, and GitHub Pages variables at build time. It is very useful
-for inspecting `site.github.*` metadata and troubleshooting configuration
-issues during development.
-
-See the
-[Debug Config](https://carlosperate.github.io/jekyll-theme-rtd/configuration/debug.html)
-docs page for full details, usage instructions, and security considerations.
-
-The source file is at [`docs/debug.html`](docs/debug.html).
-
-
-## 🆚 Build the docs with MkDocs for comparison
-
-As this theme is a port from the MkDocs port, it can be useful to run
-MkDocs to build the docs and compare the original MkDocs theme vs
-this Jekyll port. A `mkdocs.yml` file is included to configure the project.
-
-We recommend using a virtual environment to run the following steps:
-
-```bash
-$ pip install mkdocs==1.0.4 Jinja2==2.11.3 MarkupSafe==1.1.1 Markdown==3.1.1 "setuptools<82"
-$ mkdocs serve
-```
-
-This currently needs Python 3.9, but as we update the theme to include the
-latest changes from MkDocs version it'll be able to work with newer versions.
-
+This project is intended to be a safe, welcoming space for collaboration, and
+contributors are expected to adhere to the
+[Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## 👨‍👩‍👧‍👦 Contributing
 
