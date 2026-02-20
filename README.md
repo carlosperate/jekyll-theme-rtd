@@ -21,13 +21,12 @@ Features:
 
 - ✅ Responsive design with a collapsible sidebar navigation
 - ✅ "Edit on GitHub" link for each page
-- 🟠 Built-in search functionality using [Lunr.js](https://lunrjs.com/)
+- ✅ Built-in search functionality using [Lunr.js](https://lunrjs.com/)
 - ✅ Source code highlighting using the [highlight.js](https://highlightjs.org)
 - ✅ Specifically developed to be compatible with GitHub Pages
 - ✅ SEO-friendly meta tags and canonical URLs
 - ✅ Configurable with custom options in `_config.yml` and front matter
 - TODO: Social media preview images
-
 
 ### 🚧 Warning!
 
@@ -125,19 +124,19 @@ The source file is at [`docs/debug.html`](docs/debug.html).
 
 ## 🆚 Build the docs with MkDocs for comparison
 
-As this theme has been ported from the MkDocs port, it can be useful to run
-MkDocs on the documentation markdown file and compare its output to the Jekyll
-output. A `mkdocs.yml` file is included to configure the project.
+As this theme is a port from the MkDocs port, it can be useful to run
+MkDocs to build the docs and compare the original MkDocs theme vs
+this Jekyll port. A `mkdocs.yml` file is included to configure the project.
 
-Pipenv has been used to manage Python dependencies:
+We recommend using a virtual environment to run the following steps:
 
 ```bash
-$ pip install pipenv
-$ pipenv install
-$ pipenv run mkdocs build
-$ cd _site_mkdocs
-$ pipenv run python -m http.server 8080
+$ pip install mkdocs==1.0.4 Jinja2==2.11.3 MarkupSafe==1.1.1 Markdown==3.1.1 "setuptools<82"
+$ mkdocs serve
 ```
+
+This currently needs Python 3.9, but as we update the theme to include the
+latest changes from MkDocs version it'll be able to work with newer versions.
 
 
 ## 👨‍👩‍👧‍👦 Contributing

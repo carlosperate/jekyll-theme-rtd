@@ -4,6 +4,9 @@ repo_url: 'https://github.com/carlosperate/jekyll-theme-rtd'
 repo_name: 'GitHub'
 docs_dir: 'docs/'
 site_dir: '_site_mkdocs/'
-theme: 'readthedocs'
-prev_next_buttons_location: 'both'
 copyright: 'Carlos Pereira Atencio'
+theme:
+  name: readthedocs
+  include_homepage_in_sidebar: false
+  prev_next_buttons_location: 'both'
+  logo: assets/img/jekyll-rtd-logo-250px.jpg
