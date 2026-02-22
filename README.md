@@ -42,7 +42,6 @@ label.
 
 Contributions are very welcomed!
 
-
 ## 👨‍👩‍👧‍👦 Contributing
 
 Bug reports and pull requests are welcome on GitHub at
@@ -54,16 +53,6 @@ For information about contributing, see the
 This project is intended to be a safe, welcoming space for collaboration, and
 contributors are expected to adhere to the
 [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
-## 👨‍👩‍👧‍👦 Contributing
-
-Bug reports and pull requests are welcome on GitHub at
-https://github.com/carlosperate/jekyll-theme-rtd.
-
-This project is intended to be a safe, welcoming space for collaboration, and
-contributors are expected to adhere to the
-[Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
 
 ## ⚖️ License
 

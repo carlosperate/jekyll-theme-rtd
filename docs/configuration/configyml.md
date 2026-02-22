@@ -68,4 +68,16 @@ google_analytics_anonymize_ip: true
 # highlight.js style name loaded from cdnjs.
 # Default: github-gist
 hljs_style: github-gist
+
+# List of highlight.js languages to load from cdnjs.
+hljs_languages:
+  - ruby
+  - python
+  - javascript
+  - bash
+  - yaml
+
+# List of additional CSS files to load for all pages, path relative to the site base URL.
+extra_css:
+  - assets/css/my_custom_file.css
 ```

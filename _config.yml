@@ -8,11 +8,6 @@ description: Port of the Read the Docs theme to Jekyll to use with GitHub Pages.
 #  - jekyll-remote-theme
 #remote_theme: /srv/jekyll/
 
-# Development server config, needed to load some of the content
-webrick:
-  headers:
-    Access-Control-Allow-Origin: "*"
-
 # Theme settings
 site_author: Carlos Pereira Atencio
 repo_url: 'https://github.com/carlosperate/jekyll-theme-rtd'
@@ -21,4 +16,5 @@ github_docs_folder: false
 sticky_navigation: true
 prev_next_buttons_location: both
 search_enabled: true
-hljs_style: github-gist
+hljs_style: atom-one-dark
+hljs_languages: [ruby, python, javascript, bash, yaml]
