@@ -16,8 +16,8 @@
       {%- endif %}
     {%- endif %}
     <li class="wy-breadcrumbs-aside">
-      {%- if site.edit_on_github != false and page and page.name != "search.html" %}
-        <a href="{{ site.repo_url | url }}/blob/master/{%- if site.github_docs_folder %}docs/{% endif %}{{ page.path }}" class="icon icon-github" target="_blank"> Edit on GitHub</a>
+      {%- if site.edit_on_github and page and page.name != "search.html" %}
+        <a href="{{ site.repo_url | url }}/blob/{{ site.github_branch | default: 'main' }}/{%- if site.github_docs_folder %}docs/{% endif %}{{ page.path }}" class="icon icon-github" target="_blank"> Edit on GitHub</a>
       {%- endif %}
     </li>
   </ul>

@@ -25,7 +25,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
   <link rel="stylesheet" href="{{ 'assets/css/theme.css' | absolute_url }}" />
   <link rel="stylesheet" href="{{ 'assets/css/theme_extra.css' | absolute_url }}" />
-  <link rel="stylesheet" href="{{ 'assets/css/theme_custom.css' | absolute_url }}" />
+  <link rel="stylesheet" href="{{ 'assets/css/theme_jekyll_custom.css' | absolute_url }}" />
   {%- if site.hljs_style %}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/{{site.hljs_style}}.min.css" />
   {%- else %}
@@ -34,6 +34,9 @@
   {%- for path in site.extra_css %}
   <link rel="stylesheet" href="{{ path | absolute_url }}" />
   {%- endfor %}
+
+  <script src="{{ 'assets/js/jquery-2.1.1.min.js' | absolute_url }}" defer></script>
+  <script src="{{ 'assets/js/modernizr-2.8.3.min.js' | absolute_url }}" defer></script>
 
   {%- if site.google_analytics %}{% include ganalytics.html %}{% endif %}
 </head>
@@ -87,19 +90,20 @@
 
   {% include versions.html %}
 
-  <script src="{{ 'assets/js/jquery-2.1.1.min.js' | absolute_url }}" defer></script>
-  <script src="{{ 'assets/js/modernizr-2.8.3.min.js' | absolute_url }}" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   {% for lang in site.hljs_languages %}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/{{lang}}.min.js"></script>
   {% endfor %}
   <script src="{{ 'assets/js/theme.js' | absolute_url }}" defer></script>
-  <script type="text/javascript" defer>
+  <script type="text/javascript">
     hljs.initHighlightingOnLoad();
     window.addEventListener('load', function() {
       SphinxRtdTheme.Navigation.enable({{ site.sticky_navigation | default: 'false' }});
     });
   </script>
+  {% for path in site.extra_javascript %}
+  <script src="{{ path | absolute_url }}" defer></script>
+  {% endfor %}
   <!-- Build Date: {{ site.time | date: "%Y-%m-%d %H:%M" }} -->
 </body>
 </html>

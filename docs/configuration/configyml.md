@@ -33,10 +33,16 @@ site_author: Carlos Pereira Atencio
 repo_url: 'https://github.com/carlosperate/jekyll-theme-rtd'
 
 # Show/hide the "Edit on GitHub" link in page breadcrumbs.
+# Default: false
 edit_on_github: true
 
+# GitHub branch to use for the "Edit on GitHub" links.
+# Default: main
+github_branch: main
+
 # Set it to true if the site is build with GitHub Pages from the "docs" folder.
-# This takes in consideration the "docs/" path the "Edit on GitHub" link.
+# This is to take in consideration the "docs/" path for the "Edit on GitHub" link.
+# Default: false
 github_docs_folder: true
 
 # Logo image URL shown at the top of the left sidebar.
@@ -77,7 +83,9 @@ hljs_languages:
   - bash
   - yaml
 
-# List of additional CSS files to load for all pages, path relative to the site base URL.
+# List of additional CSS & JS files to load for all pages, path relative to the site base URL.
+extra_javascript:
+  - assets/js/my_custom_file.js
 extra_css:
   - assets/css/my_custom_file.css
 ```
