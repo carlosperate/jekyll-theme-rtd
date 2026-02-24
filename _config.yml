@@ -12,7 +12,7 @@ description: Port of the Read the Docs theme to Jekyll to use with GitHub Pages.
 site_author: Carlos Pereira Atencio
 repo_url: 'https://github.com/carlosperate/jekyll-theme-rtd'
 # edit_on_github: true
-github_docs_folder: false
+# github_branch: main
 # logo: docs/assets/img/jekyll-rtd-logo-250px.jpg
 # favicon: docs/assets/img/favicon/favicon.ico
 sticky_navigation: true

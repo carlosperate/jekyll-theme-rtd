@@ -37,13 +37,8 @@ repo_url: 'https://github.com/carlosperate/jekyll-theme-rtd'
 edit_on_github: true
 
 # GitHub branch to use for the "Edit on GitHub" links.
-# Default: main
+# Default: Automatic detection if built with GitHub Pages, otherwise "main".
 github_branch: main
-
-# Set it to true if the site is build with GitHub Pages from the "docs" folder.
-# This is to take in consideration the "docs/" path for the "Edit on GitHub" link.
-# Default: false
-github_docs_folder: true
 
 # Logo image URL shown at the top of the left sidebar.
 # If not set, the site title is shown instead.
