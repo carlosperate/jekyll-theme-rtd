@@ -49,4 +49,5 @@ is updated.
 
 If you are hosting your website in GH Pages, but testing locally with Jekyll
 you might want to have a look at the official documentation for
-[Testing your GitHub Pages site locally with Jekyll](https://help.github.com/en/github/working-with-github-pages/testing-your-github-pages-site-locally-with-jekyll).
+[Testing your GitHub Pages site locally with Jekyll](https://help.github.com/en/github/working-with-github-pages/testing-your-github-pages-site-locally-with-jekyll)
+and the [dev docs](dev.html) for this theme.

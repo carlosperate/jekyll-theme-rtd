@@ -14,8 +14,8 @@
   {% if page and page.canonical_url %}<link rel="canonical" href="{{ page.canonical_url }}">{% endif %}
   {% if page.noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
 
-  {% if config.site_favicon %}
-  <link rel="shortcut icon" href="{{ config.site_favicon | absolute_url }}">
+  {% if site.favicon %}
+  <link rel="shortcut icon" href="{{ site.favicon | absolute_url }}">
   {% else %}
   <link rel="shortcut icon" href="{{ 'assets/img/favicon.ico' | absolute_url  }}">
   {% endif %}

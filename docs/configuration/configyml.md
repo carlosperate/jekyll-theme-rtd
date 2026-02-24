@@ -25,7 +25,7 @@ The following options are specific to this theme and can be added to your
 `_config.yml` to control features like the sidebar logo, navigation,
 search, analytics, and more:
 
-```yml
+```yaml
 # Name shown in the footer copyright and in the page author meta tag.
 site_author: Carlos Pereira Atencio
 
@@ -47,11 +47,11 @@ github_docs_folder: true
 
 # Logo image URL shown at the top of the left sidebar.
 # If not set, the site title is shown instead.
-logo: 'https://your.url/image.png'
+logo: 'path/to/your_image.png'
 
 # Custom favicon URL.
 # If not set, defaults to assets/img/favicon.ico from the theme.
-site_favicon: 'https://your.url/here.ico'
+favicon: 'path/to/your_favicon.ico'
 
 # Enables sticky navigation behavior for the left sidebar.
 sticky_navigation: true

@@ -11,6 +11,7 @@ edit_on_github: true
 github_branch: main
 github_docs_folder: true
 logo: assets/img/jekyll-rtd-logo-250px.jpg
+favicon: assets/img/favicon/favicon.ico
 sticky_navigation: true
 prev_next_buttons_location: bottom
 search_enabled: true

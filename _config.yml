@@ -11,10 +11,12 @@ description: Port of the Read the Docs theme to Jekyll to use with GitHub Pages.
 # Theme settings
 site_author: Carlos Pereira Atencio
 repo_url: 'https://github.com/carlosperate/jekyll-theme-rtd'
-edit_on_github: true
+# edit_on_github: true
 github_docs_folder: false
+# logo: docs/assets/img/jekyll-rtd-logo-250px.jpg
+# favicon: docs/assets/img/favicon/favicon.ico
 sticky_navigation: true
 prev_next_buttons_location: both
 search_enabled: true
-hljs_style: atom-one-dark
+# hljs_style: atom-one-dark
 hljs_languages: [ruby, python, javascript, bash, yaml]

@@ -46,6 +46,7 @@ end
 ```
 
 ```python
+# Python code with syntax highlighting
 from microbit import *
 
 while True:

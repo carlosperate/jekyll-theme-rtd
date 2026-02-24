@@ -11,10 +11,10 @@ The original [Read The Docs](https://sphinx-rtd-theme.readthedocs.io)
 theme was created for [Sphinx](https://www.sphinx-doc.org/), and so it is
 designed specifically for documentation.
 Combined with [GitHub Pages](https://pages.github.com) it's a great and easy
-way to document your projects!
+way to document your projects.
 
 Check out the [🚀 quick start guide](https://carlosperate.github.io/jekyll-theme-rtd/quickstart.html)
-to see how easy it is to get started.
+to see how easy it is to get started!
 
 Features:
 
