@@ -87,12 +87,9 @@ this Jekyll port. A `mkdocs.yml` file is included to configure the project.
 We recommend using a virtual environment to run the following steps:
 
 ```bash
-$ pip install mkdocs==1.0.4 Jinja2==2.11.3 MarkupSafe==1.1.1 Markdown==3.1.1 "setuptools<82"
+$ pip install mkdocs==1.2 Jinja2==3.0.3
 $ mkdocs serve
 ```
-
-This currently needs Python 3.9, but as we update the theme to include the
-latest changes from MkDocs version it'll be able to work with newer versions.
 
 ## 👨‍👩‍👧‍👦 Contributing
 

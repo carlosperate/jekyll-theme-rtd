@@ -1,13 +1,15 @@
 <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       {%- if site.repo_url %}
-        <a href="{{ site.repo_url }}" class="fa fa-github" target="_blank" style="float: left; color: #fcfcfc"> GitHub</a>
+        <span>
+          <a href="{{ site.repo_url }}" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
       {%- endif %}
       {%- if previous_page %}
-        <span><a href="{{ previous_page.url | absolute_url }}" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="{{ previous_page.url | absolute_url }}" style="color: #fcfcfc">&laquo; Previous</a></span>
       {%- endif %}
       {%- if next_page %}
-        <span style="margin-left: 15px"><a href="{{ next_page.url | absolute_url }}" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span><a href="{{ next_page.url | absolute_url }}" style="color: #fcfcfc">Next &raquo;</a></span>
       {%- endif %}
     </span>
 </div>
