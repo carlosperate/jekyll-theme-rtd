@@ -8,8 +8,28 @@ WORKDIR /srv/jekyll
 COPY Gemfile jekyll-theme-rtd.gemspec ./
 RUN bundle install
 
+# Inline entrypoint script
+RUN cat > /usr/local/bin/entrypoint.sh <<'EOF' && chmod +x /usr/local/bin/entrypoint.sh
+#!/usr/bin/env bash
+set -euo pipefail
+
+bundle install
+
+case "${1:-serve}" in
+  build)
+    exec bundle exec jekyll build
+    ;;
+  serve)
+    shift || true
+    exec bundle exec jekyll serve --host 0.0.0.0 --watch --force_polling --livereload "$@"
+    ;;
+  *)
+    exec "$@"
+    ;;
+esac
+EOF
+
 EXPOSE 4000 35729
 
-# Re-run bundle install at startup in case dependencies have changed,
-# this will be near-instant if the Gemfile hasn't been modified
-CMD ["sh", "-lc", "bundle install && exec bundle exec jekyll serve --host 0.0.0.0 --watch --force_polling --livereload"]
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+CMD ["serve"]

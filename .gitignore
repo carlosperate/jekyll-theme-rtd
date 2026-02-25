@@ -5,6 +5,7 @@
 .sass-cache
 _site/
 _site_mkdocs/
+tests/screenshot_compare/screenshots/old/
 
 ##########
 # Python #

@@ -1,0 +1,5 @@
+# Required Python packages for the screenshot comparison tool.
+# Install with:
+#   pip install -r tests/requirements.txt
+#   playwright install chromium
+playwright

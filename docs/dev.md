@@ -20,7 +20,7 @@ And the repository with all the theme source code is at:
 
 [Docker](https://www.docker.com) provides an easy way to set up the
 development environment without installing Ruby or any other dependencies
-on your machine. With two simple commands you can build and serve this project.
+on your machine.
 
 A [Dockerfile](Dockerfile) is included to run an environment with Ruby and
 Jekyll. First, build the Docker image:
@@ -35,12 +35,27 @@ And then serve the website:
 $ docker run --rm -p 4000:4000 -p 35729:35729 -v $(pwd):/srv/jekyll jekyll-theme-rtd
 ```
 
+The Docker image includes an inline entrypoint script in the `Dockerfile`
+that supports multiple commands. By default, the container runs `serve`.
+
+Build only (no local server):
+
+```bash
+$ docker run --rm -v $(pwd):/srv/jekyll jekyll-theme-rtd build
+```
+
+Serve with custom Jekyll CLI options:
+
+```bash
+$ docker run --rm -p 4000:4000 -p 35729:35729 -v $(pwd):/srv/jekyll jekyll-theme-rtd serve --drafts --future
+```
+
 This will serve the website at [http://localhost:4000](http://localhost:4000)
 with live-reload enabled, so any changes made on these files will trigger a
 rebuild and automatically refresh the browser.
 
 Building the docker image pre-installs the required Ruby Gems, but the built
-image still goes triggers a gem installation step every time it is launched,
+image still triggers a gem installation step every time it is launched,
 in case there has been changes. It's recommended to rebuild the image if there
 are any changes made to the `Gemfile` or gemspec dependencies.
 
