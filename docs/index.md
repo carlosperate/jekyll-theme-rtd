@@ -1,6 +1,5 @@
 ---
 layout: default
-title: Index
 nav_exclude: true
 ---
 
@@ -49,10 +48,14 @@ Features:
   you can copy into your site to inspect every Jekyll & Liquid variable at
   build time.
 
-## 🚧 Warning!
+## 🚧 Work in Progress!
 
-This theme is currently a **Work-In-Progress** but, while some things might be
-under development, it should be already usable.
+This theme is currently being developed but v1.0 is already usable and released.
+Some features are still missing and breaking changes (mostly config names and
+default values) will be released as major uprevs.
+
+So it is recommended to lock the version of the theme to a specific version
+in the `_config.yml` file: `remote_theme: carlosperate/jekyll-theme-rtd@v1.0.0`
 
 Missing features are listed in the GitHub issues with the
 [enhancement](https://github.com/carlosperate/jekyll-theme-rtd/issues?q=is%3Aissue%20state%3Aopen%20label%3Aenhancement)

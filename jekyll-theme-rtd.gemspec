@@ -2,13 +2,18 @@
 
 Gem::Specification.new do |spec|
   spec.name       = "jekyll-theme-rtd"
-  spec.version    = "0.1.0"
+  spec.version    = "1.0.0"
   spec.authors    = ["carlosperate"]
   spec.email      = ["carlosperate@embeddedlog.com"]
 
   spec.summary    = "Port of the Read the Docs theme to Jekyll to use with GitHub Pages."
   spec.homepage   = "https://github.com/carlosperate/jekyll-theme-rtd"
-  spec.license    = "MIT"
+  spec.license    = "BSD-2-Clause"
+  spec.metadata      = {
+    "bug_tracker_uri"   => "https://github.com/carlosperate/jekyll-theme-rtd/issues",
+    "documentation_uri" => "https://carlosperate.github.io/jekyll-theme-rtd/",
+    "source_code_uri"   => "https://github.com/carlosperate/jekyll-theme-rtd",
+  }
 
   spec.files       = Dir[
     "_includes/**/*",
@@ -24,6 +29,9 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "jekyll", "~> 3.10"
 
   spec.add_development_dependency "github-pages", "~> 232"
+  # Needed to change to use version specified in the Gemfile so that we can use local paths with "remote_theme"
+  # https://github.com/benbalter/jekyll-remote-theme/pull/120
+  # gem "jekyll-remote-theme", github: "benbalter/jekyll-remote-theme", ref: "048c7ec68ac6205aa684a3a72d4f02a5b0b4916d"
   spec.add_development_dependency "jekyll-remote-theme", "~> 0.4.3"
 
   # Others unrelated to GH pages

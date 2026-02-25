@@ -2,8 +2,9 @@
 
 Port of the Read the Docs theme to Jekyll that can be used with GitHub Pages.
 
-You can preview it in this
-[theme documentation](https://carlosperate.github.io/jekyll-theme-rtd):
+
+The [theme documentation](https://carlosperate.github.io/jekyll-theme-rtd) is
+also the live demo:
 
 [![theme screenshot](docs/assets/img/screenshot.png)](https://carlosperate.github.io/jekyll-theme-rtd)
 
@@ -28,10 +29,14 @@ Features:
 - 🧑‍💻 TODO: Social media preview images
 - 🧑‍💻 TODO: Admonition notes
 
-### 🚧 Warning!
+### 🚧 Work in Progress!
 
-This theme is currently a **Work-In-Progress** but, while some things might be
-broken, it should be already usable.
+This theme is currently being developed but v1.0 is already usable and released.
+Some features are still missing and breaking changes (mostly config names and
+default values) will be released as major uprevs.
+
+So it is recommended to lock the version of the theme to a specific version
+in the `_config.yml` file: `remote_theme: carlosperate/jekyll-theme-rtd@v1.0.0`
 
 Missing features are listed in the GitHub issues with the
 [enhancement](https://github.com/carlosperate/jekyll-theme-rtd/issues?q=is%3Aissue%20state%3Aopen%20label%3Aenhancement)
