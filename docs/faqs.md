@@ -68,7 +68,7 @@ for example:
 - Sitemaps and `robots.txt` with the [jekyll-sitemap plugin](https://github.com/jekyll/jekyll-sitemap)
 
 Is there a useful feature missing that you would like to see in this theme?
-[Please open a new issue in the theme GitHub repository]((https://github.com/carlosperate/jekyll-theme-rtd/issues/new)).
+[Please open a new issue in the theme GitHub repository](https://github.com/carlosperate/jekyll-theme-rtd/issues/new).
 
 ## Any Other Questions?
 

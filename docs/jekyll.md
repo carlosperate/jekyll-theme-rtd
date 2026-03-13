@@ -39,7 +39,7 @@ The latest version of `jekyll-remote-theme` also lets you select a specific
 version, tag, or branch. To pin your site to a specific release:
 
 ```yaml
-remote_theme: carlosperate/jekyll-theme-rtd@v1.0.0
+remote_theme: carlosperate/jekyll-theme-rtd@v1.1.0
 ```
 
 This ensures your site continues to use a known version even when the theme

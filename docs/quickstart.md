@@ -17,7 +17,7 @@ running with this theme:
 1. Add your documentation markdown files into a `docs` folder at the root of your
   repository.
 1. Add to the `docs` folder a `_config.yml` file with this line:<br>
-  `remote_theme: carlosperate/jekyll-theme-rtd@v1.0.0`
+  `remote_theme: carlosperate/jekyll-theme-rtd@v1.1.0`
     - _To ensure stability in your site builds, it's recommended to lock
       this theme to a specific version as shown above._
 1. Select your publishing source in the GitHub repository settings as indicated
