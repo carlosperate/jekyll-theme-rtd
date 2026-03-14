@@ -1,11 +1,11 @@
 <footer>
     {%- if (site.prev_next_buttons_location == 'bottom' or  site.prev_next_buttons_location =='both') and (previous_page or next_page) %}
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      {%- if next_page %}
-        <a href="{{ next_page.url | absolute_url }}" class="btn btn-neutral float-right" title="{{ next_page.title }}">Next <span class="icon icon-circle-arrow-right"></span></a>
-      {%- endif %}
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
       {%- if previous_page %}
-        <a href="{{ previous_page.url | absolute_url }}" class="btn btn-neutral" title="{{ previous_page.title }}"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="{{ previous_page.url | absolute_url }}" class="btn btn-neutral" title="{{ previous_page.title }}"><span class="icon icon-circle-arrow-left" aria-hidden="true"></span> Previous</a>
+      {%- endif %}
+      {%- if next_page %}
+        <a href="{{ next_page.url | absolute_url }}" class="btn btn-neutral float-right" title="{{ next_page.title }}">Next <span class="icon icon-circle-arrow-right" aria-hidden="true"></span></a>
       {%- endif %}
     </div>
     {%- endif %}

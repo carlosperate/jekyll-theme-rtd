@@ -58,14 +58,6 @@ prev_next_buttons_location: both
 # Enables the search box in the sidebar.
 search_enabled: true
 
-# Google Analytics measurement ID (or legacy UA ID).
-# When set, the analytics snippet is included.
-google_analytics: UA-XXXXX-Y
-
-# Adds anonymize_ip to the analytics config.
-# Only applies when google_analytics is set.
-google_analytics_anonymize_ip: true
-
 # highlight.js style name loaded from cdnjs.
 # Default: github-gist
 hljs_style: github-gist
@@ -77,6 +69,9 @@ hljs_languages:
   - javascript
   - bash
   - yaml
+
+# Version string to show in the sidebar.
+display_version: 1.0.0
 
 # List of additional CSS & JS files to load for all pages, path relative to the site base URL.
 extra_javascript:

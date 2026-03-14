@@ -102,7 +102,7 @@ this Jekyll port. A `mkdocs.yml` file is included to configure the project.
 We recommend using a virtual environment to run the following steps:
 
 ```bash
-$ pip install mkdocs==1.2 Jinja2==3.0.3
+$ pip install mkdocs==1.6.1
 $ mkdocs serve
 ```
 

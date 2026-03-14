@@ -1,18 +1,18 @@
 <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
+    <li><a href="{{ '/' | absolute_url }}" class="icon icon-home" aria-label="Docs"></a></li>
     {%- if page %}
       {%- if page.collection == "posts" %}
-        <li><a href="{{ '/' | absolute_url }}">Posts</a> &raquo;</li>
-        <li>{{ page.title }}</li>
+        <li><a href="{{ '/' | absolute_url }}">Posts</a></li>
+        <li class="breadcrumb-item">{{ page.title }}</li>
       {%- else %}
         {%- assign page_directories = page.dir | split: '/' %}
-        <li><a href="{{ '/' | absolute_url }}">Docs</a>&raquo;</li>
         {%- for dir in page_directories %}
         {%- if forloop.first == false %}
-        <li>{{ dir | capitalize }} &raquo;</li>
+        <li class="breadcrumb-item">{{ dir | capitalize }}</li>
         {%- endif %}
         {%- endfor %}
-        <li>{{ page.title }}</li>
+        <li class="breadcrumb-item">{{ page.title }}</li>
       {%- endif %}
     {%- endif %}
     <li class="wy-breadcrumbs-aside">
@@ -27,10 +27,10 @@
   {%- if (site.prev_next_buttons_location == 'top' or  site.prev_next_buttons_location =='both') and (previous_page or next_page) %}
     <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       {%- if next_page %}
-        <a href="{{ next_page.url | absolute_url }}" class="btn btn-neutral float-right" title="{{ next_page.title }}">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="{{ next_page.url | absolute_url }}" class="btn btn-neutral float-right" title="{{ next_page.title }}">Next <span class="icon icon-circle-arrow-right" aria-hidden="true"></span></a>
       {%- endif %}
       {%- if previous_page %}
-        <a href="{{ previous_page.url | absolute_url }}" class="btn btn-neutral" title="{{ previous_page.title }}"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="{{ previous_page.url | absolute_url }}" class="btn btn-neutral" title="{{ previous_page.title }}"><span class="icon icon-circle-arrow-left" aria-hidden="true"></span> Previous</a>
       {%- endif %}
     </div>
   {%- endif %}
