@@ -15,4 +15,4 @@ prev_next_buttons_location: bottom
 search_enabled: true
 hljs_style: github
 hljs_languages: [ruby, python, javascript, bash, yaml]
-display_version: 1.1.0
+display_version: 1.2.0

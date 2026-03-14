@@ -71,7 +71,7 @@ hljs_languages:
   - yaml
 
 # Version string to show in the sidebar.
-display_version: 1.0.0
+display_version: 1.2.0
 
 # List of additional CSS & JS files to load for all pages, path relative to the site base URL.
 extra_javascript:

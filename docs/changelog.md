@@ -8,7 +8,7 @@ nav_order: 5
 
 ## v1.2.0
 
-- Sync theme with the upstream version from MkDocs [v1.6.1](https://github.com/mkdocs/mkdocs/releases/tag/1.4).
+- Sync theme with the upstream version from MkDocs [v1.6.1](https://github.com/mkdocs/mkdocs/releases/tag/1.4), which is synced to the original Read the Docs theme to v1.2.
     - Includes following commits since last time it was synced:
         - [mkdocs/mkdocs@4d1d1c1](https://github.com/mkdocs/mkdocs/commit/4d1d1c1ba5065dde50ae7ddab4b0a85305781047)
         - [mkdocs/mkdocs@fa52d3a](https://github.com/mkdocs/mkdocs/commit/fa52d3ae71251ae1c760cbe9b31caced816573d1)

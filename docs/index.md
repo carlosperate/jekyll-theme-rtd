@@ -55,7 +55,7 @@ Some features are still missing and breaking changes (mostly config names and
 default values) will be released as major uprevs.
 
 So it is recommended to lock the version of the theme to a specific version
-in the `_config.yml` file: `remote_theme: carlosperate/jekyll-theme-rtd@v1.1.0`
+in the `_config.yml` file: `remote_theme: carlosperate/jekyll-theme-rtd@v1.2.0`
 
 Missing features are listed in the GitHub issues with the
 [enhancement](https://github.com/carlosperate/jekyll-theme-rtd/issues?q=is%3Aissue%20state%3Aopen%20label%3Aenhancement)
