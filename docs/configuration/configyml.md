@@ -59,8 +59,8 @@ prev_next_buttons_location: both
 search_enabled: true
 
 # highlight.js style name loaded from cdnjs.
-# Default: github-gist
-hljs_style: github-gist
+# Default: github
+hljs_style: github
 
 # List of highlight.js languages to load from cdnjs.
 hljs_languages:

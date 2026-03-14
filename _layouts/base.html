@@ -24,17 +24,17 @@
   <link rel="stylesheet" href="{{ 'assets/css/theme_extra.css' | absolute_url }}" />
   <link rel="stylesheet" href="{{ 'assets/css/theme_jekyll_custom.css' | absolute_url }}" />
   {%- if site.hljs_style %}
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/{{site.hljs_style}}.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/{{site.hljs_style}}.min.css" />
   {%- else %}
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-gist.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github.min.css" />
   {%- endif %}
   {%- for path in site.extra_css %}
   <link rel="stylesheet" href="{{ path | absolute_url }}" />
   {%- endfor %}
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js" defer></script>
   {% for lang in site.hljs_languages %}
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/{{lang}}.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/{{lang}}.min.js" defer></script>
   {% endfor %}
 </head>
 
@@ -100,6 +100,10 @@
   {% endfor %}
   <script>
     window.addEventListener('load', function() {
+      hljs.configure({
+        ignoreUnescapedHTML: true,
+        throwUnescapedHTML: false,
+      });
       hljs.highlightAll();
       SphinxRtdTheme.Navigation.enable({{ site.sticky_navigation | default: 'false' }});
     });
