@@ -10,7 +10,8 @@ This is a port of the
 [Jekyll](https://jekyllrb.com/), specifically developed be used with
 [GitHub Pages](https://jekyllrb.com/docs/github-pages/).
 
-You are previewing 👀 the theme right now, as you navigate this documentation!
+> [!NOTE]
+> You are previewing 👀 the theme right now as you navigate this documentation!
 
 ![screenshot](assets/img/screenshot.png)
 
@@ -31,8 +32,8 @@ Features:
 - ✅ Specifically developed to be compatible with GitHub Pages
 - ✅ SEO-friendly meta tags and canonical URLs
 - ✅ Configurable with custom options in `_config.yml` and front matter
+- ✅ Admonition callout notes
 - 🧑‍💻 TODO: Social media preview images
-- 🧑‍💻 TODO: Admonition notes
 
 ## What Can You Find Around Here
 

@@ -6,6 +6,10 @@ nav_order: 5
 
 # Changelog
 
+## v1.3.0
+
+- Added admonitions support using the GitHub Markdown-style syntax.
+
 ## v1.2.0
 
 - Sync theme with the upstream version from MkDocs [v1.6.1](https://github.com/mkdocs/mkdocs/releases/tag/1.4), which is synced to the original Read the Docs theme to v1.2.

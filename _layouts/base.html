@@ -93,6 +93,9 @@
   {% include versions.html %}
 
   <script src="{{ 'assets/js/jquery-3.6.0.min.js' | absolute_url  }}"></script>
+  {%- unless site.admonitions == false %}
+  <script src="{{ 'assets/js/adomonitions-0.1.1.umd.min.js' | absolute_url }}"></script>
+  {%- endunless %}
   <script src="{{ 'assets/js/theme_extra.js' | absolute_url }}"></script>
   <script src="{{ 'assets/js/theme.js' | absolute_url }}"></script>
   {% for path in site.extra_javascript %}
@@ -100,11 +103,16 @@
   {% endfor %}
   <script>
     window.addEventListener('load', function() {
+      {%- unless site.admonitions == false %}
+      adomonitions.init();
+      {%- endunless %}
+
       hljs.configure({
         ignoreUnescapedHTML: true,
         throwUnescapedHTML: false,
       });
       hljs.highlightAll();
+
       SphinxRtdTheme.Navigation.enable({{ site.sticky_navigation | default: 'false' }});
     });
   </script>

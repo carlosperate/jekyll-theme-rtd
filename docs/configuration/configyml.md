@@ -70,6 +70,10 @@ hljs_languages:
   - bash
   - yaml
 
+# Enables admonitions (GitHub-style blockquote callouts like [!NOTE], [!WARNING], etc).
+# Default: true
+admonitions: true
+
 # Version string to show in the sidebar.
 display_version: 1.2.0
 

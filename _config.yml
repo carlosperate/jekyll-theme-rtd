@@ -20,4 +20,4 @@ sticky_navigation: true
 prev_next_buttons_location: both
 search_enabled: true
 # hljs_style: atom-one-dark
-hljs_languages: [ruby, python, javascript, bash, yaml]
+hljs_languages: [ruby, python, javascript, bash, yaml, markdown]
