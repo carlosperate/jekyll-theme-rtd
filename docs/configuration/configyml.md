@@ -30,6 +30,8 @@ search, analytics, and more:
 site_author: Carlos Pereira Atencio
 
 # Repository URL used for GitHub links (Edit on GitHub, footer revision link, bottom-left GitHub link).
+# When built with GitHub Pages this is auto-detected, so it can be left unset.
+# Set to `false` to disable the GitHub link entirely.
 repo_url: 'https://github.com/carlosperate/jekyll-theme-rtd'
 
 # Show/hide the "Edit on GitHub" link in page breadcrumbs.

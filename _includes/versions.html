@@ -4,6 +4,10 @@
         <span>
           <a href="{{ site.repo_url }}" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
         </span>
+      {%- elsif site.repo_url == nil and site.github.url %}
+        <span>
+          <a href="{{ site.github.url }}" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
       {%- endif %}
       {%- if previous_page %}
         <span><a href="{{ previous_page.url | absolute_url }}" style="color: #fcfcfc">&laquo; Previous</a></span>
