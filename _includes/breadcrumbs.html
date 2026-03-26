@@ -16,10 +16,16 @@
       {%- endif %}
     {%- endif %}
     <li class="wy-breadcrumbs-aside">
-      {%- if site.edit_on_github and site.repo_url and page and page.name != "search.html" %}
+      {%- if site.repo_url %}
+        {%- assign breadcrumb_repo_url = site.repo_url %}
+      {%- elsif site.repo_url == nil and site.github.repository_url %}
+        {%- assign breadcrumb_repo_url = site.github.repository_url %}
+      {%- endif %}
+      {%- assign edit_on_github = site.edit_on_github | default: true %}
+      {%- if edit_on_github and breadcrumb_repo_url and page and page.name != "search.html" %}
         {% comment %} For the repo branch first try config.yml value, then GitHub Page Metadata {% endcomment %}
         {% assign repo_branch = site.github_branch | default: site.github.source.branch | default: 'main' %}
-        <a href="{{ site.repo_url | url }}/blob/{{ repo_branch }}{%- if site.github.source.path %}{{ site.github.source.path }}{% endif %}/{{ page.path }}" class="icon icon-github" target="_blank"> Edit on GitHub</a>
+        <a href="{{ breadcrumb_repo_url }}/blob/{{ repo_branch }}{%- if site.github.source.path %}{{ site.github.source.path }}{% endif %}/{{ page.path }}" class="icon icon-github" target="_blank"> Edit on GitHub</a>
       {%- endif %}
     </li>
   </ul>
