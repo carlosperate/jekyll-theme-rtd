@@ -4,9 +4,9 @@
         <span>
           <a href="{{ site.repo_url }}" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
         </span>
-      {%- elsif site.repo_url == nil and site.github.url %}
+      {%- elsif site.repo_url == nil and site.github.repository_url %}
         <span>
-          <a href="{{ site.github.url }}" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+          <a href="{{ site.github.repository_url }}" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
         </span>
       {%- endif %}
       {%- if previous_page %}
