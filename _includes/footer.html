@@ -19,7 +19,12 @@
         {%- endif %}
         {%- if site.github.build_revision %}
           {%- if site.repo_url %}
-            <span class="commit">Revision <a href="{{ site.repo_url | url }}/commit/{{ site.github.build_revision }}" target="_blank"><code>{{ site.github.build_revision | truncate: 8, "" }}</code></a>.
+            {%- assign footer_repo_url = site.repo_url %}
+          {%- elsif site.repo_url == nil and site.github.repository_url %}
+            {%- assign footer_repo_url = site.github.repository_url %}
+          {%- endif %}
+          {%- if footer_repo_url %}
+            <span class="commit">Revision <a href="{{ footer_repo_url }}/commit/{{ site.github.build_revision }}" target="_blank"><code>{{ site.github.build_revision | truncate: 8, "" }}</code></a>.
           {%- else %}
             <span class="commit">Revision <code>{{ site.github.build_revision | truncate: 8, "" }}</code>.</span>
           {%- endif %}
