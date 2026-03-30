@@ -77,3 +77,17 @@
         {%- endif %}
     {%- endfor %}
 {%- endfor %}
+
+{%- if site.nav_external_links %}
+    {%- for entry in site.nav_external_links %}
+        {%- if entry.section %}
+            <p class="caption"><span class="caption-text">{{ entry.section }}</span></p>
+        {%- elsif entry.title and entry.url %}
+            <ul>
+                <li class="toctree-l1">
+                    <a class="reference external" href="{{ entry.url }}" target="_blank" rel="noopener noreferrer">{{ entry.title }}</a>
+                </li>
+            </ul>
+        {%- endif %}
+    {%- endfor %}
+{%- endif %}

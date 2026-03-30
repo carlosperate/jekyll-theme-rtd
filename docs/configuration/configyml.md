@@ -17,6 +17,11 @@ These are standard Jekyll configuration options that the theme uses:
 ```yml
 title: This is the title for your site
 description: And this is a short description that goes with it.
+
+# If building with Jekyll this sets the URL for your site, useful to be able to
+# include it in the metadata for social media cards and SEO.
+# GitHub pages builds automatically detects this, so you can leave it unset.
+url: 'https://yourdomain.com'
 ```
 
 ## Theme Specific Configuration
@@ -70,6 +75,22 @@ favicon: 'path/to/your_favicon.ico'
 # Enables sticky navigation behaviour for the left sidebar.
 # Default: false
 sticky_navigation: true
+
+# List of external links to show at the bottom of the sidebar navigation.
+# Each entry is either a link or a section header.
+# Section headers group the links that follow them.
+# Default: Unset
+nav_external_links:
+  - title: A link without a section header
+    url: 'https://example.com'
+  - section: Links
+  - title: A link under the Links section
+    url: 'https://example.com'
+  - title: Another link under the Links section
+    url: 'https://example.com'
+  - section: More Links
+  - title: A link under the More Links section
+    url: 'https://example.com'
 
 # Where to show previous/next navigation buttons.
 # Options: none, top, bottom, both

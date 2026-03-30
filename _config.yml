@@ -19,6 +19,12 @@ repo_url: 'https://github.com/carlosperate/jekyll-theme-rtd'
 # logo: docs/assets/img/jekyll-rtd-logo-250px.jpg
 # favicon: docs/assets/img/favicon/favicon.ico
 sticky_navigation: true
+# nav_external_links:
+#   - title: Jekyll RTD Theme on GitHub
+#     url: 'https://github.com/carlosperate/jekyll-theme-rtd'
+#   - section: Links
+#   - title: Jekyll RTD Theme on GitHub I
+#     url: 'https://github.com/carlosperate/jekyll-theme-rtd'
 prev_next_buttons_location: both
 search_enabled: true
 # hljs_style: atom-one-dark

@@ -19,16 +19,19 @@ to see how easy it is to get started!
 
 Features:
 
-- ✅ Responsive design with a collapsible sidebar navigation
+- ✅ Read the Docs responsive design with a collapsible sidebar navigation
 - ✅ Specifically developed to be compatible with GitHub Pages out of the box
 - ✅ Automatic GitHub link, "Edit on GitHub", and commit links (optional)
 - ✅ Latest release tag displayed in the sidebar (optional)
+- ✅ External links in the navigation bar
 - ✅ Built-in search functionality via [Lunr.js](https://lunrjs.com/)
-- ✅ Source code highlighting via [highlight.js](https://highlightjs.org) with a copy-to-clipboard button
+- ✅ Source code highlighting via [highlight.js](https://highlightjs.org), with a copy-to-clipboard button
 - ✅ Admonition callouts via [aDOMonitions](https://github.com/carlosperate/aDOMonitions)
 - ✅ Configurable with custom options in `_config.yml` and front matter
 - ✅ Social media metadata and preview images
 - ✅ SEO friendly meta tags and canonical URLs
+- 🧑‍💻 TODO: Mermaid diagram support
+- 🧑‍💻 TODO: Heading anchor links on hover
 - 🧑‍💻 TODO: Buttons
 - 🧑‍💻 TODO: Labels
 
@@ -65,7 +68,7 @@ contributors are expected to adhere to the
 ## ⚖️ License
 
 This theme is based on the [MkDocs](https://github.com/mkdocs/mkdocs)
-[`readthedocs` port](https://github.com/mkdocs/mkdocs/tree/1.0.4/mkdocs/themes/readthedocs).
+[`readthedocs` port](https://github.com/mkdocs/mkdocs/tree/1.6.1/mkdocs/themes/readthedocs).
 Copyright © 2014, Tom Christie, all rights reserved, and released under the
 [BSD 2-Clause "Simplified" License](LICENSE).
 
