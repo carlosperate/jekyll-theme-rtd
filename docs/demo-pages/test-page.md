@@ -30,6 +30,9 @@ This is a normal paragraph following a header. GitHub is a code hosting platform
 
 ### Kitchen Header 3 - 1.1
 
+> [!TIP]
+> Hover over any code block to reveal the copy-to-clipboard button.
+
 ```js
 // Javascript code with syntax highlighting.
 var fun = function lang(l) {

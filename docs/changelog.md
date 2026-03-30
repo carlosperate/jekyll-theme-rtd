@@ -6,13 +6,15 @@ nav_order: 5
 
 # Changelog
 
-## v1.3.0
+## v1.3.0 (unreleased)
 
 - Added admonitions support using the GitHub Markdown-style syntax.
+- When built with GitHub pages, automatically detect and add GH link, "edit on GitHub" link, and commit hash link.
+- Added "copy code to clipboard" buttons to code blocks.
 - Added social media previews/metadata/images.
 - Added more SEO related metadata.
 
-## v1.2.0
+## v1.2.0 (2026-03-15)
 
 - Sync theme with the upstream version from MkDocs [v1.6.1](https://github.com/mkdocs/mkdocs/releases/tag/1.4), which is synced to the original Read the Docs theme to v1.2.
     - Includes following commits since last time it was synced:
@@ -41,7 +43,7 @@ nav_order: 5
             - Navigation reimplemented for Jekyll Liquid templates, not needed.
     - There was also a large number of commits updating the translations, which are not supported in this Jekyll theme version.
 
-## v1.1.0
+## v1.1.0 (2026-03-13)
 
 - Sync theme with the upstream version from MkDocs [v1.2](https://github.com/mkdocs/mkdocs/releases/tag/1.2).
     - Includes following commits since last time it was synced:
@@ -61,6 +63,6 @@ nav_order: 5
             - GAnalytics change within MkDocs, not needed.
 - Added a test script to create screenshots of the theme and compare them with the previous version, to easily spot visual changes.
 
-## v1.0.0
+## v1.0.0  (2026-02-25)
 
 Initial stable release.

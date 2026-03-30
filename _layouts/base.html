@@ -92,6 +92,7 @@
   {%- endunless %}
   <script src="{{ 'assets/js/theme_extra.js' | absolute_url }}"></script>
   <script src="{{ 'assets/js/theme.js' | absolute_url }}"></script>
+  <script src="{{ 'assets/js/theme_jekyll_custom.js' | absolute_url }}"></script>
   {% for path in site.extra_javascript %}
   <script src="{{ path | absolute_url }}"></script>
   {% endfor %}
@@ -106,7 +107,7 @@
         throwUnescapedHTML: false,
       });
       hljs.highlightAll();
-
+      JekyllRtd.addCodeBlockCopyButton();
       SphinxRtdTheme.Navigation.enable({{ site.sticky_navigation | default: 'false' }});
     });
   </script>

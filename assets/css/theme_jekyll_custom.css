@@ -9,3 +9,46 @@
 .commit code {
     font-size: 0.9em !important;
 }
+
+/* Reduce padding between <pre> and <code> */
+.rst-content div[class^=highlight] pre {
+    padding: 6px !important;
+}
+
+/*****************************************************************************/
+/* Copy code to clipboard button                                             */
+/*****************************************************************************/
+.copy-code-wrapper {
+    position: relative;
+}
+
+.copy-code-btn {
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.9em;
+    height: 1.9em;
+    padding: 0;
+    background: rgb(43 135 195 / 10%);
+    color: #2980b9e0;
+    border: 1px solid #2980b9e0;
+    border-radius: 0px 0px 0px 6px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.15s ease, color 0.15s ease, background 0.15s ease;
+    user-select: none;
+}
+
+.copy-code-wrapper:hover .copy-code-btn {
+    opacity: 1;
+}
+
+.copy-code-btn.copied {
+    color: #3c7a2b;
+    border-color: #3c7a2b;
+}

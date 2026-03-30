@@ -21,13 +21,13 @@ Features:
 
 - ✅ Responsive design with a collapsible sidebar navigation
 - ✅ Specifically developed to be compatible with GitHub Pages out of the box
-- ✅ Project GitHub link and "Edit on GitHub" link for each page (optional)
+- ✅ Automatic GitHub link, "Edit on GitHub", and commit links (optional)
 - ✅ Latest release tag displayed in the sidebar (optional)
-- ✅ Built-in search functionality using [Lunr.js](https://lunrjs.com/)
-- ✅ Source code highlighting using the [highlight.js](https://highlightjs.org)
-- ✅ Admonition callouts using [aDOMonitions](https://github.com/carlosperate/aDOMonitions)
+- ✅ Built-in search functionality via [Lunr.js](https://lunrjs.com/)
+- ✅ Source code highlighting via [highlight.js](https://highlightjs.org) with a copy-to-clipboard button
+- ✅ Admonition callouts via [aDOMonitions](https://github.com/carlosperate/aDOMonitions)
 - ✅ Configurable with custom options in `_config.yml` and front matter
-- ✅ Social media preview images
+- ✅ Social media metadata and preview images
 - ✅ SEO friendly meta tags and canonical URLs
 - 🧑‍💻 TODO: Buttons
 - 🧑‍💻 TODO: Labels
