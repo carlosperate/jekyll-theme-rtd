@@ -1,18 +1,10 @@
 <!DOCTYPE html>
-<html class="writer-html5">
+<html class="writer-html5" lang="{{ site.lang | default: 'en' }}">
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  {%- if page and page.excerpt %}
-  <meta name="description" content="{{ page.excerpt }}">
-  {%- elsif page and page.path == "index.md" %}
-  <meta name="description" content="{{ site.description }}">
-  {% endif %}
-  {%- if site.site_author %}<meta name="author" content="{{ site.site_author }}" />{% endif %}
-  {%- if page and page.canonical_url %}<link rel="canonical" href="{{ page.canonical_url }}" />{%- endif %}
-  {%- if page.noindex %}<meta name="robots" content="noindex, nofollow" />{%- endif %}
-  {%- if site.favicon %}
+  {%- if site.favicon -%}
   <link rel="shortcut icon" href="{{ site.favicon | absolute_url }}" />
   {%- else %}
   <link rel="shortcut icon" href="{{ 'assets/img/favicon.ico' | absolute_url  }}" />
@@ -33,9 +25,11 @@
   {%- endfor %}
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js" defer></script>
-  {% for lang in site.hljs_languages %}
+  {% for lang in site.hljs_languages -%}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/{{lang}}.min.js" defer></script>
   {% endfor %}
+
+  {% include social_seo.html %}
 </head>
 
 <body class="wy-body-for-nav" role="document">

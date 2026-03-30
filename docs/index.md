@@ -32,8 +32,11 @@ Features:
 - ✅ Specifically developed to be compatible with GitHub Pages
 - ✅ SEO-friendly meta tags and canonical URLs
 - ✅ Configurable with custom options in `_config.yml` and front matter
-- ✅ Admonition callout notes
-- 🧑‍💻 TODO: Social media preview images
+- ✅ Admonition callouts using [aDOMonitions](https://github.com/carlosperate/aDOMonitions)
+- ✅ TODO: Social media preview images
+- 🧑‍💻 TODO: SEO
+- 🧑‍💻 TODO: Buttons
+- 🧑‍💻 TODO: Labels
 
 ## What Can You Find Around Here
 

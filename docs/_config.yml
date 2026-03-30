@@ -6,6 +6,8 @@ remote_theme: carlosperate/jekyll-theme-rtd
 # Theme settings docs:
 # https://carlosperate.github.io/jekyll-theme-rtd/configuration/configyml.html
 site_author: Carlos Pereira Atencio
+lang: en
+locale: en_US
 repo_url: "https://github.com/carlosperate/jekyll-theme-rtd"
 edit_on_github: true
 logo: assets/img/jekyll-rtd-logo-250px.jpg
@@ -15,4 +17,8 @@ prev_next_buttons_location: bottom
 search_enabled: true
 hljs_style: github
 hljs_languages: [ruby, python, javascript, bash, yaml, markdown]
+admonitions: true
 display_version: 1.2.0
+social_image: assets/img/jekyll-rtd-social-media.jpg
+social_image_alt: "Social media card image for the Jekyll RTD theme, showing the logo and project title."
+fediverse: "@carlosperate@mastodon.social"

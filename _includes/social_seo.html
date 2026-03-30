@@ -1,0 +1,108 @@
+{%- comment %}
+  Social Media Cards - Open Graph (og:) + Twitter/X Cards
+
+  Automatically generates social preview metadata for all major platforms
+  (Facebook, LinkedIn, Discord, Slack, WhatsApp, Mastodon, Twitter/X, etc.).
+
+  _config.yml settings:
+    social_image: /path/to/default-social.jpg  # Default social card image (1200×630px recommended)
+    social_image_alt: "Description of image"    # Alt text for the default social image
+    twitter: yourtwitterhandle                  # Site Twitter/X handle (without @)
+    locale: en_US                               # Locale for og:locale (default: en_US, accepts en-US or en_US)
+
+  Page frontmatter overrides:
+    description: "Custom page description"      # Overrides auto-generated description
+    social_image: /path/to/page-social.jpg      # Page-specific social card image
+    social_image_alt: "Description of image"    # Alt text for the page social image
+    author: "Author Name"                       # Article author (for posts/articles)
+    twitter: authorhandle                       # Author Twitter/X handle for articles (without @)
+    date_last_modified: 2025-01-01               # Last modified date (for articles)
+{%- endcomment %}
+
+{%- comment -%} --- Resolve title --- {%- endcomment -%}
+{%- if page.title -%}
+  {%- assign _sm_title = page.title | append: " — " | append: site.title -%}
+{%- else -%}
+  {%- assign _sm_title = site.title -%}
+{%- endif -%}
+
+{%- comment -%} --- Resolve author --- {%- endcomment -%}
+{%- if page.author -%}
+  {%- assign _sm_author = page.author -%}
+{%- elsif site.site_author -%}
+  {%- assign _sm_author = site.site_author -%}
+{%- endif -%}
+
+{%- comment -%} --- Resolve description --- {%- endcomment -%}
+{%- if page.description -%}
+  {%- assign _sm_description = page.description -%}
+{%- elsif page.excerpt -%}
+  {%- assign _sm_description = page.excerpt | strip_html | strip_newlines | truncate: 200 -%}
+{%- elsif site.description -%}
+  {%- assign _sm_description = site.description -%}
+{%- endif -%}
+
+{%- comment -%} --- Resolve canonical URL --- {%- endcomment -%}
+{%- if page.canonical_url -%}
+  {%- assign _sm_url = page.canonical_url -%}
+{%- else -%}
+  {%- assign _sm_url = page.url | absolute_url -%}
+{%- endif -%}
+
+{%- comment -%}--- Resolve social image ---
+  Priority: page.social_image > site.social_image > site.logo (fallback)
+{%- endcomment -%}
+{%- if page.social_image -%}
+  {%- assign _sm_image = page.social_image | absolute_url -%}
+  {%- assign _sm_image_alt = page.social_image_alt | default: page.title | default: site.title -%}
+{%- elsif site.social_image -%}
+  {%- assign _sm_image = site.social_image | absolute_url -%}
+  {%- assign _sm_image_alt = site.social_image_alt | default: site.title -%}
+{%- elsif site.logo -%}
+  {%- assign _sm_image = site.logo | absolute_url -%}
+  {%- assign _sm_image_alt = site.title -%}
+{%- endif -%}
+
+{%- comment -%}--- Resolve og:type ---
+  Posts use "article" to unlock article:published_time and related tags.
+  All other pages use "website".
+{%- endcomment -%}
+{%- if page.layout == "post" -%}
+  {%- assign _sm_type = "article" -%}
+{%- else -%}
+  {%- assign _sm_type = "website" -%}
+{%- endif -%}
+
+  {% if page.noindex -%}<meta name="robots" content="noindex, nofollow" />{% endif %}
+  {% if page and page.canonical_url -%}<link rel="canonical" href="{{ page.canonical_url }}" />{% endif %}
+  {% if _sm_author -%}<meta name="author" content="{{ _sm_author }}" />{% endif %}
+  {% if _sm_description -%}<meta name="description" content="{{ _sm_description }}" />{%- endif %}
+
+  <!-- Open Graph / Social Media Cards -->
+  <meta property="og:type" content="{{ _sm_type }}" />
+  <meta property="og:url" content="{{ _sm_url }}" />
+  <meta property="og:title" content="{{ _sm_title }}" />
+  <meta property="og:site_name" content="{{ site.title }}" />
+  <meta property="og:locale" content="{{ site.locale | replace: '-', '_' | default: 'en_US' }}">
+  {% if _sm_description %}<meta property="og:description" content="{{ _sm_description }}" />{% endif %}
+{%- if _sm_image %}
+  <meta property="og:image" content="{{ _sm_image }}" />
+  <meta property="og:image:alt" content="{{ _sm_image_alt }}" />
+{%- endif %}
+
+{%- comment -%} Article-specific metadata (only for posts) {%- endcomment -%}
+{%- if _sm_type == "article" %}
+  {%- if page.date %}<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}" />{%- endif %}
+  {%- if page.date_last_modified %}<meta property="article:modified_time" content="{{ page.date_last_modified | date_to_xmlschema }}" />{%- endif %}
+  {%- if _sm_author %}<meta property="article:author" content="{{ _sm_author }}" />{%- endif %}
+{%- endif %}
+
+  <!-- Twitter/X & Fediverse Cards (title, description, and image fall back to og: above) -->
+  <meta name="twitter:card" content="{% if _sm_image %}summary_large_image{% else %}summary{% endif %}" />
+{%- if site.twitter %}
+  <meta name="twitter:site" content="@{{ site.twitter }}" />
+  <meta name="twitter:creator" content="@{{ site.twitter }}" />
+{%- endif %}
+{% if site.fediverse %}
+  <meta name="fediverse:creator" content="{{ site.fediverse }}">
+{% endif %}

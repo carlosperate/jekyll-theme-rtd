@@ -11,6 +11,8 @@ exclude:
 
 # Theme settings
 site_author: Carlos Pereira Atencio
+# lang: en
+# locale: en_US
 repo_url: 'https://github.com/carlosperate/jekyll-theme-rtd'
 # edit_on_github: true
 # github_branch: main
@@ -21,3 +23,8 @@ prev_next_buttons_location: both
 search_enabled: true
 # hljs_style: atom-one-dark
 hljs_languages: [ruby, python, javascript, bash, yaml, markdown]
+# admonitions: true
+# display_version: 1.2.0
+# social_image: docs/assets/img/jekyll-rtd-social-media.jpg
+# social_image_alt: "Social media card image for the Jekyll RTD theme, showing the logo and project title."
+# fediverse: "@carlosperate@mastodon.social"
