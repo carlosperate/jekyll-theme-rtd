@@ -20,18 +20,17 @@ to see how easy it is to get started!
 Features:
 
 - ✅ Responsive design with a collapsible sidebar navigation
-- ✅ "Edit on GitHub" link for each page
+- ✅ Specifically developed to be compatible with GitHub Pages out of the box
+- ✅ Project GitHub link and "Edit on GitHub" link for each page (optional)
+- ✅ Latest release tag displayed in the sidebar (optional)
 - ✅ Built-in search functionality using [Lunr.js](https://lunrjs.com/)
 - ✅ Source code highlighting using the [highlight.js](https://highlightjs.org)
-- ✅ Specifically developed to be compatible with GitHub Pages
-- ✅ SEO-friendly meta tags and canonical URLs
-- ✅ Configurable with custom options in `_config.yml` and front matter
 - ✅ Admonition callouts using [aDOMonitions](https://github.com/carlosperate/aDOMonitions)
-- ✅ TODO: Social media preview images
-- 🧑‍💻 TODO: SEO
+- ✅ Configurable with custom options in `_config.yml` and front matter
+- ✅ Social media preview images
+- ✅ SEO friendly meta tags and canonical URLs
 - 🧑‍💻 TODO: Buttons
 - 🧑‍💻 TODO: Labels
-
 
 ### 🚧 Work in Progress!
 

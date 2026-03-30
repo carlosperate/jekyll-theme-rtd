@@ -9,6 +9,8 @@ nav_order: 5
 ## v1.3.0
 
 - Added admonitions support using the GitHub Markdown-style syntax.
+- Added social media previews/metadata/images.
+- Added more SEO related metadata.
 
 ## v1.2.0
 

@@ -21,7 +21,7 @@
 
 {%- comment -%} --- Resolve title --- {%- endcomment -%}
 {%- if page.title -%}
-  {%- assign _sm_title = page.title | append: " — " | append: site.title -%}
+  {%- assign _sm_title = page.title | append: " - " | append: site.title -%}
 {%- else -%}
   {%- assign _sm_title = site.title -%}
 {%- endif -%}
@@ -101,8 +101,49 @@
   <meta name="twitter:card" content="{% if _sm_image %}summary_large_image{% else %}summary{% endif %}" />
 {%- if site.twitter %}
   <meta name="twitter:site" content="@{{ site.twitter }}" />
-  <meta name="twitter:creator" content="@{{ site.twitter }}" />
+  {%- if _sm_type == "article" %}<meta name="twitter:creator" content="@{{ site.twitter }}" />{%- endif %}
 {%- endif %}
-{% if site.fediverse %}
+{%- if site.fediverse %}
   <meta name="fediverse:creator" content="{{ site.fediverse }}">
-{% endif %}
+{%- endif %}
+
+  <!-- JSON-LD Structured Data -->
+  {% comment %} WebSite schema — on every page, with SearchAction if search is enabled {%- endcomment -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "{{ '/' | absolute_url }}#website",
+    "name": {{ site.title | jsonify }},
+    "url": {{ '/' | absolute_url | jsonify }},
+    "inLanguage": {{ site.lang | default: 'en' | jsonify }}{% if site.description %},
+    "description": {{ site.description | jsonify }}{% endif %}{% unless site.search_enabled == false %},
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "{{ '/search/' | absolute_url }}?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }{% endunless %}
+  }
+  </script>
+
+{%- comment -%} BlogPosting schema — only for posts, reuses variables resolved above {%- endcomment -%}
+{%- if _sm_type == "article" %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": {{ page.title | jsonify }},
+    "url": {{ _sm_url | jsonify }},
+    "inLanguage": {{ site.lang | default: 'en' | jsonify }}{% if _sm_description %},
+    "description": {{ _sm_description | jsonify }}{% endif %}{% if _sm_image %},
+    "image": {{ _sm_image | jsonify }}{% endif %}{% if page.date %},
+    "datePublished": {{ page.date | date_to_xmlschema | jsonify }}{% endif %}{% if page.date_last_modified %},
+    "dateModified": {{ page.date_last_modified | date_to_xmlschema | jsonify }}{% endif %}{% if _sm_author %},
+    "author": {"@type": "Person", "name": {{ _sm_author | jsonify }}}{% endif %},
+    "isPartOf": {"@id": "{{ '/' | absolute_url }}#website"}
+  }
+  </script>
+{%- endif %}
