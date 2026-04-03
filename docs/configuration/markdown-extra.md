@@ -1,10 +1,12 @@
 ---
 layout: default
-title: Admonitions
-nav_order: 3
+title: Additional Markdown Features
+nav_order: 1
 ---
 
-# Admonitions
+# Additional Markdown Features
+
+## Admonitions
 
 Admonitions are highlighted callouts for important context such as notes,
 tips, warnings, and cautions.
@@ -21,7 +23,7 @@ first line, eg. `[!NOTE]`,`[!WARNING]`, etc).
 Each of the following examples shows the Markdown source first, and the
 rendered result below it.
 
-## Note
+### Note
 
 ```markdown
 > [!NOTE]
@@ -31,7 +33,7 @@ rendered result below it.
 > [!NOTE]
 > This is a note admonition.
 
-## Tip
+### Tip
 
 ```markdown
 > [!TIP]
@@ -41,7 +43,7 @@ rendered result below it.
 > [!TIP]
 > This is a tip admonition.
 
-## Important
+### Important
 
 ```markdown
 > [!IMPORTANT]
@@ -51,7 +53,7 @@ rendered result below it.
 > [!IMPORTANT]
 > This is an important admonition.
 
-## Warning
+### Warning
 
 ```markdown
 > [!WARNING]
@@ -61,7 +63,7 @@ rendered result below it.
 > [!WARNING]
 > This is a warning admonition.
 
-## Caution
+### Caution
 
 ```markdown
 > [!CAUTION]

@@ -10,15 +10,24 @@ excerpt: A sample description for SEO.
 nav_order: 2
 ---
 
-Text can be **bold**, _italic_, or ~~strikethrough~~.
+Text can be **bold**, _italic_, ~~strikethrough~~, ***bold and italic***, or ~~**bold strikethrough**~~.
 
-[Link to another page](another-page).
+Inline code `looks like this`.
 
-There should be whitespace between paragraphs.
+[Link to another page](../quickstart.html).
 
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
+There should be whitespace between this paragraph and the one below.
+
+There should be whitespace this paragraph and the one above.
+But consecutive lines in the Markdown, like these two, are rendered in the same paragraph.
 
 # Markdown Kitchen Sink Example
+
+## Header h2
+### Header h3
+#### Header h4
+##### Header h5
+##### Header h6
 
 This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
 
@@ -30,8 +39,12 @@ This is a normal paragraph following a header. GitHub is a code hosting platform
 
 ### Kitchen Header 3 - 1.1
 
+[Admonitions (more info here)](../configuration/admonitions.html) are added via Markdown blockquotes and rendered like this:
+
 > [!TIP]
-> Hover over any code block to reveal the copy-to-clipboard button.
+> Hover over any code block from the following section to reveal the copy-to-clipboard button.
+
+#### Kitchen Header 4 - 1.1.1
 
 ```js
 // Javascript code with syntax highlighting.
@@ -62,17 +75,9 @@ while True:
         display.show("-")
 ```
 
-#### Kitchen Header 4 - 1.1.1
-
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-
 ##### Kitchen Header 5 - 1.1.1.1
 
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
+Section reserved to add more Markdown features in the future.
 
 ###### Kitchen Header 6 - 1.1.1.1.1
 
@@ -83,7 +88,7 @@ while True:
 | ok           | good `oreos`      | hmm   |
 | ok           | good `zoute` drop | yumm  |
 
-### Kitchen Header 7 = 1.2
+### Kitchen Header 7 - 1.2
 
 There's a horizontal rule below this.
 
@@ -98,8 +103,6 @@ Here is an unordered list:
 *   Item baz
 *   Item zip
 
-### Kitchen Header 9 - 1.3
-
 And an ordered list:
 
 1.  Item one
@@ -107,7 +110,7 @@ And an ordered list:
 1.  Item three
 1.  Item four
 
-### Kitchen Header 10 - 1.4
+#### Kitchen Header 9 - 1.3.1
 
 And a nested list:
 
@@ -125,9 +128,7 @@ And a nested list:
   - level 2 item
 - level 1 item
 
-### Kitchen Header 11 - 1.5
-
-Nesting an ol in ul in an ol
+Nesting an ol in ul in an ol:
 
 - level 1 item (ul)
   1. level 2 item (ol)
@@ -145,7 +146,7 @@ Nesting an ol in ul in an ol
     - level 3 item (ul)
 - level 1 item (ul)
 
-### Kitchen Header 12 - 1.6
+#### Kitchen Header 10 - 1.3.2
 
 And a task list
 
@@ -153,19 +154,19 @@ And a task list
 - [ ] Hello, this is another TODO item
 - [x] Goodbye, this item is done
 
-## Kitchen Header 13 - 2
+### Kitchen Header 11 - 1.4
 
 Small image
 
-![](https://github.blog/wp-content/uploads/2019/01/Company@2x-2.png)
+![](https://carlosperate.github.io/jekyll-theme-rtd/assets/img/jekyll-rtd-logo-250px.jpg)
 
-### Kitchen Header 14 - 2.1
+### Kitchen Header 12 - 1.5
 
 Large image
 
-![](https://guides.github.com/activities/hello-world/branching.png)
+![](https://carlosperate.github.io/jekyll-theme-rtd/assets/img/jekyll-rtd-social-media.jpg)
 
-### Kitchen Header 15 - 2.2
+## Kitchen Header 13 - 2
 
 Definition lists can be used with HTML syntax.
 
@@ -179,6 +180,19 @@ Definition lists can be used with HTML syntax.
 <dt>Color</dt>
 <dd>Green</dd>
 </dl>
+
+### Kitchen Header 14 - 2.1
+
+This is a `<details>/<summary>` collapsible :
+
+<details>
+<summary>Click to expand/collapse</summary>
+This content is hidden by default and can be revealed by clicking the summary above. You can put any content here, including text, images, code blocks, etc.
+</details>
+
+### Kitchen Header 15 - 2.2
+
+Section reserved to add more Markdown features in the future.
 
 #### Kitchen Header 16 - 2.2.1
 
