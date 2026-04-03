@@ -53,6 +53,16 @@ rendered result below it.
 > [!IMPORTANT]
 > This is an important admonition.
 
+### Info
+
+```markdown
+> [!INFO]
+> This is an info/hint admonition.
+```
+
+> [!INFO]
+> This is an info/hint admonition.
+
 ### Warning
 
 ```markdown
@@ -72,3 +82,13 @@ rendered result below it.
 
 > [!CAUTION]
 > This is a caution admonition.
+
+### Danger
+
+```markdown
+> [!DANGER]
+> This is a danger admonition.
+```
+
+> [!DANGER]
+> This is a danger admonition.
