@@ -27,11 +27,11 @@ Features:
 - ✅ Built-in search functionality via [Lunr.js](https://lunrjs.com/)
 - ✅ Source code highlighting via [highlight.js](https://highlightjs.org), with a copy-to-clipboard button
 - ✅ Admonition callouts via [aDOMonitions](https://github.com/carlosperate/aDOMonitions)
+- ✅ Heading anchor links on hover via [AnchorJS](https://www.bryanbraun.com/anchorjs/)
 - ✅ Configurable with custom options in `_config.yml` and front matter
 - ✅ Social media metadata and preview images
 - ✅ SEO friendly meta tags and canonical URLs
 - 🧑‍💻 TODO: Mermaid diagram support
-- 🧑‍💻 TODO: Heading anchor links on hover
 - 🧑‍💻 TODO: Buttons
 - 🧑‍💻 TODO: Labels
 

@@ -90,6 +90,7 @@
   {%- unless site.admonitions == false %}
   <script src="{{ 'assets/js/adomonitions-0.3.1.umd.min.js' | absolute_url }}"></script>
   {%- endunless %}
+  <script src="{{ 'assets/js/anchor-5.0.0.min.js' | absolute_url }}"></script>
   <script src="{{ 'assets/js/theme_extra.js' | absolute_url }}"></script>
   <script src="{{ 'assets/js/theme.js' | absolute_url }}"></script>
   <script src="{{ 'assets/js/theme_jekyll_custom.js' | absolute_url }}"></script>
@@ -126,6 +127,8 @@
       hljs.highlightAll();
       JekyllRtd.addCodeBlockCopyButton();
       SphinxRtdTheme.Navigation.enable({{ site.sticky_navigation | default: 'false' }});
+      anchors.options = { placement: "left", visible: "hover", class: "title-anchor"};
+      anchors.add();
     });
   </script>
   <!-- Build Date: {{ site.time | date: "%Y-%m-%d %H:%M" }} -->
