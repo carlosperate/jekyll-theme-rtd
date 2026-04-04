@@ -23,72 +23,97 @@ first line, eg. `[!NOTE]`,`[!WARNING]`, etc).
 Each of the following examples shows the Markdown source first, and the
 rendered result below it.
 
-### Note
+### Admonition Types
 
 ```markdown
 > [!NOTE]
 > This is a note admonition.
+
+> [!TIP]
+> This is a tip admonition.
+
+> [!IMPORTANT]
+> This is an important admonition.
+
+> [!INFO]
+> This is an info/hint admonition.
+
+> [!WARNING]
+> This is a warning admonition.
+
+> [!CAUTION]
+> This is a caution admonition.
+
+> [!DANGER]
+> This is a danger admonition.
 ```
 
 > [!NOTE]
 > This is a note admonition.
 
-### Tip
-
-```markdown
 > [!TIP]
 > This is a tip admonition.
-```
-
-> [!TIP]
-> This is a tip admonition.
-
-### Important
-
-```markdown
-> [!IMPORTANT]
-> This is an important admonition.
-```
 
 > [!IMPORTANT]
 > This is an important admonition.
 
-### Info
-
-```markdown
 > [!INFO]
 > This is an info/hint admonition.
-```
-
-> [!INFO]
-> This is an info/hint admonition.
-
-### Warning
-
-```markdown
-> [!WARNING]
-> This is a warning admonition.
-```
 
 > [!WARNING]
 > This is a warning admonition.
 
-### Caution
-
-```markdown
-> [!CAUTION]
-> This is a caution admonition.
-```
-
 > [!CAUTION]
 > This is a caution admonition.
 
-### Danger
+> [!DANGER]
+> This is a danger admonition.
+
+## Buttons
+
+Links can be styled as buttons using Kramdown's [attribute list syntax](https://kramdown.gettalong.org/syntax.html#attribute-list-definitions).
+Apply the `.btn` class to any Markdown link:
 
 ```markdown
-> [!DANGER]
-> This is a danger admonition.
+[Button](#){: .btn }
 ```
 
-> [!DANGER]
-> This is a danger admonition.
+[Button](#buttons){: .btn }
+
+### Button Variants
+
+Colour Variants:
+
+```markdown
+[Default](#){: .btn }
+[Neutral](#){: .btn .btn-neutral }
+[Info](#){: .btn .btn-info }
+[Success](#){: .btn .btn-success }
+[Warning](#){: .btn .btn-warning }
+[Danger](#){: .btn .btn-danger }
+```
+
+[Default](#color-variants){: .btn }
+[Neutral](#color-variants){: .btn .btn-neutral }
+[Info](#color-variants){: .btn .btn-info }
+[Success](#color-variants){: .btn .btn-success }
+[Warning](#color-variants){: .btn .btn-warning }
+[Danger](#color-variants){: .btn .btn-danger }
+
+For smaller buttons add `.btn-small`:
+
+```markdown
+[Small button](#){: .btn .btn-small }
+[Small info](#){: .btn .btn-info .btn-small }
+```
+
+[Small button](#small-buttons){: .btn .btn-small }
+[Small info](#small-buttons){: .btn .btn-info .btn-small }
+
+`.btn-link` renders a button with the appearance of a plain link:
+
+```markdown
+[Link button](#){: .btn .btn-link }
+```
+
+[Link button](#){: .btn .btn-link }

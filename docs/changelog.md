@@ -11,7 +11,9 @@ nav_order: 5
 - Added admonitions support using the GitHub Markdown-style syntax.
 - When built with GitHub pages, automatically detect and add GH link, "edit on GitHub" link, and commit hash link.
 - Added "copy code to clipboard" buttons to code blocks.
-- Added option to add external links in the navigation bar
+- Added heading anchor links on hover.
+- Added option to add external links in the navigation bar.
+- Add button styling via links with additional attributes.
 - Added social media previews/metadata/images.
 - Added more SEO related metadata.
 

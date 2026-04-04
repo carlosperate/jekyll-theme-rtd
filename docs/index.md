@@ -34,11 +34,11 @@ Features:
 - ✅ Source code highlighting via [highlight.js](https://highlightjs.org), with a copy-to-clipboard button
 - ✅ Admonition callouts via [aDOMonitions](https://github.com/carlosperate/aDOMonitions)
 - ✅ Heading anchor links on hover via [AnchorJS](https://www.bryanbraun.com/anchorjs/)
+- ✅ Button styling via links with additional attributes
 - ✅ Configurable with custom options in `_config.yml` and front matter
 - ✅ Social media metadata and preview images
 - ✅ SEO friendly meta tags and canonical URLs
 - 🧑‍💻 TODO: Mermaid diagram support
-- 🧑‍💻 TODO: Buttons
 - 🧑‍💻 TODO: Labels
 
 ## What Can You Find Around Here
@@ -55,14 +55,14 @@ Features:
   you can copy into your site to inspect every Jekyll & Liquid variable at
   build time.
 
-## 🚧 Work in Progress!
+## 🧑‍💻 Work in Progress!
 
-This theme is currently being developed but v1.0 is already usable and released.
-Some features are still missing and breaking changes (mostly config names and
-default values) will be released as major uprevs.
+New features are still being developed but the theme is already usable and
+v1 has been released.
 
-So it is recommended to lock the version of the theme to a specific version
-in the `_config.yml` file: `remote_theme: carlosperate/jekyll-theme-rtd@v1.2.0`
+Any possible breaking change would be released as major uprev. So, it is
+recommended to lock the version of the theme in the `_config.yml` file:
+`remote_theme: carlosperate/jekyll-theme-rtd@v1.2.0`
 
 Missing features are listed in the GitHub issues with the
 [enhancement](https://github.com/carlosperate/jekyll-theme-rtd/issues?q=is%3Aissue%20state%3Aopen%20label%3Aenhancement)
