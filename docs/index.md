@@ -27,8 +27,9 @@ Features:
 
 - ✅ Read the Docs responsive design with a collapsible sidebar navigation
 - ✅ Specifically developed to be compatible with GitHub Pages out of the box
-- ✅ Automatic GitHub link, "Edit on GitHub", and commit links (optional)
-- ✅ Latest release tag displayed in the sidebar (optional)
+  - ✅ Simply create a `docs` folder with a `_config.yml` and your markdown files
+  - ✅ Automatic GitHub link, "Edit on GitHub", and commit links (optional)
+  - ✅ Latest release tag displayed in the sidebar (optional)
 - ✅ External links in the navigation bar
 - ✅ Built-in search functionality via [Lunr.js](https://lunrjs.com/)
 - ✅ Source code highlighting via [highlight.js](https://highlightjs.org), with a copy-to-clipboard button

@@ -117,3 +117,74 @@ For smaller buttons add `.btn-small`:
 ```
 
 [Link button](#){: .btn .btn-link }
+
+## Labels
+
+Labels are small inline badges for marking status, releases, or other metadata.
+Apply the `.label` class to any inline element using Kramdown's [attribute list syntax](https://kramdown.gettalong.org/syntax.html#attribute-list-definitions):
+
+```markdown
+New
+{: .label }
+```
+
+New
+{: .label }
+
+### Label variants
+
+```markdown
+Default
+{: .label }
+
+Blue
+{: .label .label-blue }
+
+Green
+{: .label .label-green }
+
+Fuchsia
+{: .label .label-fuchsia }
+
+Yellow
+{: .label .label-yellow }
+
+Red
+{: .label .label-red }
+
+Gray
+{: .label .label-gray }
+```
+
+Default
+{: .label }
+
+Blue
+{: .label .label-blue }
+
+Green
+{: .label .label-green }
+
+Fuchsia
+{: .label .label-fuchsia }
+
+Yellow
+{: .label .label-yellow }
+
+Red
+{: .label .label-red }
+
+Gray
+{: .label .label-gray }
+
+### Inline labels
+
+Labels can be placed inline using `*text*{: .label }` (notice there is no space
+between the `*` and `{`).
+Wrapping in `*...*` gives Kramdown an `<em>` element to attach the attribute:
+
+```markdown
+### My Feature *New*{: .label .label-green }
+```
+
+### My Feature *New*{: .label .label-green }

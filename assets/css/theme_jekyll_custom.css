@@ -28,6 +28,7 @@
   padding-left: 0.2em;
 }
 
+/* Custom AnchorJS class */
 .title-anchor {
   color: #2980b9 !important;
   margin-top: 2px !important;
@@ -70,3 +71,31 @@
     color: #3c7a2b;
     border-color: #3c7a2b;
 }
+
+/*****************************************************************************/
+/* Labels                                                                    */
+/*****************************************************************************/
+.rst-content .label {
+    display: inline-block;
+    padding: 0.15em 0.5em;
+    font-size: 0.75em;
+    font-weight: 700;
+    line-height: 1.4;
+    border-radius: 4px;
+    vertical-align: middle;
+    white-space: nowrap;
+    background: #2980b9;
+    color: #fff;
+    margin: 0 0.2em;
+}
+
+/* Allow inline labels via *text*{: .label } without italic/bold side-effects */
+.rst-content em.label    { font-style: normal; }
+.rst-content strong.label { font-weight: 700; }
+
+.rst-content .label-blue   { background: #2980b9; color: #fff; }
+.rst-content .label-green  { background: #27ae60; color: #fff; }
+.rst-content .label-fuchsia { background: #a0165b; color: #fff; }
+.rst-content .label-yellow { background: #f1c40f; color: #333; }
+.rst-content .label-red    { background: #e74c3c; color: #fff; }
+.rst-content .label-gray   { background: #7f8c8d; color: #fff; }

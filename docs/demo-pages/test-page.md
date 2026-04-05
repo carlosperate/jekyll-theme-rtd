@@ -23,13 +23,13 @@ But consecutive lines in the Markdown, like these two, are rendered in the same 
 
 # Markdown Kitchen Sink Example
 
+Hovering over the headers show anchor links on their left.
+
 ## Header h2
 ### Header h3
 #### Header h4
 ##### Header h5
 ##### Header h6
-
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
 
 ## Kitchen Header 2 - 1
 
@@ -39,12 +39,14 @@ This is a normal paragraph following a header. GitHub is a code hosting platform
 
 ### Kitchen Header 3 - 1.1
 
-[Admonitions (more info here)](../configuration/admonitions.html) are added via Markdown blockquotes and rendered like this:
+[Admonitions (more info here)](../configuration/markdown-extra.html#admonitions) are added via Markdown blockquotes and rendered like this:
 
 > [!TIP]
 > Hover over any code block from the following section to reveal the copy-to-clipboard button.
 
 #### Kitchen Header 4 - 1.1.1
+
+Hover on the code blocks to show a "copy code to clipboard" button on the top right corner.
 
 ```js
 // Javascript code with syntax highlighting.
@@ -77,7 +79,16 @@ while True:
 
 ##### Kitchen Header 5 - 1.1.1.1
 
-Section reserved to add more Markdown features in the future.
+[Buttons (more info here)](../configuration/markdown-extra.html#buttons) are inlined and have multiple options:
+
+[Default](#kitchen-header-5---1111){: .btn }
+[Neutral](#kitchen-header-5---1111){: .btn .btn-neutral }
+[Info](#kitchen-header-5---1111){: .btn .btn-info }
+[Success](#kitchen-header-5---1111){: .btn .btn-success }
+[Warning](#kitchen-header-5---1111){: .btn .btn-warning }
+[Danger](#kitchen-header-5---1111){: .btn .btn-danger }
+[Small button](#kitchen-header-5---1111){: .btn .btn-small }
+[Link button](#kitchen-header-5---1111){: .btn .btn-link }
 
 ###### Kitchen Header 6 - 1.1.1.1.1
 
@@ -88,11 +99,30 @@ Section reserved to add more Markdown features in the future.
 | ok           | good `oreos`      | hmm   |
 | ok           | good `zoute` drop | yumm  |
 
-### Kitchen Header 7 - 1.2
+### Kitchen Header 7 - 1.2 *New*{: .label .label-green }
 
-There's a horizontal rule below this.
+[Labels (more info here)](../configuration/markdown-extra.html#labels) are
+badges for status, releases, or other metadata: *Default colour*{: .label }
 
-* * *
+Blue
+{: .label .label-blue }
+
+Green
+{: .label .label-green }
+
+Fuchsia
+{: .label .label-fuchsia }
+
+Yellow
+{: .label .label-yellow }
+
+Red
+{: .label .label-red }
+
+Gray
+{: .label .label-gray }
+
+<br>
 
 ### Kitchen Header 8 - 1.3
 
@@ -192,7 +222,9 @@ This content is hidden by default and can be revealed by clicking the summary ab
 
 ### Kitchen Header 15 - 2.2
 
-Section reserved to add more Markdown features in the future.
+There's a horizontal rule below this.
+
+* * *
 
 #### Kitchen Header 16 - 2.2.1
 
