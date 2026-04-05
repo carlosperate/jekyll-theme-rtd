@@ -41,7 +41,7 @@ v1 has been released.
 
 Any possible breaking change would be released as major uprev. So, it is
 recommended to lock the version of the theme in the `_config.yml` file:
-`remote_theme: carlosperate/jekyll-theme-rtd@v1.2.0`
+`remote_theme: carlosperate/jekyll-theme-rtd@v1.3.0`
 
 Missing features are listed in the GitHub issues with the
 [enhancement](https://github.com/carlosperate/jekyll-theme-rtd/issues?q=is%3Aissue%20state%3Aopen%20label%3Aenhancement)

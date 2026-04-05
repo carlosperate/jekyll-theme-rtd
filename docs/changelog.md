@@ -6,7 +6,7 @@ nav_order: 5
 
 # Changelog
 
-## v1.3.0 (unreleased)
+## v1.3.0 (2026-04-5)
 
 - Added admonitions support using the GitHub Markdown-style syntax.
 - When built with GitHub pages, automatically detect and add GH link, "edit on GitHub" link, and commit hash link.

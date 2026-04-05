@@ -120,7 +120,7 @@ admonitions: true
 
 # Version string to show in the sidebar.
 # Default: Unset
-display_version: 1.2.0
+display_version: 1.3.0
 
 # Social media card image shown when the site is shared on social platforms
 # (Twitter/X, LinkedIn, Discord, Slack, etc.). Recommended size: 1200×630px.
