@@ -18,31 +18,40 @@ to see how easy it is to get started!
 
 Features:
 
-- ✅ Read the Docs responsive design with a collapsible sidebar navigation
-- ✅ Specifically developed to be compatible with GitHub Pages out of the box
-  - ✅ Simply create a `docs` folder with a `_config.yml` and your markdown files
-  - ✅ Automatic GitHub link, "Edit on GitHub", and commit links (optional)
-  - ✅ Latest release tag displayed in the sidebar (optional)
-- ✅ External links in the navigation bar
-- ✅ Built-in search functionality via [Lunr.js](https://lunrjs.com/)
-- ✅ Source code highlighting via [highlight.js](https://highlightjs.org), with a copy-to-clipboard button
-- ✅ Admonition callouts via [aDOMonitions](https://github.com/carlosperate/aDOMonitions)
-- ✅ Heading anchor links on hover via [AnchorJS](https://www.bryanbraun.com/anchorjs/)
-- ✅ Button styling via links with additional attributes
-- ✅ Configurable with custom options in `_config.yml` and front matter
-- ✅ Social media metadata and preview images
-- ✅ SEO friendly meta tags and canonical URLs
-- 🧑‍💻 TODO: Mermaid diagram support
-- 🧑‍💻 TODO: Labels
+- 🖥️ Read the Docs responsive design with a collapsible sidebar navigation
+- 🐙 Specifically developed to be compatible with GitHub Pages out of the box
+  - 📁 Simply create a `docs` folder with a `_config.yml` and your markdown files
+  - 🔗 Automatic GitHub link, "Edit on GitHub", and commit links (optional)
+  - 🏷️ Latest release tag displayed in the sidebar (optional)
+- 🌐 External links in the navigation bar
+- 🔍 Built-in search functionality via [Lunr.js](https://lunrjs.com/)
+- 🖍️ Source code highlighting via [highlight.js](https://highlightjs.org), with a copy-to-clipboard button
+- 🧜 Diagram rendering support via [Mermaid](https://www.npmjs.com/package/mermaid)
+- 📢 Admonition callouts via [aDOMonitions](https://github.com/carlosperate/aDOMonitions)
+- ⚓ Heading anchor links on hover via [AnchorJS](https://www.bryanbraun.com/anchorjs/)
+- 🔘 Button styling via links with additional attributes
+- 🏷 Labels for status, releases, or other metadata
+- ⚙️ Configurable with custom options in `_config.yml` and front matter
+- 📣 Social media metadata and preview images
+- 🔎 SEO friendly meta tags and canonical URLs
+- 🧑‍💻 TODO 🧑‍💻: 🧮 Mathematical expressions rendering
 
 ## 🧑‍💻 Work in Progress!
 
 New features are still being developed but the theme is already usable and
-v1 has been released.
+[v1.3.0](https://github.com/carlosperate/jekyll-theme-rtd/releases/tag/v1.3.0)
+is the latest release 🎉.
 
-Any possible breaking change would be released as major uprev. So, it is
-recommended to lock the version of the theme in the `_config.yml` file:
-`remote_theme: carlosperate/jekyll-theme-rtd@v1.3.0`
+Any possible breaking change would be released as a major revision
+(i.e. `v2`, `v3`, etc). A breaking change would be a change in existing config
+options, or a significant visual style change, while new features and
+settings will be released a minor revisions (i.e. `v1.1`, `v1.2`, etc).
+
+So, it is recommended to lock the theme version in the `_config.yml` file:
+
+```yml
+remote_theme: carlosperate/jekyll-theme-rtd@v1.3.0
+```
 
 Missing features are listed in the GitHub issues with the
 [enhancement](https://github.com/carlosperate/jekyll-theme-rtd/issues?q=is%3Aissue%20state%3Aopen%20label%3Aenhancement)

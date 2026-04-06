@@ -31,20 +31,29 @@ Hovering over the headers show anchor links on their left.
 ##### Header h5
 ##### Header h6
 
-## Kitchen Header 2 - 1
+## Quotes 2 - 1
 
 > This is a blockquote following a header.
 >
 > When something is important enough, you do it even if the odds are not in your favor.
 
-### Kitchen Header 3 - 1.1
+### Admonitions 3 - 1.1
 
 [Admonitions (more info here)](../configuration/markdown-extra.html#admonitions) are added via Markdown blockquotes and rendered like this:
 
 > [!TIP]
 > Hover over any code block from the following section to reveal the copy-to-clipboard button.
 
-#### Kitchen Header 4 - 1.1.1
+> [!WARNING]
+> Admonitons and Mermaid diagrams are transformed on page load.
+
+> [!DANGER]
+> 
+> Not locking a theme version (`remote_theme: carlosperate/jekyll-theme-rtd@v1.3.0`)
+> in your `_config.yml` file could result in changes on your built site
+> between theme releases.
+
+#### Code Blocks 4 - 1.1.1
 
 Hover on the code blocks to show a "copy code to clipboard" button on the top right corner.
 
@@ -77,7 +86,7 @@ while True:
         display.show("-")
 ```
 
-##### Kitchen Header 5 - 1.1.1.1
+##### Buttons 5 - 1.1.1.1
 
 [Buttons (more info here)](../configuration/markdown-extra.html#buttons) are inlined and have multiple options:
 
@@ -90,7 +99,7 @@ while True:
 [Small button](#kitchen-header-5---1111){: .btn .btn-small }
 [Link button](#kitchen-header-5---1111){: .btn .btn-link }
 
-###### Kitchen Header 6 - 1.1.1.1.1
+###### Tables 6 - 1.1.1.1.1
 
 | head1        | head two          | three |
 |:-------------|:------------------|:------|
@@ -99,7 +108,7 @@ while True:
 | ok           | good `oreos`      | hmm   |
 | ok           | good `zoute` drop | yumm  |
 
-### Kitchen Header 7 - 1.2 *New*{: .label .label-green }
+### Labels 7 - 1.2 *New*{: .label .label-green }
 
 [Labels (more info here)](../configuration/markdown-extra.html#labels) are
 badges for status, releases, or other metadata: *Default colour*{: .label }
@@ -124,7 +133,7 @@ Gray
 
 <br>
 
-### Kitchen Header 8 - 1.3
+### Lists 8 - 1.3
 
 Here is an unordered list:
 
@@ -140,7 +149,7 @@ And an ordered list:
 1.  Item three
 1.  Item four
 
-#### Kitchen Header 9 - 1.3.1
+#### Nested Lists 9 - 1.3.1
 
 And a nested list:
 
@@ -176,7 +185,7 @@ Nesting an ol in ul in an ol:
     - level 3 item (ul)
 - level 1 item (ul)
 
-#### Kitchen Header 10 - 1.3.2
+#### Task List 10 - 1.3.2
 
 And a task list
 
@@ -184,19 +193,17 @@ And a task list
 - [ ] Hello, this is another TODO item
 - [x] Goodbye, this item is done
 
-### Kitchen Header 11 - 1.4
+### Images 11 - 1.4
 
 Small image
 
 ![](https://carlosperate.github.io/jekyll-theme-rtd/assets/img/jekyll-rtd-logo-250px.jpg)
 
-### Kitchen Header 12 - 1.5
-
-Large image
+### Large Image 12 - 1.5
 
 ![](https://carlosperate.github.io/jekyll-theme-rtd/assets/img/jekyll-rtd-social-media.jpg)
 
-## Kitchen Header 13 - 2
+## Definition Lists 13 - 2
 
 Definition lists can be used with HTML syntax.
 
@@ -211,7 +218,7 @@ Definition lists can be used with HTML syntax.
 <dd>Green</dd>
 </dl>
 
-### Kitchen Header 14 - 2.1
+### Collapsibles 14 - 2.1
 
 This is a `<details>/<summary>` collapsible :
 
@@ -220,18 +227,24 @@ This is a `<details>/<summary>` collapsible :
 This content is hidden by default and can be revealed by clicking the summary above. You can put any content here, including text, images, code blocks, etc.
 </details>
 
-### Kitchen Header 15 - 2.2
+### Horizonal Rule 15 - 2.2
 
 There's a horizontal rule below this.
 
 * * *
 
-#### Kitchen Header 16 - 2.2.1
+#### Mermaid Diagrams 16 - 2.2.1
 
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
+[Mermaid diagrams (more info here)](../configuration/mermaid-diagrams.html) are rendered from code blocks with language `mermaid`:
 
-```
-The final element.
+```mermaid
+sequenceDiagram
+Alice->>John: Hello John, how are you?
+loop HealthCheck
+    John->>John: Fight against hypochondria
+end
+Note right of John: Rational thoughts!
+John-->>Alice: Great!
+John->>Bob: How about you?
+Bob-->>John: Jolly good!
 ```
