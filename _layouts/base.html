@@ -90,6 +90,9 @@
   {%- unless site.admonitions == false %}
   <script src="{{ 'assets/js/adomonitions-0.3.1.umd.min.js' | absolute_url }}"></script>
   {%- endunless %}
+  {%- unless site.mermaid == false %}
+  <script src="{{ 'assets/js/mermaid-11.14.0.min.js' | absolute_url }}"></script>
+  {%- endunless %}
   <script src="{{ 'assets/js/anchor-5.0.0.min.js' | absolute_url }}"></script>
   <script src="{{ 'assets/js/theme_extra.js' | absolute_url }}"></script>
   <script src="{{ 'assets/js/theme.js' | absolute_url }}"></script>
@@ -118,6 +121,13 @@
           }
         },
       });
+      {%- endunless %}
+      {%- unless site.mermaid == false %}
+      document.querySelectorAll('code.language-mermaid').forEach(function(el) {
+        el.setAttribute('data-highlighted', 'yes');
+      });
+      mermaid.initialize({ startOnLoad: false });
+      mermaid.run({ querySelector: 'code.language-mermaid' });
       {%- endunless %}
 
       hljs.configure({

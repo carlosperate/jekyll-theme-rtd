@@ -118,6 +118,11 @@ hljs_languages:
 # Default: true
 admonitions: true
 
+# Enables Mermaid diagram rendering.
+# JS file is around 850 KB Gzip, disable it if you'd like to save the bandwidth.
+# Default: true
+mermaid: true
+
 # Version string to show in the sidebar.
 # Default: Unset
 display_version: 1.3.0

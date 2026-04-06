@@ -71,7 +71,8 @@ rendered result below it.
 
 ## Buttons
 
-Links can be styled as buttons using Kramdown's [attribute list syntax](https://kramdown.gettalong.org/syntax.html#attribute-list-definitions).
+Links can be styled as buttons using Kramdown's
+[attribute list syntax](https://kramdown.gettalong.org/syntax.html#attribute-list-definitions).
 Apply the `.btn` class to any Markdown link:
 
 ```markdown
@@ -121,7 +122,8 @@ For smaller buttons add `.btn-small`:
 ## Labels
 
 Labels are small inline badges for marking status, releases, or other metadata.
-Apply the `.label` class to any inline element using Kramdown's [attribute list syntax](https://kramdown.gettalong.org/syntax.html#attribute-list-definitions):
+Apply the `.label` class to any inline element using Kramdown's
+[attribute list syntax](https://kramdown.gettalong.org/syntax.html#attribute-list-definitions):
 
 ```markdown
 New
