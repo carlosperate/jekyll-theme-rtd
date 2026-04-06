@@ -19,7 +19,7 @@ hljs_style: github
 hljs_languages: [ruby, python, javascript, bash, yaml, markdown]
 admonitions: true
 mermaid: true
-display_version: 1.3.0
+display_version: 1.4.0
 social_image: assets/img/jekyll-rtd-social-media.jpg
 social_image_alt: "Social media card image for the Jekyll RTD theme, showing the logo and project title."
 fediverse: "@carlosperate@mastodon.social"

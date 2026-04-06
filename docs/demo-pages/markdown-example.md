@@ -49,7 +49,7 @@ Hovering over the headers show anchor links on their left.
 
 > [!DANGER]
 > 
-> Not locking a theme version (`remote_theme: carlosperate/jekyll-theme-rtd@v1.3.0`)
+> Not locking a theme version (`remote_theme: carlosperate/jekyll-theme-rtd@v1.4.0`)
 > in your `_config.yml` file could result in changes on your built site
 > between theme releases.
 

@@ -63,7 +63,7 @@ Features:
 ## 🧑‍💻 Work in Progress!
 
 New features are still being developed but the theme is already usable and
-[v1.3.0](https://github.com/carlosperate/jekyll-theme-rtd/releases/tag/v1.3.0)
+[v1.4.0](https://github.com/carlosperate/jekyll-theme-rtd/releases/tag/v1.4.0)
 is the latest release 🎉.
 
 Any possible breaking change would be released as a major revision
@@ -74,7 +74,7 @@ settings will be released a minor revisions (i.e. `v1.1`, `v1.2`, etc).
 So, it is recommended to lock the theme version in the `_config.yml` file:
 
 ```yaml
-remote_theme: carlosperate/jekyll-theme-rtd@v1.3.0
+remote_theme: carlosperate/jekyll-theme-rtd@v1.4.0
 ```
 
 Missing features are listed in the GitHub issues with the

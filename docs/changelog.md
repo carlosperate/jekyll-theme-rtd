@@ -6,6 +6,11 @@ nav_order: 5
 
 # Changelog
 
+## v1.4.0 (2026-04-07)
+
+- Add Mermaid diagram rendering.
+- Add labels via Kramdown's attributes.
+
 ## v1.3.0 (2026-04-5)
 
 - Added admonitions support using the GitHub Markdown-style syntax.
