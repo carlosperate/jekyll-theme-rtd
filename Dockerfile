@@ -5,7 +5,7 @@ WORKDIR /srv/jekyll
 
 # Pre-install gems for caching (these layers survive volume mounts
 # since gems are stored in /usr/local/bundle, not /srv/jekyll)
-COPY Gemfile jekyll-theme-rtd.gemspec ./
+COPY Gemfile* jekyll-theme-rtd.gemspec ./
 RUN bundle install
 
 # Inline entrypoint script
@@ -13,7 +13,8 @@ RUN cat > /usr/local/bin/entrypoint.sh <<'EOF' && chmod +x /usr/local/bin/entryp
 #!/usr/bin/env bash
 set -euo pipefail
 
-bundle install
+# Only install gems when the current bundle is incomplete.
+bundle check || bundle install
 
 case "${1:-serve}" in
   build)

@@ -11,9 +11,9 @@ of this theme or build their own customisations.
 
 The theme is developed like a normal Jekyll site, and it uses the
 [docs folder in the GitHub repository](https://github.com/carlosperate/jekyll-theme-rtd/tree/main/docs)
-as the markdown content to generate this website.
+as the markdown content to generate the documentation website.
 
-And the repository with all the theme source code is at:
+Single repository with all the theme source code and docs:
 [https://github.com/carlosperate/jekyll-theme-rtd](https://github.com/carlosperate/jekyll-theme-rtd)
 
 ## 🚀 Run with Docker
@@ -22,8 +22,9 @@ And the repository with all the theme source code is at:
 development environment without installing Ruby or any other dependencies
 on your machine.
 
-A [Dockerfile](Dockerfile) is included to run an environment with Ruby and
-Jekyll. First, build the Docker image:
+A [Dockerfile](https://github.com/carlosperate/jekyll-theme-rtd/blob/main/Dockerfile)
+is included to run an environment with Ruby and Jekyll.
+First, build the Docker image:
 
 ```bash
 $ docker build -t jekyll-theme-rtd .
@@ -54,10 +55,12 @@ This will serve the website at [http://localhost:4000](http://localhost:4000)
 with live-reload enabled, so any changes made on these files will trigger a
 rebuild and automatically refresh the browser.
 
-Building the docker image pre-installs the required Ruby Gems, but the built
-image still triggers a gem installation step every time it is launched,
-in case there has been changes. It's recommended to rebuild the image if there
-are any changes made to the `Gemfile` or gemspec dependencies.
+Building the docker image pre-installs the required Ruby Gems. On launch, the
+container runs `bundle check` and only installs gems when needed (for example,
+if dependencies changed). It's recommended to rebuild the image if there are
+any changes made to the `Gemfile`, `Gemfile.lock`, or gemspec dependencies.
+In fresh clones where `Gemfile.lock` is not present, bundler resolves versions
+from the `Gemfile` and generates the lockfile during install.
 
 ### Build the docs using the remote theme
 
@@ -109,7 +112,7 @@ $ mkdocs serve
 ## 👨‍👩‍👧‍👦 Contributing
 
 Bug reports and pull requests are welcome on GitHub at
-https://github.com/carlosperate/jekyll-theme-rtd.
+[https://github.com/carlosperate/jekyll-theme-rtd](https://github.com/carlosperate/jekyll-theme-rtd).
 
 This project is intended to be a safe, welcoming space for collaboration, and
 contributors are expected to adhere to the
@@ -118,4 +121,4 @@ contributors are expected to adhere to the
 ## ⚖️ License
 
 Information about the license can be found in the
-[repository README file](https://github.com/carlosperate/jekyll-theme-rtd/tree/main?tab=readme-ov-file#%EF%B8%8F-license).
+[repository README file](https://github.com/carlosperate/jekyll-theme-rtd/#%EF%B8%8F-license).
